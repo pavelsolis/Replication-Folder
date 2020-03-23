@@ -1,8 +1,11 @@
 ## RESEARCH REPLICATION FOLDER
-Reproducibility of your research results is at a minimum desirable. Reproducibility is easier to achieve if it is part of a project since its inception, as you work along. This repository provides a folder structure that facilitates working on a project that is replicable.
+-------------------------------------------------------------------------------------
+Folder structure that facilitates the reproducibility of research.
+
+At a minimum, reproducibility of your research results is desirable. Reproducibility is easier to achieve if it is part of a project since its inception and until it is completed; that is, if it is part of the research process as you work along. This repository provides a folder structure that facilitates working on a project that is replicable.
 
 ### Paper
-The structure gives you flexibility to generate different versions of the paper: full draft vs outline, clean vs linked (when editing, it is useful to go back and forth to ToC), with vs without comment boxes (when editing, it is useful to keep in mind certain pending issues).
+The structure gives you flexibility to generate different versions of the paper: full draft vs outline, clean vs linked (when editing, it is useful to go back and forth to the table of contents), with vs without comment boxes (when editing, it is useful to keep in mind certain pending issues).
 
 
 
@@ -77,28 +80,33 @@ Note: Git commands only work when (in the terminal) you are in a folder that con
 ### Create (Remote and Local) Repositories
 You need to designate a folder to be a Git repository. When you initialize a folder to be a repository, Git creates a subfolder called *.git* that it uses to do all its magic.
 
-You can create a Git repository from the terminal with `$ git init` or from GitHub.com. With the first option, you will later need to call that local repository from GitHub; for the second option, later you will need to clone the remote repository into your local machine. Below are the steps for creating a repository using GitHub.
+You can create a Git repository from the terminal with `$ git init` or from GitHub.com. With the first option, you will later need to call that local repository from GitHub; for the second option, you will later need to clone the remote repository into your local machine. Below are the steps for creating a repository using GitHub.
 
-In GitHub.com click the plus sign at the top and follow the instructions. Choose whether you want the repository to be private or public. Initialize it with a README file. Although it's optional, it is recommended to include a GitHub-hosted *.gitignore* file, it includes the file extensions you want Git to ignore (e.g. junk files from Latex).
+In GitHub.com click the plus sign at the top and choose 'New Repository' or under 'Repositories' select 'New'. Choose a name for the repository (with no spaces). Choose whether you want the repository to be private or public, and whether you want to initialize it with a README file (a README file is usually recommended). Although it's optional, it is recommended to include a GitHub-hosted *.gitignore* file, which includes the file extensions you want Git to ignore; a good option might be to type and choose 'tex', it excludes junk files from Latex. The *.gitignore* file can later be modified to add more extensions (e.g. autosave extensions for Word, Matlab, Stata, R, Python).
 
-- If you are going to move an existing project (i.e. folder with files) to the repository just created, make sure to have or create a *.gitignore* file immediately after the repository is created, so that the unwanted files are ignored right away when you include files with those extensions in your local repository; otherwise, if you first upload a file with extension that you don't want to follow and then create the *.gitignore* file, you will need to untrack the file with the command: `$ git rm --cached <filename.ext>`.
+- If you are going to move an existing project (i.e. folder with files) to the repository just created, make sure to have or create a *.gitignore* file immediately after the repository is created, so that the unwanted files are ignored right away when you include files with those extensions in your local repository; otherwise, if you first upload a file with an extension that you don't want to track and then create the *.gitignore* file, you will need to untrack the file with the command: `$ git rm --cached <filename.ext>`.
 - You can place the *.gitignore* file within any folder in the Git repository except in the *.git* folder itself, in which case the file won't work. However, if you need to have a private version of the *.gitignore* file, you can add the rules to the *.git/info/exclude* file.
-- Extensions to include in the *.gitignore* file: Latex junk, Excel files (.xls*) because of size limits and they will later be processed into .mat or .dta files. In fact, very large files (> 100 MB) do not work well in version control because they are often duplicated in the history and are not supported by GitHub.
+- File extensions to include in the *.gitignore* file: Latex junk, Excel files (.xls*) because of size limits and they will later be processed into .mat or .dta files. In fact, very large files (> 100 MB) do not work well in version control because they are often duplicated in the history and are not supported by GitHub.
 - Do **not** ignore: .tex files, figures (you may want them later if you change the code).
 
 Once you created a repository in GitHub, copy the URL link that GitHub creates in order to clone the repository in your machine. You need the appropriate URL depending on how you decided to clone when setting up Git above. Thus there are two options: using HTTPS (recommended) or SSH.
 
-Using the `cd` command in the terminal, go to the folder where you want to set the repository: 
+Using the `cd` command in the terminal, go to the folder where you want to set the repository and paste the URL:
 ```bash
+$ cd <directory location>
 $ git clone <URL>
 ```
 
-This has initialized a folder as a Git repository. To pull down from GitHub.com the most recent version of the project to your machine, use:
+This initializes a folder as a Git repository in your machine. To pull down from GitHub.com the most recent version of the project to your machine, use:
 ```bash
 $ git pull
 # OR
 $ git pull <remote> <branch>
 ```
+
+You can update the *.gitignore* file, the README file, move an existing project into the local repository and commit the changes.
+
+**To change name of repositories.** You need to change the name in GitHub.com (under the settings of a project) and in your local machine. Use `git config` to get the remote URL and `git remote set -url origin` to update the URL.
 
 #### Adding a New Repository to Use the Branching Model (See Below)
 In GitHub.com go to repositories and click in 'New'. Type a name and choose whether you want the repository to be private or public. Do not initialize with a README file. Add *.gitignore* file for TeX. Click 'Create'.
@@ -139,7 +147,7 @@ $ git commit -m "Brief (< 50 characters) meaningful comment"
 ```
 - Always run tests and review changes *before* committing. When working with code, this means to commit working versions of it.
 
-When you want to commit all the files in the staging area (e.g. a whole project), you can combine the add and commit steps in one step. above with one line as follows:
+When you want to commit all the files in the staging area (e.g. a whole project), you can combine the add and commit steps in one step as follows:
 ```bash
 $ git commit -a -m "Message"
 # OR
