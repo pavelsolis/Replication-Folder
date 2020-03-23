@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[outdir=./]{epstopdf}  					% Avoids errors when input figures
+\usepackage[labelsep=period,labelfont=bf]{caption}
+%\usepackage{subcaption}
+
+\begin{document}
+
+\begin{figure}[tbph]
+	\begin{center}
+		\caption{Caption of Figure}
+		\label{fig:factorslines}
+		\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
+	\end{center}
+	
+	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
+\end{figure}
+
+% trim = {<left> <lower> <right> <upper>}
+
+%\begin{figure}[tbph]
+%	\caption{Caption of Figure}
+%	\label{fig:roa_n_ratios}
+%	\begin{subfigure}[t]{\textwidth}
+%		\begin{center}
+%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
+%			\caption{Subcaption of Figure} \label{subfig:roadcmp}
+%%			\vspace{.5cm}
+%		\end{center}
+%	\end{subfigure}
+%	
+%	\begin{subfigure}[t]{\textwidth}
+%		\begin{center}
+%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
+%			\caption{Subcaption of Figure} \label{subfig:bankratios}
+%%			\vspace{.4cm}
+%		\end{center}
+%	\end{subfigure}
+%	
+%	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
+%\end{figure}
+
+\end{document}

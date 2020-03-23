@@ -1,0 +1,100 @@
+%----------------------------------------------------------------
+% Preamble
+%----------------------------------------------------------------
+\documentclass[12pt, aspectratio=169, xcolor=dvipsnames]{beamer}  % Document class
+%\documentclass[12pt, aspectratio=169,xcolor=dvipsnames,handout,notes=show]{beamer}	  % For printing
+\input{../Settings/packs_beamer}   		  % Packages
+\input{../Settings/macros}					   % Personalized commands
+%----------------------------------------------------------------
+
+\begin{document}
+
+\input{titleslide}
+
+%\begin{frame}{To Dos}
+%\listoftodos
+%\end{frame}
+
+\section{Introduction}
+
+ \begin{frame}[label=LinkA]
+	\frametitle{Text Formatting, Equations and \\ \vspace{-.4cm} Links}
+	\begin{itemize}
+		\item Profitability \alert{monetary policy} \textit{and} implies \textcolor{red}{$\coeffmatch = 1$}
+		\iftoggle{long}{\pause}{}
+		\begin{itemize}
+			\item Withstand 
+		\end{itemize}
+	%\vspace{-1cm}
+	\input {../Equations/panelBanksInter}
+	\vspace{-0.8cm}
+	\quad where $\eqBankbetas$ is
+	\end{itemize}
+	\begin{textblock*}{3cm}(.89\textwidth,-.05\textheight)
+		\hyperlink{LinkB}{\beamergotobutton{Go To Text}}
+	\end{textblock*}
+\end{frame}
+\note{Profitability.}
+\note{Granularity.}
+
+\subsection{Layered Items}
+
+\begin{frame}[label=LinkB]
+	\frametitle{Layered Items and Links}
+	\begin{itemize}
+		\item Income
+		\begin{itemize}
+				\item Net interest margin (NIM)
+				\begin{itemize}
+					\iftoggle{struct}{\item<2->}{\item} Interest income (II)
+				\end{itemize}
+				\iftoggle{struct}{\item<1->}{\item} Non-interest income (NNI)
+				\begin{itemize}
+					\iftoggle{long}{\item<2>}{\item} Net fees
+				\end{itemize}
+		\end{itemize}
+		\item Operating costs (OC)
+	\end{itemize}
+	\begin{textblock*}{3cm}(.85\textwidth,-.5\textheight)
+		\hyperlink{LinkA}{\beamerreturnbutton{Go Back Text}}
+	\end{textblock*}
+\end{frame}
+
+\section{Inserting Files}
+
+%\begin{frame}
+%	\frametitle{Inserting A PDF}
+%	\vspace{-4.8cm}
+%	\begin{center}
+%		\includegraphics[trim={2cm 3.7cm 3cm 2cm},clip,height=15cm,width=\textwidth,keepaspectratio]{../../../Ch_MX/Docs/Tables/Latex/nimdcmp_all_tsdcmp_lsdvc_pdf.pdf}
+%		% trim={<left> <lower> <right> <upper>}
+%	\end{center}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Inserting PDF and Highlighting It}
+%	\vspace{-3.2cm}
+%	\hspace{3cm}
+%	\begin{tikzpicture}
+%	\node (table) at (0,0)
+%			{\includegraphics[trim={2cm 1.2cm 1cm 1cm},clip,height=11cm,width=\textwidth,keepaspectratio]{../../../Ch_XXXX/Docs/Tables/Latex/depvars_all_nointer_lsdvc_pdf.pdf}};
+%		% trim={<left> <lower> <right> <upper>}
+%		%\draw[step=1cm,gray,very thin] (-4,-4) grid (6,6);
+%		\draw[red,thick] (-3.7,2.1) rectangle (4,2.95);
+%	\end{tikzpicture}
+%\end{frame}
+
+\section{Appendix}
+
+\begin{frame}
+	\begin{center}
+		\huge \textcolor{yaleblue}{Appendix}
+	\end{center}
+\end{frame}
+
+\begin{frame}<presentation:0>
+	\bibliographystyle{abbrvnat} 
+	\bibliography{../../../References/library}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,100 @@
+%% Packages
+% Conditionals, Contents, Layout, Formatting, Math, Figures and Tables,
+% Hyperlinks and References, Special Characters, Appendix
+
+%---------------------------------------------------------------
+% Conditionals
+%---------------------------------------------------------------
+\usepackage{etoolbox}
+	\newtoggle{toclinks}				    % Add links in sections to ToC
+	\newtoggle{cboxes}					    % Comments for sections
+	\newtoggle{fulldraft}					 % Versions: outline vs full draft
+	
+	\settoggle{toclinks}{true}			   	% 'true' to include ToC and links
+	\settoggle{cboxes}{true}				% 'true' to include boxed comments
+	\settoggle{fulldraft}{true}	   	 	     % 'false' to generate an outline
+
+%---------------------------------------------------------------
+% Contents
+%---------------------------------------------------------------
+\usepackage[nottoc]{tocbibind} 		 % Displays bib in ToC, nottoc omits ToC from itself
+\usepackage{textcomp}		  			% For the copyright symbol
+\usepackage{todonotes} 					% For to-do lists
+%\usepackage{makeidx} 					% Creates an index at the end of the document
+%	\makeindex								   % use: \index{} and \printindex
+
+%---------------------------------------------------------------
+% Layout
+%---------------------------------------------------------------
+\usepackage{pdfpages}
+\usepackage{pdflscape}			  		% To rotate page in PDF using \begin{landscape}
+\usepackage{rotating}					  % To rotate page in PDF using \begin{sidewaystable}
+
+%---------------------------------------------------------------
+% Formatting
+%---------------------------------------------------------------
+\usepackage{float}							% Placing inputs in current section
+\usepackage{enumerate}				   % Personalizes the enumerate style
+
+%---------------------------------------------------------------
+% Math
+%---------------------------------------------------------------
+\usepackage{amsmath} 						% For command eqref
+\usepackage{amssymb} 						% For math fonts
+\usepackage{dsfont}								% More math fonts (e.g. indicator function)
+%\usepackage{amsthm,enumitem}
+
+%---------------------------------------------------------------
+% Figures and Tables
+%---------------------------------------------------------------
+\usepackage{standalone}			  % To compile sub-files as part of main document
+\usepackage[labelsep=period,labelfont=bf]{caption} % Dot separator, boldfaced
+%	\captionsetup[figure]{position=top}					 % Position of caption
+%	\captionsetup[table]{name=New Table Name}	% Change table caption prefix
+
+% Figures
+\usepackage{graphicx} 				% Needed for \includegraphics
+\usepackage[outdir=./]{epstopdf}  % Avoids errors when calling figures
+\usepackage{subcaption}	    	  % Multi-panel figure: \begin{subfigure}[t]{\textwidth}
+
+% Tables (extensions to the standard tabular environment)
+\usepackage{booktabs}			  % Needed for \toprule, \midrule, \bottomrule
+\usepackage{tabularx}				% Creates paragraph-like columns
+\usepackage{threeparttable}		 % Includes a structured note section
+\usepackage{longtable} 			   % For multi-page tables, note section needs package threeparttablex
+\usepackage{multirow}			   % To add entries with multiple rows
+\usepackage{bigstrut} 			 	 % Needed for \bigstrut
+\usepackage{siunitx}				 % To align the decimal points
+
+%---------------------------------------------------------------
+% Hyperlinks and References
+%---------------------------------------------------------------
+\usepackage[colorlinks=true]{hyperref} 	% Creates hyperlinks, 'true' gets rid of awful boxes
+\usepackage{xcolor}
+	\definecolor{c1}{rgb}{0,0,1} 				  % Blue
+	\definecolor{c2}{rgb}{0,0.3,0.9} 			% Light blue
+	\definecolor{c3}{rgb}{0.3,0,0.9} 			% Red blue
+	\hypersetup{
+	    linkcolor={c1}, 								% Internal links
+	    citecolor={c2}, 								% Citations
+	    urlcolor={c3} 									 % External links/urls
+	}
+\usepackage[round,authoryear]{natbib} 	% For cite and abbrvnat bibliography style
+%\usepackage{cite} 									% Needed for cite
+
+%---------------------------------------------------------------
+% Special Characters
+%---------------------------------------------------------------
+\usepackage[utf8]{inputenc}			  			% Handles accented characters
+%\usepackage{underscore}				   		% Handles "_" in text but hurts labels/files with it
+%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
+
+%---------------------------------------------------------------
+% Appendix
+%---------------------------------------------------------------
+\usepackage[page]{appendix}	
+	\renewcommand*\appendixpagename{Appendix}
+	\renewcommand*\appendixtocname{Appendix}
+% appendix options: [titletoc,title,page,toc]; 
+% title adds 'Appendix' before each letter, 
+% page adds a separate title “Appendices” above the first appendix

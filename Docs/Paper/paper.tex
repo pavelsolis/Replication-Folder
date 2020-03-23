@@ -1,0 +1,65 @@
+%---------------------------------------------------------------
+% Preamble
+%---------------------------------------------------------------
+\documentclass[a4paper, 12pt]{article} 		% Document class
+\input{../Settings/packages}		   		  	  % Packages
+\input{../Settings/page_settings}   			% Page settings
+\input{../Settings/macros}					   		% Personalized commands
+%---------------------------------------------------------------
+
+\begin{document}
+%---------------------------------------------------------------
+% Title
+%---------------------------------------------------------------
+\title{\input{../Settings/title}
+	\iftoggle{fulldraft}{
+		\thanks{I am particularly grateful to XXXX for insightful discussions and feedback. I also thank NAMES and participants in the seminars XXXX at XXXX for their helpful comments. All remaining errors are mine. The codes used to generate the results in this paper can be found in the author's website \url{https://pavelsolis.github.io/research}.}
+	}
+	{\\ \large Outline}
+	}
+\author{Name LastName 
+	\iftoggle{fulldraft}{
+		\thanks{Address. Email: \href{mailto:email@domain.extension}{\texttt{email@domain.extension}}.}}
+	{}
+	}
+\date{}
+\maketitle	\vspace{-4ex}
+	\iftoggle{fulldraft}{									% Turn it on/off in packages.tex
+	\begin{center}
+		First version: Month Day, Year \\
+		This version: \today	% or Month Day, Year
+	\end{center}
+	}{}	% Closes \iftoggle{fulldraft}
+
+%---------------------------------------------------------------
+% Contents
+%---------------------------------------------------------------
+\iftoggle{fulldraft}{										% Turn it on/off in packages.tex
+	\input{abstract}
+	}{}	% Closes \iftoggle{fulldraft}
+
+\input{sections}
+
+\iftoggle{fulldraft}{										% Turn it on/off in packages.tex
+	\bibliographystyle{abbrvnat} 					% Other styles: {plain}, {authordate1}
+	%\bibliography{../References/library}		% Uses local copy of database with references
+	\bibliography{../../../References/library}	% Uses centralized database with references
+	
+	\input{appendix}
+	}{}	% Closes \iftoggle{fulldraft}
+
+\iftoggle{toclinks}{\maketoc \listoftodos}{}	% Turn it on/off in packages.tex
+
+\end{document}
+
+%---------------------------------------------------------------
+% Notes
+%---------------------------------------------------------------
+% References:
+% Local approach might need to first run file_duplicator.sh
+% Centralized approach doesn't need to execute file_duplicator.sh; but
+% it might show removed citations included in earlier drafts. To clean 
+% removed references, in the terminal execute the next two lines
+% $ cd Book/Ch_XXXX/Docs/Paper
+% $ bibexport -o ../References/library.bib paper.aux
+% Source for cleaning .bib file to remove citations https://tex.stackexchange.com/questions/41821/creating-bib-file-containing-only-the-cited-references-of-a-bigger-bib-file

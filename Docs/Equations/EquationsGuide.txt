@@ -1,0 +1,6 @@
+In Docs -> Settings -> macros.tex define variables and equations. The goal is to write each equation only once. That is why equations are *defined* in the macros.tex file because some equations need to be numbered, others don't and others are needed both with and without a number (e.g. numbered in the paper but not numbered in the slides).
+
+Once equations are defined in the macros.tex file, create a .tex file for each one depending on its required use (numbered vs not numbered). All files starting with 'n' referred to numbered equations and those starting with 'u' to 'unnumbered' ones. The name of the file is the same as the name of the label (e.g. nEquationName with \label{eq:nEquationName}), this makes easier to reference equations later.
+
+Equations are finally called in the main tex file (e.g. paper.tex, slides.tex) as follows: \input{../Equations/nEquationName}
+

@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}					  % Input accented characters
+\usepackage{underscore}						   % Control the behaviour of "_" in the text
+%\usepackage[T1]{fontenc}					  % Fonts to use for printing characters
+\usepackage[margin=1in]{geometry} 	   % Sets the margins of the file
+\usepackage[colorlinks=true]{hyperref} 	% colorlinks=true gets rid of the awful boxes
+\usepackage{enumitem,amssymb}
+\usepackage{xcolor}
+	\definecolor{clink}{rgb}{0,0,1} 			 % Blue
+	\definecolor{ccite}{rgb}{0,0.3,0.9} 	   % Light blue
+	\definecolor{curl}{rgb}{0.3,0,0.9} 			% Red blue
+	\hypersetup{linkcolor={clink}, citecolor={ccite}, urlcolor={curl}} 		% Internal links, Citations, External links/urls
+
+% Link to ToC from section
+\newcommand{\gototoc}{\vspace{-1.8cm} \null\hfill [\hyperlink{toc}{Go to ToC}] \newline}
+
+\newlist{todolist}{itemize}{2}					 % To-do list with checkmarks
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+	\newcommand{\cmark}{\ding{51}}
+	\newcommand{\xmark}{\ding{55}}
+	\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+	\hspace{-2.5pt}}
+	\newcommand{\wontdo}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\begin{document}
+	\title{Tasks for `\input{../../Settings/title}'}
+	\author{Name LastName}
+	\date{}
+	\maketitle
+	\hypertarget{toc}{}								 % Allows to link back to the ToC
+	\tableofcontents
+	\vspace{2.5\bigskipamount}
+	
+
+\section{Ideas}
+\gototoc
+\begin{todolist}
+	\item[\wontdo] Show conjecture.
+\end{todolist}
+
+\section{Edits}
+\begin{todolist}
+	\item Introduce easy text edits.
+	\item Introduce longer edits.
+\end{todolist}
+
+\section{Analysis}
+\gototoc
+\begin{todolist}
+	\item[\done] Improve abstract.
+	\item Tables:
+	\begin{todolist}
+		\item Format changes.
+		\item Try different rescaling.
+	\end{todolist}
+	\item Figures:
+	\begin{todolist}
+		\item[\done] Correct figure 1. 
+	\end{todolist}
+\end{todolist}
+
+\section{Updates}
+\gototoc
+\begin{todolist}
+	\item Update dataset.
+\end{todolist}
+
+\end{document}

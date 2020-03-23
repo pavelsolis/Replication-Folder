@@ -1,0 +1,3 @@
+https://tex.stackexchange.com/questions/127897/how-to-use-a-macro-inside-includegraphics-options
+
+https://tex.stackexchange.com/questions/345091/passing-arguments-to-includegraphics

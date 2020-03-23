@@ -1,0 +1,77 @@
+%% Personalized Macros
+% Variable Definitions, Equations, Table of Contents, Paths, Text Fomats, Tables, Sources
+
+%---------------------------------------------------------------
+% Variable Definitions
+%---------------------------------------------------------------
+% General
+\providecommand{\tnr}{n}
+\providecommand{\tidx}{t}
+\providecommand{\Yield}{y_{\tidx, \tnr}}
+\providecommand{\PriceLag}{P_{\tidx+1,\tnr-1}}
+
+% Math fonts
+\providecommand{\Expec}{\mathrm{E}_{\tidx}}
+\providecommand{\Qmeasure}{\mathbb{Q}}
+
+% Greeks
+\providecommand{\error}{\nu_{\tidx}}
+
+%\providecommand{\}{}
+
+%---------------------------------------------------------------
+% Equations
+%---------------------------------------------------------------
+\newcommand{\eqYP}{\Yield = \Expec^\Qmeasure [\PriceLag] + \error}
+
+%---------------------------------------------------------------
+% Table of Contents
+%---------------------------------------------------------------
+% Link to ToC from section
+\newcommand{\gototoc}{\vspace{-2cm} \null\hfill [\hyperlink{toc}{Go2ToC}] \newline}
+
+% Link back to section from ToC
+\newcommand{\maketoc}{
+	\hypertarget{toc}{}
+	\newpage
+	\tableofcontents
+	\vspace{2.5\bigskipamount} }
+
+% Box with bullets for tasks to do in a section
+\newenvironment{boxeditems}
+	{\begin{tabular}{|p{\linewidth}|}
+	\hline
+	\begin{itemize}
+	}
+	{
+	\end{itemize}
+	\\ \hline
+	\end{tabular} \\
+	}
+
+%---------------------------------------------------------------
+% Paths
+%---------------------------------------------------------------
+%\newcommand*{\pathFigs}{../Figures}
+%\input{pathFigs/fig1.tex}
+
+%---------------------------------------------------------------
+% Text Fomats
+%---------------------------------------------------------------
+%\newcommand{\txtbi}[1]{\textbf{\textit{#1}}}
+
+%---------------------------------------------------------------
+% Tables
+%---------------------------------------------------------------
+%\newcommand\LL[1]{\multicolumn{2}{|l}{#1}}
+%\newcommand\RR[1]{\multicolumn{2}{c|}{#1}}
+%\newcommand\LR[1]{\multicolumn{2}{|c|}{#1}}
+%\newcommand\LL[1]{\multicolumn{1}{|c}{#1}}
+%\newcommand\RR[1]{\multicolumn{1}{c|}{#1}}
+%\newcommand\LR[1]{\multicolumn{1}{|c|}{#1}}
+
+%---------------------------------------------------------------
+% Sources
+%---------------------------------------------------------------
+%What do newcommand, renewcommand, and providecommand do, and how do they differ?
+%https://tex.stackexchange.com/questions/36175/what-do-newcommand-renewcommand-and-providecommand-do-and-how-do-they-differ

@@ -1,0 +1,87 @@
+\section{Introduction}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+\iftoggle{cboxes}{	   				  % Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item Reference.
+	\end{boxeditems}}{}
+
+Part I: RAP (research question, answer, positioning paper in the literature).
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Part II: Description of sections' takeaways.
+	
+}{}	% Closes \iftoggle{fulldraft}
+
+
+\section{Section} \label{sec:data}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+\iftoggle{cboxes}{	   				  % Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item Comment.
+	\end{boxeditems}}{}
+
+Section takeaway.
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Section content.
+
+\input{../Equations/uExampleNoNumber}	%(\ref{eq:nExampleAligned})
+
+}{}	% Closes \iftoggle{fulldraft}
+
+
+\section{Section} \label{sec:analysis}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+\iftoggle{cboxes}{	   				  % Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item Task.
+	\end{boxeditems}}{}
+
+Section takeaway.
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Section content.
+
+}{}	% Closes \iftoggle{fulldraft}
+
+\subsection{Subsection}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+
+Subsection takeaway.
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Subsection content.
+
+}{}	% Closes \iftoggle{fulldraft}
+
+\subsubsection{Sub-subsection}
+Sub-subsection takeaway.
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Sub-subsection \todo[size=\tiny]{Change format}  content.
+
+}{}	% Closes \iftoggle{fulldraft}
+
+
+\section{Conclusions}\label{sec:conclusions}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+\iftoggle{cboxes}{	   				 % Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item Review. 
+	\end{boxeditems}}{}
+
+Summary.
+
+\iftoggle{fulldraft}{					% Turn it on/off in packages.tex
+Remarks.
+
+}{}	% Closes \iftoggle{fulldraft}
+
+
+%---------------------------------------------------------------
+% Figures and Tables
+%---------------------------------------------------------------
+
+%\newpage
+%\input{../Figures/fig1}	% \ref{fig:fig1}
+%\input{../Tables/tab1}		% \ref{tab:tab1}

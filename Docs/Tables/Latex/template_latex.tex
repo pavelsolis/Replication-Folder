@@ -1,0 +1,38 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[labelsep=period,labelfont=bf]{caption}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\begin{document}
+	\begin{footnotesize}
+		\begin{table}
+			\centering
+			\begin{threeparttable}
+				\caption{Caption}
+				\label{tab:test}
+				\begin{tabular}{lcccccc}
+					\toprule
+					& Freq. & \(H_{0}: k = k_{0}\) & Wald Statistic & DF & \(p\)-Value & Obs. \\
+					\midrule
+					&  & 0 & 40.12 & 10 & 0.000 & 38 \\
+					& I & 1 & 11.57 & 5 & 0.041 & 38 \\
+					Exchange Rate &  & 2 &  0.03 & 1 & 0.852 & 38 \\
+					\cmidrule(lr){2-7}
+					\& Yield Curve &  & 0 & 41.76 & 10 & 0.000 & 72 \\
+					& D & 1 & 13.88 & 5 & 0.016 & 72 \\
+					&  & 2 &  0.07 & 1 & 0.794 & 72 \\
+					\cmidrule(lr){1-7}
+					\multirow{4}[5]{*}{Swaps} & \multirow{2}{*}{I} & 0 & 26.47 & 6 & 0.000 & 72 \\
+					&  & 1 &  7.47 & 2 & 0.024 & 72 \\
+					\cmidrule(lr){2-7}
+					& \multirow{2}{*}{D} & 0 & 28.56 & 6 & 0.000 & 72 \\
+					&  & 1 &  9.15 & 2 & 0.010 & 72 \\
+					\bottomrule
+				\end{tabular}
+				\begin{tablenotes}[para,flushleft]
+					\footnotesize \textit{Notes:} R
+				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+	\end{footnotesize}
+\end{document}

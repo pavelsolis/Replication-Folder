@@ -1,0 +1,61 @@
+%% Page Settings
+% Margins, Head and Foot, Indentation, Spacing, Hyphenation
+
+%---------------------------------------------------------------
+% Margins
+%---------------------------------------------------------------
+\usepackage[margin=1in]{geometry}	 % Sets the margins of the file
+%\usepackage[top=2.54cm, bottom=2.54cm,left=3.17cm,right=3.17cm]{geometry}
+
+%---------------------------------------------------------------
+% Head and Foot
+%---------------------------------------------------------------
+\usepackage{fancyhdr} 							% Needed for head and foot options
+
+%---------------------------------------------------------------
+% Indentation
+%---------------------------------------------------------------
+%\parindent=0cm 				 				 % Sets space of first line of new text block
+
+%---------------------------------------------------------------
+% Spacing
+%---------------------------------------------------------------
+\usepackage{setspace}
+	\doublespacing
+	%\setlength{\abovedisplayskip}{1pt}  % Sets spaces above/below an equation
+	%\setlength{\belowdisplayskip}{1pt}
+	%\setlength\abovedisplayskip{0pt}
+\AtBeginDocument{								 % Avoids excesive spacing b/w floating objects
+	\addtolength\abovedisplayskip{-0.2\baselineskip}
+	\addtolength\belowdisplayskip{-0.2\baselineskip}
+}
+
+%---------------------------------------------------------------
+% Hyphenation
+%---------------------------------------------------------------
+\sloppy 								 			% Try to avoid hyphens
+%\hyphenation{} 		   					   % Sets hyphenation of tolerance parameters
+	%\hyphenpenalty=10000			   % Ridiculously high values force hyphenless
+														 % but may result in lines with very few words
+	%\exhyphenpenalty=10000
+
+%---------------------------------------------------------------
+% Customize Thanks Symbol
+%---------------------------------------------------------------
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \ddagger\or
+		\mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+		\or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+%---------------------------------------------------------------
+% Sources
+%---------------------------------------------------------------
+% Spacing without extra spacing for floating objects
+%https://tex.stackexchange.com/questions/32918/how-can-i-decrease-spaces-between-equations
+
+% Hyphenation
+% http://www.jr-x.de/publikationen/latex/tipps/zeilenumbruch.html
+
+% Customize Thanks Symbol
+%https://tex.stackexchange.com/questions/455140/customizing-the-symbol-next-to-the-authors-name-in-a-document
