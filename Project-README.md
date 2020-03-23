@@ -23,12 +23,13 @@ Codes folder:
 - runCodes.EXT: executes the codes that generate the results
 - Pre-Analysis folder: codes for cleaning and preparing the data
 - Analysis folder: runAppendix.EXT and replication codes
+- Aux foler
 
 Data folder: 
 - Analytic folder
 - Raw folder
 - Metadata folder
-- Temp folder
+- Aux folder
 
 Docs folder: 
 - Paper folder
@@ -39,7 +40,7 @@ Docs folder:
 - DataStats folder: descriptive statistics of the variables used
 - Settings folder: .tex files with settings for the paper and the slides
 - References folder: .bib file with cited references
-- Temp folder
+- Aux folder
 
 
 ## DATA FILES
@@ -81,6 +82,9 @@ For more information on the reproducibility of empirical research, see:
 - TIER protocol (http://www.projecttier.org/tier-protocol/)
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide
 - Chang & Li, 2017. A Pre-analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time
+
+For more on the structure of a LaTeX project, see:
+https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT
 
 
 ## CODE WORKFLOW (OPTIONAL)
