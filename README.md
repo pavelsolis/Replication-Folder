@@ -4,9 +4,11 @@ Folder structure that facilitates the reproducibility of research.
 
 At a minimum, reproducibility of your research results is desirable. Reproducibility is easier to achieve if it is part of a project since its inception and until it is completed; that is, if it is part of the research process as you work along. This repository provides a folder structure that facilitates working on a project that is replicable.
 
-### Paper
-The structure gives you flexibility to generate different versions of the paper: full draft vs outline, clean vs linked (when editing, it is useful to go back and forth to the table of contents), with vs without comment boxes (when editing, it is useful to keep in mind certain pending issues).
+**Paper.** The structure for the paper gives you flexibility to generate different versions of the paper: full draft vs outline, clean vs linked (when editing, it is useful to go back and forth to the table of contents), with vs without comment boxes (when editing, it is useful to keep in mind certain pending issues).
 
+You just need to copy the folder into your computer.
+
+Below are step-by-step instructions in case you want to start working with GitHub (a version control system) from scratch. The instructions summarize information provided in different great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
 
 
 ## GIT AND GITHUB
@@ -29,6 +31,7 @@ In what follows:
 - The lines starting with the '$' symbol mean commands one inputs in the terminal; the lines starting with the '>' symbol mean output shown in the terminal.
 - The most commonly used commands in the terminal (also known as shell) when working with Git are: `cd`, `ls`.
 - The most commonly used Git commands are: `status`, `add`, `commit`, `push`, `pull`; other less used commands include: `diff`, `reset`, `branch`, `checkout`, `merge`.
+
 
 ### [Setting Up Git](https://help.github.com/en/articles/set-up-git)
 In the terminal type the following to compare your current version of Git with the [latest release](https://git-scm.com/downloads)
