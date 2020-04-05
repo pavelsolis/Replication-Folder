@@ -5,13 +5,12 @@
 %---------------------------------------------------------------
 % Conditionals
 %---------------------------------------------------------------
-\usepackage{etoolbox}						% For conditionals (e.g. slides with pauses)
+\usepackage{etoolbox}						% For conditionals (e.g. slides with stops)
 	\providetoggle{long}					   % Generates long vs. short version
-	\settoggle{long}{true}
-	%\settoggle{long}{false}
+	\settoggle{long}{false} 					% 'false' for version without stops
 	
-	\providetoggle{struct}						
-	\settoggle{struct}{true}
+	\providetoggle{struct}					   % Generates long vs. short version
+	\settoggle{struct}{false}					% 'true' for version with customized stops
 
 %---------------------------------------------------------------
 % Fromatting
@@ -28,13 +27,13 @@
 % Lists
 %---------------------------------------------------------------
 \usepackage{enumerate} 											% Personalizes the enumerate style
-\setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{itemize items}{$\bullet$}		 % Or {$\vdash$}
-\setbeamertemplate{itemize subitem}{$\rightharpoonup$}
-\setbeamertemplate{itemize subsubitem}{---}
-%\setbeamertemplate{itemize subsubitem}[triangle]
-% \setbeamercolor{subitem projected}{bg=green}
-%\setbeamercolor{itemize subitem}{bg=green}
+	\setbeamertemplate{enumerate items}[default]
+	\setbeamertemplate{itemize items}{$\bullet$}		 % Or {$\vdash$}
+	\setbeamertemplate{itemize subitem}{$\rightharpoonup$}
+	\setbeamertemplate{itemize subsubitem}{---}
+	%\setbeamertemplate{itemize subsubitem}[triangle]
+	%\setbeamercolor{subitem projected}{bg=green}
+	%\setbeamercolor{itemize subitem}{bg=green}
 %\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter}
 
 %---------------------------------------------------------------
@@ -43,6 +42,8 @@
 \usepackage{tikz}								% To create high quality diagrams
 \usepackage{graphicx} 				 		% Needed for \includegraphics
 \usepackage[outdir=./]{epstopdf} 	  % Avoids errors to input figures
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]
+%{eso-pic}											 % Draw grid on slide to aid positioning figures
 
 %---------------------------------------------------------------
 % Tables
@@ -60,25 +61,25 @@
 %---------------------------------------------------------------
 % Hyperlinks and References
 %---------------------------------------------------------------
-\usepackage{textpos}				  % Positioning text in slide (e.g. links to slides)
+\usepackage[absolute,overlay]{textpos}	% Positioning text in slide (e.g. links to slides)
 \usepackage{hyperref}				  % For hyperlinks, [colorlinks=true] gets rid of the awful boxes
 \usepackage{xcolor}
-\definecolor{c1}{rgb}{0,0,1} 		  % Blue
-\definecolor{c2}{rgb}{0,0.3,0.9} 	% Light blue
-\definecolor{c3}{rgb}{0.3,0,0.9} 	% Red blue
-\hypersetup{
-	linkcolor={c1}, 						% Internal links
-	citecolor={c2}, 						% Citations
-	urlcolor={c3} 							% External links/urls
-}
+	\definecolor{c1}{rgb}{0,0,1} 		  % Blue
+	\definecolor{c2}{rgb}{0,0.3,0.9} 	% Light blue
+	\definecolor{c3}{rgb}{0.3,0,0.9} 	% Red blue
+	\hypersetup{
+		linkcolor={c1}, 						% Internal links
+		citecolor={c2}, 						% Citations
+		urlcolor={c3} 							 % External links/urls
+	}
 \usepackage[round,authoryear]{natbib} % For cite and abbrvnat bibliography style
-%\usepackage{cite} 						% Needed for cite
+%\usepackage{cite} 							% Needed for cite
 
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
 \usepackage[utf8]{inputenc}			  % Input accented characters
-\usepackage{underscore}				   % Control the behaviour of "_" in the text
+%\usepackage{underscore}				   % Control the behaviour of "_" in the text
 %\usepackage[T1]{fontenc}		  	  % Fonts to use for printing characters
 
 %---------------------------------------------------------------
@@ -129,8 +130,8 @@
 \definecolor{tuftsblue}{rgb}{0.28, 0.57, 0.81} 	% Fresh light blue-green
 \definecolor{unitednationsblue}{rgb}{0.36, 0.57, 0.9}
 \definecolor{yaleblue}{rgb}{0.06, 0.3, 0.57}	% Good
-\usecolortheme[named=yaleblue]{structure}
 
+\usecolortheme[named=yaleblue]{structure}
 \setbeamercolor{alerted text}{fg=midnightblue}
 \setbeamerfont{alerted text}{series=\bfseries}
 
@@ -139,6 +140,9 @@
 %---------------------------------------------------------------
 % http://latexcolor.com/
 % https://ramblingacademic.com/2015/12/how-to-quickly-overhaul-beamer-colors/
+
+% Position text in a slide
+%https://tex.stackexchange.com/questions/82463/how-to-position-a-beamer-box-in-a-slide
 
 % To draw a box above a table (stored as an image)
 %https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing
