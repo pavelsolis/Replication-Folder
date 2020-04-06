@@ -506,3 +506,5 @@ It may cause the local and remote branches to diverge, in which case (see [this]
 $ git rebase origin/code/ans/fit-models
 ```
 
+To exit the prompt `>` (e.g. if you opened up a string with the odd number of `'` characters when making a commit) and go back to your normal bash prompt, [use](https://stackoverflow.com/questions/26228848/how-do-i-exit-my-git-commit-message-im-not-in-the-vim-i-used-the-commit-m) `ctrl` + `c` or close the string by typing `'` again.
+
