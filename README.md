@@ -380,13 +380,13 @@ Based on the previous two sources, I will use a forward slash separator and the 
 Since `dev` is a permanent branch and `fix` branches are mainly used to correct bugs, most of the branches that will be used are feature `ftr` branches. Therefore, naming conventions are needed to differentiate between them; also since `fix` branches can be branched off from `master` *or* `dev`, it will be useful to distinguish between them. Thus, these are the naming conventions for the temporary branches:
 - To distinguish a `fix` branched off from `master` or `dev`, the names of `fix` branches will begin with: `fix/mst` or `fix/dev`.
 - There can be three types of feature branches and so `ftr` can take any of three tokens: `data`, `code`, `docs`.
-  `data` branches deal with raw or analytic data so this token will be followed by: `raw` and `ans`.
-  `code` branches deal with pre-analysis or analysis of the data so this token will be followed by: `pre` and `ans`.
-  `docs` branches deal with issues on equations, statistics, figures, paper, slides, references, tables so this token will be followed by: `sta`, `eqn`, `fig`, `ppr`, `set`, `sld`, `ref` and `tab`.
+  - `data` branches deal with raw or analytic data so this token will be followed by: `raw` and `ans`.
+  - `code` branches deal with pre-analysis or analysis of the data so this token will be followed by: `pre` and `ans`.
+  - `docs` branches deal with issues on equations, statistics, figures, paper, slides, references, tables so this token will be followed by: `sta`, `eqn`, `fig`, `ppr`, `set`, `sld`, `ref` and `tab`.
 - All three of the different types of feature branches can be used for experimenting or testing minor things unrelated to the previous categories, in which case any of the three types will be followed by: `tst`.
-- Examples: `data/raw/feature-name`, `code/ans/feature-name`, `docs/eqn/feature-name`, `fix/dev/feature-name`, `code/tst/feature-name`, `docs/tst/feature-name`.
+- **Examples**: `data/raw/feature-name`, `code/ans/feature-name`, `docs/eqn/feature-name`, `fix/dev/feature-name`, `code/tst/feature-name`, `docs/tst/feature-name`.
 - Therefore, there are in total 17 possible types of temporary branches: 15 feautre branches (12 regular, 3 for tests), 2 fix branches.
-- With this convention (names *and* forward slashes), no branch can have the following names (see first link above) -i.e. without the `/feature-name` part-: `ftr/cat` (e.g. `data/raw`,`code/ana`), `fix/dev`, `fix/mst`.
+- With this convention (names *and* forward slashes), no feature branch can have the following names: `ftr/cat` (e.g. `data/raw`,`code/ans`), `fix/dev`, `fix/mst`. That is, their names need to include the `/feature-name` part (see first link above).
 
 #### Driessen's Model Adapted To A Research Project
 [Implementation](https://stackoverflow.com/questions/4470523/create-a-branch-in-git-from-another-branch) of Driessen's branching model to a research project:
@@ -413,11 +413,12 @@ $ git push -u origin dev		# Sets the upstream for dev and see it in GitHub
 	# Usual workflow
 $ git status
 $ git commit -am "Your message"
-	# To merge dev branch into master
+	# To merge dev branch into master (close all open files from the dev branch first)
 $ git checkout master
 $ git merge --no-ff dev			# Merge your changes to master without a fast-forward
 $ git push origin master		# Push changes to the server
 $ git push origin dev
+$ git checkout dev			# Go back to work on dev branch
 
 
 # Feature branches
@@ -427,7 +428,7 @@ $ git push -u origin ftr/cat/name	# Sets the upstream for the branch and see it 
 	# Usual workflow
 $ git status
 $ git commit -am "Your message"
-	# To merge feature branch into dev, first close all open files from the feature branch
+	# To merge feature branch into dev (close all open files from the feature branch first)
 $ git checkout dev
 $ git pull				# Pull before push to ensure you have the latest version of the remote dev branch
 $ git merge --no-ff ftr/cat/name	# Merge your branch changes to dev without a fast-forward
