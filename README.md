@@ -418,7 +418,9 @@ $ git checkout master
 $ git merge --no-ff dev			# Merge your changes to master without a fast-forward
 $ git push origin master		# Push changes to the server
 $ git push origin dev
-$ git checkout dev			# Go back to work on dev branch
+$ git checkout dev			# Go back to dev branch, but if the master branch is changed after the dev branch
+$ git branch -d dev			# was fully merged to master, delete the dev branch and create a new one from the
+$ git push origin --delete dev		# newest version of the master branch
 
 
 # Feature branches
@@ -436,7 +438,7 @@ $ git pull				# When working in teams, it might be needed to again pull to ensur
 $ git push origin dev			# Push changes to the server
 $ git push origin ftr/cat/name		# Might need `git branch` for the name of the feature branch
 	# To delete the feature branch
-$ git branch -d ftr/cat/name		# Optional: remove local and remote branches
+$ git branch -d ftr/cat/name		# Optional: remove fully merged local and remote branches
 $ git push origin --delete ftr/cat/name
 
 
