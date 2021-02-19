@@ -9,9 +9,20 @@
 
 % \captionsetup[table]{name=Table A}
 % Changes table caption prefix plus restart table and figure counters
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}
 
-\section{Appendix Name} % \label{sec:appdx}
+\section{Appendix Name} % \label{sec:appdx1}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
 Appendix content.
 
+
+\section{Appendix Name} % \label{sec:appdx2}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+Appendix content.
 
 \end{appendices}
