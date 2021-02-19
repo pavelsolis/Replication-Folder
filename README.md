@@ -78,7 +78,27 @@ Note: Git commands only work when (in the terminal) you are in a folder that con
 > Not a git repository
 ```
 
-**Update:** Authetication in GitHub changed by the end 0f 2019. [Check this page](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to create a personal access token for the command line. [Link to the announcement](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). [About personal access tokens](https://github.com/settings/tokens).
+**Update:** Authetication in GitHub [changed by the end of 2019](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). Password-based authentication for Git is deprecated, and using a personal access token ([PAT](https://github.com/settings/tokens)) is more secure. So, you need to [create](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) a PAT for the command line. PATs can only be used for HTTPS Git operations. Once you have a token, you can enter it instead of your password when performing Git operations over HTTPS.
+
+When you change your username, password, or personal access token on GitHub, you will need to [update your saved credentials](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain) in the Keychain (the credential helper `git-credential-osxkeychain`) -- since they may be cached on your computer -- in order to replace your old password with the token. To delete your credentials via the command line, type
+
+```bash
+$ git credential-osxkeychain erase
+host=github.com
+protocol=https
+> [Press Return]
+```
+
+If it's successful, nothing will print out. To test that it works, try using commands like `git clone`, `git fetch`, `git pull` or `git push` with HTTPS URLs. If you are prompted for your GitHub username and password, the keychain entry was deleted. For example, on the command line you would enter the following:
+
+```bash
+$ git clone https://github.com/username/repo.git
+Username: your_username
+Password: your_token
+```
+
+When prompted for a username and password, you must provide your GitHub username and your PAT. Notice that the command line prompt won't specify that you should enter your PAT when it asks for your password.
+
 
 ### Create (Remote and Local) Repositories
 You need to designate a folder to be a Git repository. When you initialize a folder to be a repository, Git creates a subfolder called *.git* that it uses to do all its magic.
