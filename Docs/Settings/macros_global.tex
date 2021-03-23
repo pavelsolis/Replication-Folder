@@ -1,0 +1,76 @@
+%% Personalized Macros
+% Table of Contents, Tables, Subcaptions
+
+%---------------------------------------------------------------
+% Table of Contents
+%---------------------------------------------------------------
+
+% Link to ToC from section
+\newcommand{\gototoc}{\vspace{-2cm} \null\hfill [\hyperlink{toc}{Go2ToC}] \newline}
+
+% Link back to section from ToC
+\newcommand{\maketoc}{
+	\hypertarget{toc}{}
+	\newpage
+	\tableofcontents
+	\vspace{2.5\bigskipamount} }
+
+% Box with bullets for tasks to do in a section
+\newenvironment{boxeditems}
+	{\begin{tabular}{|p{\linewidth}|}
+	\hline
+	\begin{itemize}
+	}
+	{
+	\end{itemize}
+	\\ \hline
+	\end{tabular} \\
+	}
+
+%---------------------------------------------------------------
+% Tables
+%---------------------------------------------------------------
+
+% Estout Commands following Jörg Weber
+\newcommand{\sym}[1]{\rlap{#1}}
+
+\let\estinput=\input	% define new input command to flatten the document
+
+\newcommand{\estauto}[2]{
+	\newcolumntype{C}{>{\centering\arraybackslash}X}
+	\vspace{.75ex}{
+%		\begin{tabularx}{1.4\textwidth}{l*{#2}C}
+		\begin{tabularx}{0.95\linewidth}{l*{#2}C}
+			\toprule
+			\estinput{#1}
+			\\ \bottomrule
+			\addlinespace[.75ex]
+		\end{tabularx}
+	}
+}
+
+% Allow line breaks with \\ in specialcells
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+%---------------------------------------------------------------
+% Subcaptions
+%---------------------------------------------------------------
+
+% Notes after figures following Jörg Weber
+\newcommand{\figtext}[1]{
+	\vspace{-1ex}
+	\captionsetup{justification=justified,font=footnotesize}
+	\caption*{#1}
+%	\captionsetup{justification=raggedright,singlelinecheck=false,font=footnotesize}
+%	\caption*{\hspace{6pt}\hangindent=1.5em #1}
+}
+
+\newcommand{\fignote}[1]{\figtext{\emph{Note:~}~#1}}
+\newcommand{\fignotes}[1]{\figtext{\emph{Notes:~}~#1}}
+
+% Notes after tables
+\newcommand{\tabnote}[1]{
+	\begin{tablenotes}[para,flushleft]
+		\footnotesize \emph{Notes:~}~#1
+	\end{tablenotes}
+}

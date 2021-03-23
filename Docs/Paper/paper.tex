@@ -4,7 +4,8 @@
 \documentclass[a4paper, 12pt]{article} 		% Document class
 \input{../Settings/packages}		   		  	  % Packages
 \input{../Settings/page_settings}   			% Page settings
-\input{../Settings/macros}					   		% Personalized commands
+\input{../Settings/macros_global}		       % Personalized commands
+\input{../Settings/macros_local}			    % Personalized commands
 %---------------------------------------------------------------
 
 \begin{document}
@@ -42,10 +43,13 @@
 
 \iftoggle{fulldraft}{										% Turn it on/off in packages.tex
 	\bibliographystyle{abbrvnat} 					% Other styles: {plain}, {authordate1}
-	\bibliography{../References/library}		% Uses local copy of database with references
+	\bibliography{../References/library}		 % Uses local copy of database with references
 	%\bibliography{../../../References/library}	% Uses centralized database with references
 	
-	\input{appendix}
+	\newpage
+	\begin{appendices}									 % a master file could call it with subappendices
+		\input{appendix}
+	\end{appendices}
 	}{}	% Closes \iftoggle{fulldraft}
 
 \iftoggle{toclinks}{\maketoc \listoftodos}{}	% Turn it on/off in packages.tex
@@ -62,4 +66,5 @@
 % removed references, in the terminal execute the next two lines
 % $ cd Book/Ch_XXXX/Docs/Paper
 % $ bibexport -o ../References/library.bib paper.aux
+% Delete auxiliary files in References and Paper folders
 % Source for cleaning .bib file to remove citations https://tex.stackexchange.com/questions/41821/creating-bib-file-containing-only-the-cited-references-of-a-bigger-bib-file
