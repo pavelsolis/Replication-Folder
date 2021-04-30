@@ -38,6 +38,7 @@ In the terminal type the following to compare your current version of Git with t
 ```bash
 $ git --version
 ```
+Verify that you have 1.7.10 or newer. If you don’t, update Git.
 
 Git uses a username to associate commits with an identity; the Git username is not the same as your GitHub username. Set your Git username for every repository on your computer:
 ```bash
@@ -59,17 +60,24 @@ $ git config --global color.ui "auto"
 > Permission denied (publickey)
 ```
 
-If you decide to use HTTPS:
-- Find out if Git and the osxkeychain helper are already installed:
+If you decide to use HTTPS with GitHub, you can use a credential helper to tell Git to remember your credentials (you need Git 1.7.10 or newer to use the osxkeychain credential helper).
+
+- Find out if the credential helper is already installed. In the shell, enter
 ```bash
 $ git credential-osxkeychain
 ```
-- Tell Git to use osxkeychain helper using the global credential.helper config:
+You should see something like this:
+```bash
+> usage: git credential-osxkeychain <get|store|erase>
+```
+If you do not, follow step 2 on the [GitHub help page](https://docs.github.com/en/github/getting-started-with-github/caching-your-github-credentials-in-git#platform-mac).
+
+- Tell Git to use the osxkeychain helper using the global credential.helper config:
 ```bash
 $ git config --global credential.helper osxkeychain
 ```
 
-- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once).
+- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), you can enter it instead of your password when performing Git operations over HTTPS.
 
 All Git commands have the following syntax: git verb options.
 
@@ -78,9 +86,9 @@ Note: Git commands only work when (in the terminal) you are in a folder that con
 > Not a git repository
 ```
 
-**Update:** Authetication in GitHub [changed by the end of 2019](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). Password-based authentication for Git is deprecated, and using a personal access token ([PAT](https://github.com/settings/tokens)) is more secure. So, you need to [create](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) a PAT for the command line. PATs can only be used for HTTPS Git operations. Once you have a token, you can enter it instead of your password when performing Git operations over HTTPS.
+**Update:** Authetication in GitHub [changed in 2019](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). Password-based authentication for Git is deprecated, and using a personal access token ([PAT](https://github.com/settings/tokens)) is more secure. So, you need to [create](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) a PAT for the command line. PATs can only be used for HTTPS Git operations. Once you have a token, you can enter it instead of your password when performing Git operations over HTTPS.
 
-When you change your username, password, or personal access token on GitHub, you will need to [update your saved credentials](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain) in the Keychain (the credential helper `git-credential-osxkeychain`) -- since they may be cached on your computer -- in order to replace your old password with the token. To delete your credentials via the command line, type
+When you change your username, password, or personal access token on GitHub, you will need to [update your saved credentials](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain) in the Keychain (the credential helper `git credential-osxkeychain`) -- since they may be cached on your computer -- in order to replace your old password with the token. To delete your credentials via the command line, type
 
 ```bash
 $ git credential-osxkeychain erase
