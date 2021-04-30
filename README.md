@@ -10,6 +10,7 @@ You just need to copy the folder into your computer.
 
 Below are step-by-step instructions in case you want to start working with GitHub (a version control system) from scratch. The instructions summarize information provided in different great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
 
+TEST
 
 ## GIT AND GITHUB
 -------------------------------------------------------------------------------------
