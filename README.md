@@ -41,7 +41,7 @@ $ git --version
 
 Git uses a username to associate commits with an identity; the Git username is not the same as your GitHub username. Set your Git username for every repository on your computer:
 ```bash
-$ git config --gobal user.name "Your Name"
+$ git config --global user.name "Your Name"
 ```
 
 Set your commit email address in Git:
