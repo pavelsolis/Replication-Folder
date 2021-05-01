@@ -60,7 +60,7 @@ $ git config --global color.ui "auto"
 > Permission denied (publickey)
 ```
 
-If you decide to use HTTPS with GitHub, you can use a credential helper to tell Git to remember your credentials (you need Git 1.7.10 or newer to use the osxkeychain credential helper).
+If you decide to use HTTPS with GitHub, you can use a [credential helper](https://cfss.uchicago.edu/setup/git-cache-credentials/) to tell Git to remember your credentials. Note 1: You need Git 1.7.10 or newer to use the osxkeychain credential helper. Note 2: Git installed [manually](https://cfss.uchicago.edu/setup/git/) since 2019, will likely use a credential helper provided by your operating system, so you may not need to configure the credential helper as explained below.
 
 - Find out if the credential helper is already installed. In the shell, enter
 ```bash
@@ -77,7 +77,7 @@ If you do not, follow step 2 on the [GitHub help page](https://docs.github.com/e
 $ git config --global credential.helper osxkeychain
 ```
 
-- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), you can enter it instead of your password when performing Git operations over HTTPS.
+- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), enter it instead of your password in order to perform Git operations over HTTPS.
 
 All Git commands have the following syntax: git verb options.
 
