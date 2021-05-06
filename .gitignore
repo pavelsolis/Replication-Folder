@@ -1,3 +1,6 @@
+## Git files
+.DS_Store
+
 ## Excel files (data files can be large)
 *.xls*
 
