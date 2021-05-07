@@ -38,10 +38,11 @@ In the terminal type the following to compare your current version of Git with t
 ```bash
 $ git --version
 ```
+Verify that you have 1.7.10 or newer. If you don’t, update Git.
 
 Git uses a username to associate commits with an identity; the Git username is not the same as your GitHub username. Set your Git username for every repository on your computer:
 ```bash
-$ git config --gobal user.name "Your Name"
+$ git config --global user.name "Your Name"
 ```
 
 Set your commit email address in Git:
@@ -59,17 +60,24 @@ $ git config --global color.ui "auto"
 > Permission denied (publickey)
 ```
 
-If you decide to use HTTPS:
-- Find out if Git and the osxkeychain helper are already installed:
+If you decide to use HTTPS with GitHub, you can use a [credential helper](https://cfss.uchicago.edu/setup/git-cache-credentials/) to tell Git to remember your credentials. Note 1: You need Git 1.7.10 or newer to use the osxkeychain credential helper. Note 2: Git installed [manually](https://cfss.uchicago.edu/setup/git/) since 2019, will likely use a credential helper provided by your operating system, so you may not need to configure the credential helper as explained below.
+
+- Find out if the credential helper is already installed. In the shell, enter
 ```bash
 $ git credential-osxkeychain
 ```
-- Tell Git to use osxkeychain helper using the global credential.helper config:
+You should see something like this:
+```bash
+> usage: git credential-osxkeychain <get|store|erase>
+```
+If you do not, follow step 2 on the [GitHub help page](https://docs.github.com/en/github/getting-started-with-github/caching-your-github-credentials-in-git#platform-mac).
+
+- Tell Git to use the osxkeychain helper using the global credential.helper config:
 ```bash
 $ git config --global credential.helper osxkeychain
 ```
 
-- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once).
+- After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), enter it instead of your password in order to perform Git operations over HTTPS.
 
 All Git commands have the following syntax: git verb options.
 
@@ -78,7 +86,27 @@ Note: Git commands only work when (in the terminal) you are in a folder that con
 > Not a git repository
 ```
 
-**Update:** Authetication in GitHub changed by the end 0f 2019. [Check this page](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to create a personal access token for the command line. [Link to the announcement](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). [About personal access tokens](https://github.com/settings/tokens).
+**Update:** Authetication in GitHub [changed in 2019](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/). Password-based authentication for Git is deprecated, and using a personal access token ([PAT](https://github.com/settings/tokens)) is more secure. So, you need to [create](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) a PAT for the command line. PATs can only be used for HTTPS Git operations. Once you have a token, you can enter it instead of your password when performing Git operations over HTTPS.
+
+When you change your username, password, or personal access token on GitHub, you will need to [update your saved credentials](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain) in the Keychain (the credential helper `git credential-osxkeychain`) -- since they may be cached on your computer -- in order to replace your old password with the token. To delete your credentials via the command line, type
+
+```bash
+$ git credential-osxkeychain erase
+host=github.com
+protocol=https
+> [Press Return]
+```
+
+If it's successful, nothing will print out. To test that it works, try using commands like `git clone`, `git fetch`, `git pull` or `git push` with HTTPS URLs. If you are prompted for your GitHub username and password, the keychain entry was deleted. For example, on the command line you would enter the following:
+
+```bash
+$ git clone https://github.com/username/repo.git
+Username: your_username
+Password: your_token
+```
+
+When prompted for a username and password, you must provide your GitHub username and your PAT. Notice that the command line prompt won't specify that you should enter your PAT when it asks for your password.
+
 
 ### Create (Remote and Local) Repositories
 You need to designate a folder to be a Git repository. When you initialize a folder to be a repository, Git creates a subfolder called *.git* that it uses to do all its magic.
@@ -382,7 +410,7 @@ Since `dev` is a permanent branch and `fix` branches are mainly used to correct 
 - There can be three types of feature branches and so `ftr` can take any of three tokens: `data`, `code`, `docs`.
   - `data` branches deal with raw or analytic data so this token will be followed by: `raw` and `ans`.
   - `code` branches deal with pre-analysis or analysis of the data so this token will be followed by: `pre` and `ans`.
-  - `docs` branches deal with issues on equations, statistics, figures, paper, slides, references, tables so this token will be followed by: `sta`, `eqn`, `fig`, `ppr`, `set`, `sld`, `ref` and `tab`.
+  - `docs` branches deal with issues on paper, slides, equations, figures, tables, statistics, references or settings so this token will be followed by: `ppr`, `sld`, `eqn`, `fig`, `tab`, `sta`, `ref` and `set`.
 - All three of the different types of feature branches can be used for experimenting or testing minor things unrelated to the previous categories, in which case any of the three types will be followed by: `tst`.
 - **Examples**: `data/raw/feature-name`, `code/ans/feature-name`, `docs/eqn/feature-name`, `fix/dev/feature-name`, `code/tst/feature-name`, `docs/tst/feature-name`.
 - Therefore, there are in total 17 possible types of temporary branches: 15 feautre branches (12 regular, 3 for tests), 2 fix branches.
