@@ -79,7 +79,7 @@ $ git config --global credential.helper osxkeychain
 
 - After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), enter it instead of your password in order to perform Git operations over HTTPS.
 
-All Git commands have the following syntax: git verb options.
+All Git commands have the following syntax: git verb options. Here is a useful [Git cheat-sheet](https://gist.github.com/davfre/8313299).
 
 Note: Git commands only work when (in the terminal) you are in a folder that contains a Git repository, otherwise the terminal will send an error message
 ```bash
@@ -107,6 +107,10 @@ Password: your_token
 
 When prompted for a username and password, you must provide your GitHub username and your PAT. Notice that the command line prompt won't specify that you should enter your PAT when it asks for your password.
 
+To update your GitHub access credentials see this [link](https://docs.github.com/en/github/authenticating-to-github/updating-your-github-access-credentials). Also, if you decide to use SSH with GitHub, there are links there that can be helpful. After creating a repository, you may need to [switch from HTTPS to SSH](https://docs.github.com/en/github/getting-started-with-github/managing-remote-repositories#switching-remote-urls-from-https-to-ssh) using:
+```bash
+$ git remote set-url origin git@github.com:USERNAME/REPOSITORY-NAME.git
+```
 
 ### Create (Remote and Local) Repositories
 You need to designate a folder to be a Git repository. When you initialize a folder to be a repository, Git creates a subfolder called *.git* that it uses to do all its magic.
@@ -443,12 +447,13 @@ $ git status
 $ git commit -am "Your message"
 	# To merge dev branch into master (close all open files from the dev branch first)
 $ git checkout master
+$ git pull
 $ git merge --no-ff dev			# Merge your changes to master without a fast-forward
 $ git push origin master		# Push changes to the server
-$ git push origin dev
-$ git checkout dev			# Go back to dev branch, but if the master branch is changed after the dev branch
-$ git branch -d dev			# was fully merged to master, delete the dev branch and create a new one from the
-$ git push origin --delete dev		# newest version of the master branch
+$ git push origin dev			# At this point, you can go back to dev branch (`git checkout dev')
+	# To delete the dev branch
+$ git branch -d dev			# Lowercase -d means "safe delete" e.g. only delete if merged; instead -D means force delete 
+$ git push origin --delete dev
 
 
 # Feature branches
