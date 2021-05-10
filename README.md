@@ -55,6 +55,15 @@ To visualize changes more easily in the terminal,  tell Git to colorize its outp
 $ git config --global color.ui "auto"
 ```
 
+Other optional but [useful](https://spin.atomicobject.com/2020/05/05/git-configurations-default/) Git configuartions are:
+```bash
+$ git config --global pull.rebase true
+$ git config --global fetch.prune true
+$ git config --global diff.colorMoved zebra
+```
+
+
+
 [Authenticate](https://help.github.com/en/articles/which-remote-url-should-i-use#cloning-with-https-urls-recommended) with GitHub from Git using either HTTPS (recommended) or SSH. If you don't authenticate, when you try to clone, pull, push, etc. to the remote repository, the terminal will display the following error:
 ```bash
 > Permission denied (publickey)
@@ -79,7 +88,7 @@ $ git config --global credential.helper osxkeychain
 
 - After this, the next time you try to clone, pull, push, etc. from the terminal, it will ask you for your GitHub user and password (which you will only need to provide once). Note: If you have a personal access token (see below), enter it instead of your password in order to perform Git operations over HTTPS.
 
-All Git commands have the following syntax: git verb options. Here is a useful [Git cheat-sheet](https://gist.github.com/davfre/8313299).
+All Git commands have the following syntax: git verb options. [Here](https://gist.github.com/davfre/8313299) is a useful Git cheat-sheet.
 
 Note: Git commands only work when (in the terminal) you are in a folder that contains a Git repository, otherwise the terminal will send an error message
 ```bash
@@ -188,10 +197,11 @@ $ git commit -a -m "Message"
 # OR
 $ git commit -am "Message"
 ```
-- If you run `git commit` without a message or option, your default text editor will open up and you can write a multi-line message. The terminal will show a screen to allow you to write a message. In a Mac it might be the `vi` editor. To start writing, press `i` (to switch to the insert mode) and write your comment. To exit the insert mode and switch to the command mode in order to save the changes, press `Esc`. Then type `:wq` to save the commit message and exit the editor, where `:` enters the command mode, `w` is for write/save and `q` is for quit (see [here](https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal)). In summary,
+- If you run `git commit` without a message or option, your default text editor will open up and you can write a multi-line message. The terminal will show a screen to allow you to write a message. In a Mac it might be the `Vi` editor. To start writing, press `i` (to switch to the insert mode) and write your comment. To exit the insert mode and switch to the command mode in order to save the changes, press `Esc`. Then type `:wq` to save the commit message and exit the editor, where `:` enters the command mode, `w` is for write/save and `q` is for quit (see [here](https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal)). In summary,
 ```bash
 Esc + :wq + Enter
 ```
+Note: Vi stands for Visual, it is an early attempt to a visual text editor. Vim stands for Vi IMproved and it is an implementation of the Vi standard with many additions. You can change your default editor (e.g. to vim, nano, emacs) with, for example: `git config --global core.editor nano`. The big difference between vim and nano is that vim is modal and nano is not. So with vim you are constantly changing between command mode and edit mode, whereas in nano, as in emacs, you are in one mode and your commands use special key combinations.
 
 See [here](https://chris.beams.io/posts/git-commit/) and [here](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/) for good practices on writing good commit messages.
 
