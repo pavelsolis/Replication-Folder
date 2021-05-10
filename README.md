@@ -188,11 +188,12 @@ $ git commit -a -m "Message"
 # OR
 $ git commit -am "Message"
 ```
-- If you did not include a message when you commit (either you forgot or you want to write a multi-line message), the terminal will show a screen to allow you to write a message. Git opens your default editor for you to edit the commit message. In a Mac it might be the `vi` editor. To start writing, press `i` (to switch to the insert mode) and write your comment. To exit the insert mode and switch to the command mode in order to save the changes, press `Esc`. Then type `:wq` to save the commit message and exit the editor, where `:` enters the command mode, `w` is for write/save and `q` is for quit (see [here](https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal)). In summary,
+- If you run `git commit` without a message or option, your default text editor will open up and you can write a multi-line message. The terminal will show a screen to allow you to write a message. In a Mac it might be the `vi` editor. To start writing, press `i` (to switch to the insert mode) and write your comment. To exit the insert mode and switch to the command mode in order to save the changes, press `Esc`. Then type `:wq` to save the commit message and exit the editor, where `:` enters the command mode, `w` is for write/save and `q` is for quit (see [here](https://apple.stackexchange.com/questions/252541/how-do-i-escape-the-git-commit-window-from-os-x-terminal)). In summary,
 ```bash
 Esc + :wq + Enter
 ```
 
+See [here](https://chris.beams.io/posts/git-commit/) and [here](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/) for good practices on writing good commit messages.
 
 To sync up the changes made locally with the repository in GitHub.com, use:
 ```bash
