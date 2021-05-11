@@ -32,6 +32,8 @@ In what follows:
 - The most commonly used commands in the terminal (also known as shell) when working with Git are: `cd`, `ls`.
 - The most commonly used Git commands are: `status`, `add`, `commit`, `push`, `pull`; other less used commands include: `diff`, `reset`, `branch`, `checkout`, `merge`.
 
+[Here](https://www.earthdatascience.org/courses/intro-to-earth-data-science/open-reproducible-science/bash/) you can see an overview of the terminal, shell, and bash; and [here](https://www.earthdatascience.org/courses/intro-to-earth-data-science/open-reproducible-science/bash/bash-commands-to-manage-directories-files/) the main bash commands to manage directories and files.
+
 
 ### [Setting Up Git](https://help.github.com/en/articles/set-up-git)
 In the terminal type the following to compare your current version of Git with the [latest release](https://git-scm.com/downloads)
@@ -265,13 +267,15 @@ $ git reset HEAD path/to/unwanted_file
 
 
 ### Git Workflow: Branching, Merging, Pull Requests
-*Summary*: Make a branch to solve a feature request, code the feature, make commits, get latest master version, merge master back into your branch, push your branch up, make a pull request for other people to peer review the code, resolve conflicts and make more merges to an existing pull request depending on the feedback received. When your changes are approved, your branch is merged to the parent branch and everybody's branches can inherit those changes.
+*Summary*: Make a branch to solve a feature request, code the feature, make commits, get latest version of the default branch, merge branches, push your branch up, make a pull request for other people to peer review the code, resolve conflicts and make more merges to an existing pull request depending on the feedback received. When your changes are approved, your branch is merged to the parent branch and everybody's branches can inherit those changes.
 
 Branches are the most powerful part of Git. They allow to trying things out. By isolating features into separate branches, everybody can work independently, yet it is still possible to share changes with other developers when necessary.
 
 Git encourages workflows that branch and merge often, even multiple times in a day.
 
-All branches in the remote repo will hang from origin, that is why it is important to have a branching model (structure, naming conventions, rules for branching off and merging to) to distinguish between permanent (`master`, `development`) branches and among temporary (`feature`, `fixes`) branches.
+All branches in the remote repo will hang from origin, that is why it is important to have a branching model (structure, naming conventions, rules for branching off and merging to) to distinguish between permanent (`main`, `development`) branches and among temporary (`feature`, `fixes`) branches.
+
+*Note*: Since October 2020, any new repository is created with the default branch `main`, instead of `master`. In case you needed, you can rename an existing repository default branch from `master` to `main`, see [here](https://jarv.is/notes/github-rename-master/) and [here](https://www.git-tower.com/learn/git/faq/git-rename-master-to-main/). All references below assume that the default branch is `main`.
 
 **CAUTION**: Always commit *and* close the modified files *before* switching branches (with `git checkout`) because when you switch Git will update the files in the repository to match the version to which you are moving to. If you introduce changes in one branch and suddenly realized to it would be better to swith to a different branch, Git [may or may not](https://stackoverflow.com/questions/22053757/checkout-another-branch-when-there-are-uncommitted-changes-on-the-current-branch) allow you to switch:
 - If Git doesn't allow you to switch, you can use `git commit` to the current branch and then switch to a different branch; alternatively, you can save your changes in a temporary branch using `git stash`, make the required changes in another branch and then restore the interrupted changes using `git stash pop`. `git stash` can also be used when your local changes conflict with the changes in the upstream (in which case, `git pull` will not merge): `git stash`, `git pull`, `git stash pop`.
@@ -301,19 +305,19 @@ $ git branch			# Displays all local branches
 $ git branch -r			# Displays all remote branches
 $ git branch -a			# Displays all local and remote branches
 
-> * master			# If only the master branch exists
-> * master, <branchname>	# If there are two branches
+> * main			# If only the main branch exists
+> * main, <branchname>	# If there are two branches
 ```   
 - The asterisk tells you the branch in which you are currently working on. If you configured Git to display its output in color, the current branch will be displayed in green; remote branches will be displayed in red; the rest of the branches (local non-current) will be displayed in white.   
 
 #### Download the Changes in the Remote Repository to the Local Repository
-In the terminal, switch back to master and sync: 
+In the terminal, switch back to main and sync: 
 ```bash
-$ git checkout master
+$ git checkout main
 $ git pull
 ```
 
-In the terminal, go to the *local* `parent` branch (which initially will be the `master` branch) and make sure you have the most recent version of the *remote* `parent` branch:
+In the terminal, go to the *local* `parent` branch (which initially will be the `main` branch) and make sure you have the most recent version of the *remote* `parent` branch:
 ```bash
 $ git checkout <parent>		# Update the files to work on `parent`
 $ git pull
@@ -336,8 +340,8 @@ $ git checkout -t origin/<branchname>	# Creates <branchname>, switches to it and
 # OR
 $ git checkout -b <branchname> origin/<branchname> # Same as previous but local and tracking branches can have different names
 ```
-- You can now make changes to the new branch `<branchname>` without affecting the `master` branch.
-- If after switching to the branch you type `git branch`, the terminal will display: `master`, `* <branchname>`.
+- You can now make changes to the new branch `<branchname>` without affecting the `main` branch.
+- If after switching to the branch you type `git branch`, the terminal will display: `main`, `* <branchname>`.
 - [Link](https://stackoverflow.com/questions/10002239/difference-between-git-checkout-track-origin-branch-and-git-checkout-b-branch) explaining the difference between `git checkout -b` and `git checkout -t` for tracking a remote branch.
 
 
@@ -418,12 +422,12 @@ Use meaningful branch names.
 - [Link](https://nvie.com/posts/a-successful-git-branching-model/) explaining a successful Git branching model.
 
 Based on the previous two sources, I will use a forward slash separator and the following branching categories and rules: 
-- `dev` branch off from `master` and merge back into `master`. It is a permanent branch.
+- `dev` branch off from `main` and merge back into `main`. It is a permanent branch.
 - `ftr` branch off from `dev` and merge back into `dev`. It is a temporary branch.
-- `fix` branch off from `master` or `dev` and merge back into `master` or `dev`. It is a temporary branch. `fix` branches deal with bugs found in the `dev` branch or in the `master` branch (due to a -recent- merge from the `dev` branch).
+- `fix` branch off from `main` or `dev` and merge back into `main` or `dev`. It is a temporary branch. `fix` branches deal with bugs found in the `dev` branch or in the `main` branch (due to a -recent- merge from the `dev` branch).
 
-Since `dev` is a permanent branch and `fix` branches are mainly used to correct bugs, most of the branches that will be used are feature `ftr` branches. Therefore, naming conventions are needed to differentiate between them; also since `fix` branches can be branched off from `master` *or* `dev`, it will be useful to distinguish between them. Thus, these are the naming conventions for the temporary branches:
-- To distinguish a `fix` branched off from `master` or `dev`, the names of `fix` branches will begin with: `fix/mst` or `fix/dev`.
+Since `dev` is a permanent branch and `fix` branches are mainly used to correct bugs, most of the branches that will be used are feature `ftr` branches. Therefore, naming conventions are needed to differentiate between them; also since `fix` branches can be branched off from `main` *or* `dev`, it will be useful to distinguish between them. Thus, these are the naming conventions for the temporary branches:
+- To distinguish a `fix` branched off from `main` or `dev`, the names of `fix` branches will begin with: `fix/mst` or `fix/dev`.
 - There can be three types of feature branches and so `ftr` can take any of three tokens: `data`, `code`, `docs`.
   - `data` branches deal with raw or analytic data so this token will be followed by: `raw` and `ans`.
   - `code` branches deal with pre-analysis or analysis of the data so this token will be followed by: `pre` and `ans`.
@@ -453,16 +457,16 @@ $ git push origin --delete <branchname>
 Implementation following the naming conventions:
 ```bash
 # Develop branch
-$ git checkout -b dev master
+$ git checkout -b dev main
 $ git push -u origin dev		# Sets the upstream for dev and see it in GitHub
 	# Usual workflow
 $ git status
 $ git commit -am "Your message"
-	# To merge dev branch into master (close all open files from the dev branch first)
-$ git checkout master
+	# To merge dev branch into main (close all open files from the dev branch first)
+$ git checkout main
 $ git pull
-$ git merge --no-ff dev			# Merge your changes to master without a fast-forward
-$ git push origin master		# Push changes to the server
+$ git merge --no-ff dev			# Merge your changes to main without a fast-forward
+$ git push origin main		# Push changes to the server
 $ git push origin dev			# At this point, you can go back to dev branch (`git checkout dev')
 	# To delete the dev branch
 $ git branch -d dev			# Lowercase -d means "safe delete" e.g. only delete if merged; instead -D means force delete 
@@ -490,16 +494,16 @@ $ git push origin --delete ftr/cat/name
 
 # Fix branches
 	# Create the branch
-$ git checkout -b fix/dev/name dev	OR	$ git checkout -b fix/mst/name master
+$ git checkout -b fix/dev/name dev	OR	$ git checkout -b fix/mst/name main
 $ git push -u origin fix/dev/name	OR	$ git push -u origin fix/mst/name
 	# Usual workflow
 $ git status
 $ git commit -am "Your message"
 				# fix/mst branches
-	# To merge fix branch into master
-$ git checkout master
-$ git merge --no-ff fix/mst/name	# Merge your changes to master without a fast-forward
-$ git push origin master		# Push changes to the server
+	# To merge fix branch into main
+$ git checkout main
+$ git merge --no-ff fix/mst/name	# Merge your changes to main without a fast-forward
+$ git push origin main		# Push changes to the server
 $ git push origin fix/mst/name
 	# To merge fix branch into dev
 $ git checkout dev
@@ -518,11 +522,11 @@ $ git push origin --delete fix/xxx/name
 
 
 ### Details
-- A **ref** is anything pointing to a commit (e.g. branches (heads), tags, and remote branches), they are stored in the .git/refs directory (e.g. `refs/heads/master`, `refs/remotes/master`, `refs/tags`). For example, `refs/heads/0.58` specifies a branch named `0.58`; if you don't specify what namespace the ref is in, Git will look in the default ones, so using only `0.58` is ambiguous (there could have both a `branch` and a `tag` named `0.58`).
+- A **ref** is anything pointing to a commit (e.g. branches (heads), tags, and remote branches), they are stored in the .git/refs directory (e.g. `refs/heads/main`, `refs/remotes/main`, `refs/tags`). For example, `refs/heads/0.58` specifies a branch named `0.58`; if you don't specify what namespace the ref is in, Git will look in the default ones, so using only `0.58` is ambiguous (there could have both a `branch` and a `tag` named `0.58`).
 - When an update changes a branch (or more in general, a ref) that used to point at commit A to point at another commit B, it is called a **fast-forward** update if and only if B is a descendant of A. Hence a fast-forward update from A to B does not lose any history.
 - To check out files from a previous commit (to reverse changes): `git checkout COMMIT_IDENTIFIER -- file1, file2`.
 - Warning: `git reset` have options `--hard` and `--soft` that can be used to rewrite history and to throw out commits that you no longer want.
-- If you use `git init` to create a local repository, and then want to upstream it to a remote (empty) repo, in your first push you need to use: `git push -u origin master`. This will create an upstream `master` branch on the upstream (`git push origin master`) *and* will record `origin/master` as a remote tracking branch so that the local branch `master` will be pushed to the upstream (origin) `master` (upstream branch). Since Git 1.7.11, the default push policy is `simple`: push only the current branch, and only if it has a similarly named remote tracking branch on the upstream. [Link](https://stackoverflow.com/questions/17096311/why-do-i-need-to-explicitly-push-a-new-branch/17096880#17096880) for an explanation.
+- If you use `git init` to create a local repository, and then want to upstream it to a remote (empty) repo, in your first push you need to use: `git push -u origin main`. This will create an upstream `main` branch on the upstream (`git push origin main`) *and* will record `origin/main` as a remote tracking branch so that the local branch `main` will be pushed to the upstream (origin) `main` (upstream branch). Since Git 1.7.11, the default push policy is `simple`: push only the current branch, and only if it has a similarly named remote tracking branch on the upstream. [Link](https://stackoverflow.com/questions/17096311/why-do-i-need-to-explicitly-push-a-new-branch/17096880#17096880) for an explanation.
 - [Why do I have to `git push --set-upstream origin <branch>`?](https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch)
 - Reasons for not keeping the repository in Dropbox: there is a chance of conflicts between the syncing of Dropbox and GitHub, and the space limit in Dropbox might be an issue when the project grows in size.
 - Reasons for having a project for each chapter: GitHub has a limit of 1 GB per project and has limits of 100MB per file, keeping them separate minimizes these issues.
@@ -557,3 +561,12 @@ $ git rebase origin/code/ans/fit-models
 
 To exit the prompt `>` (e.g. if you opened up a string with the odd number of `'` characters when making a commit) and go back to your normal bash prompt, [use](https://stackoverflow.com/questions/26228848/how-do-i-exit-my-git-commit-message-im-not-in-the-vim-i-used-the-commit-m) `ctrl` + `c` or close the string by typing `'` again.
 
+If `git push` displays the following (due to a git-lfs hook):
+```bash
+This repository is configured for Git LFS but 'git-lfs' was not found on your path. If you no longer wish to use Git LFS, remove this hook by deleting .git/hooks/pre-push.
+
+error: failed to push some refs to 'github.com:pavelsolis/Ch_MPS.git'
+```
+What [works](https://github.com/git-lfs/git-lfs/issues/333) is to remove the folder `.git/lfs` and the file `.git/hooks/pre-push`.
+
+Only push into [bare repositories](https://stackoverflow.com/questions/1298499/git-push-not-send-changes-to-remote-git-repository).
