@@ -431,7 +431,7 @@ Since `dev` is a permanent branch and `fix` branches are mainly used to correct 
 - There can be three types of feature branches and so `ftr` can take any of three tokens: `data`, `code`, `docs`.
   - `data` branches deal with raw or analytic data so this token will be followed by: `raw` and `ans`.
   - `code` branches deal with pre-analysis or analysis of the data so this token will be followed by: `pre` and `ans`.
-  - `docs` branches deal with issues on paper, slides, equations, figures, tables, statistics, references or settings so this token will be followed by: `ppr`, `sld`, `eqn`, `fig`, `tab`, `sta`, `ref` and `set`.
+  - `docs` branches deal with issues on paper, slides, equations, figures, tables, statistics, references or settings so this token will be followed by: `ppr`, `sld`, `eqn`, `fig`, `tbl`, `sta`, `ref` and `set`.
 - All three of the different types of feature branches can be used for experimenting or testing minor things unrelated to the previous categories, in which case any of the three types will be followed by: `tst`.
 - **Examples**: `data/raw/feature-name`, `code/ans/feature-name`, `docs/eqn/feature-name`, `fix/dev/feature-name`, `code/tst/feature-name`, `docs/tst/feature-name`.
 - Therefore, there are in total 17 possible types of temporary branches: 15 feautre branches (12 regular, 3 for tests), 2 fix branches.
