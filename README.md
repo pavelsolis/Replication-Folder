@@ -570,3 +570,7 @@ error: failed to push some refs to 'github.com:pavelsolis/Ch_MPS.git'
 What [works](https://github.com/git-lfs/git-lfs/issues/333) is to remove the folder `.git/lfs` and the file `.git/hooks/pre-push`.
 
 Only push into [bare repositories](https://stackoverflow.com/questions/1298499/git-push-not-send-changes-to-remote-git-repository).
+
+To resolve merge conflicts, see [this](https://www.simplilearn.com/tutorials/git-tutorial/merge-conflicts-in-git).
+
+To recover from an incomplete rebase operation and detached HEAD, see [this](https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin). 
