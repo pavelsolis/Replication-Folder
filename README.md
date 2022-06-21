@@ -59,10 +59,11 @@ $ git config --global color.ui "auto"
 
 Other optional but [useful](https://spin.atomicobject.com/2020/05/05/git-configurations-default/) Git configuartions are:
 ```bash
-$ git config --global pull.rebase true		# You replay your local commits on top of the newly updated origin/main
 $ git config --global fetch.prune true		# Clean removed remote branches
 $ git config --global diff.colorMoved zebra	# Color changes when using git diff
 ```
+<!-- $ git config --global pull.rebase true		# You replay your local commits on top of the newly updated origin/main -->
+
 [and](https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to-remote)
 ```bash
 git config --global rebase.autoStash true
