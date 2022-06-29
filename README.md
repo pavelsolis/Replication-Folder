@@ -67,8 +67,10 @@ $ git config --global diff.colorMoved zebra	# Color changes when using git diff
 
 [and](https://stackoverflow.com/questions/24114676/git-error-failed-to-push-some-refs-to-remote)
 ```bash
-git config --global rebase.autoStash true
+$ git config --global rebase.autoStash true
 ```
+
+To check the configuration settings, type `git config --list`.
 
 [Authenticate](https://help.github.com/en/articles/which-remote-url-should-i-use#cloning-with-https-urls-recommended) with GitHub from Git using either HTTPS (recommended) or SSH. If you don't authenticate, when you try to clone, pull, push, etc. to the remote repository, the terminal will display the following error:
 ```bash
