@@ -59,6 +59,7 @@ $ git config --global color.ui "auto"
 
 Other optional but [useful](https://spin.atomicobject.com/2020/05/05/git-configurations-default/) Git configuartions are:
 ```bash
+$ git config --global init.defaultBranch main
 $ git config --global fetch.prune true		# Clean removed remote branches
 $ git config --global diff.colorMoved zebra	# Color changes when using git diff
 ```
