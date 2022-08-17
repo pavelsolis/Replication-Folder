@@ -1,0 +1,3 @@
+The Data Appendix serves as a codebook and users' guide for the analysis data files (Data -> Analytic). It consists of metadata and codes:
+- The metadata guide (Data -> Metadata -> Metadata-Guide.docx) contains information about *all* the variables in the analysis data files.
+- The codes in this folder (Codes -> Stats) generate summary statistics and histograms for quantitative variables, and relative frequency tables and charts for categorical variables.
