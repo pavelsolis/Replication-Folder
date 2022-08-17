@@ -1,98 +1,95 @@
-# Ch_XXXX
+# <Paper's Title>
 
-The files in this folder are provided to facilitate the replication of the results in "Title of Paper" by Author (email)
+The files in this folder are provided to facilitate the replication of the results in "<Paper's Title>" by <Author> (<email>).
 
 
 ## SYSTEM FEATURES
 -------------------------------------------------------------------------------------
 The results in the paper were generated using the following:
-- Operating system: macOS High Sierra 10.14.6
-- Software: Matlab R2019b, Stata 15
-- Add-ons. Matlab: Financial Toolbox. Stata: regsave, texsave.
-- Restricted data sources: Bloomberg
-- Expected running time: Pre-Analysis (XX min/hr), Analysis (XX min/hr)
+- Operating system(s): 	macOS Version, Windows Version.
+- Software: 		Matlab Version, Stata Version, R Version, Python Version, LaTeX Version.
+- Essential add-ons: 	Financial Toolbox (Matlab); regsave, texsave (Stata); tidyverse (R); numpy, pandas (Python).
+- Restricted sources: 	Bloomberg.
+- Running time: 	Tidy XX min/hr, Stats XX min/hr, Analysis XX min/hr.
 
 
-## CONTENTS OF THE MAIN FOLDER
+## CONTENTS OF MAIN FOLDER
 -------------------------------------------------------------------------------------
 README.txt (this file)
 
 doAll.sh: generates results, paper and slides
 
 Codes folder: 
-- runCodes.EXT: executes the codes that generate the results
-- Pre-Analysis folder: codes for cleaning and preparing the data
-- Analysis folder: runAppendix.EXT and replication codes
-- Aux foler
+- Tidy folder: codes that generate the analysis data files by cleaning and processing the original data files
+- Stats folder: codes that provide descriptive statistics of the variables used and check the analysis datasets (e.g. look for outliers)
+- Analysis folder: codes that perform the analysis with comments indicating the commands that generate specific results
+- Extra folder: auxiliary, temporary and old codes
 
-Data folder: 
-- Analytic folder
-- Raw folder
-- Metadata folder
-- Aux folder
+Data folder:
+- Metadata folder: files documenting the data sources and variables
+- Raw folder: original data files
+- Analytic folder: gleaned or processed data files
+- Extra folder: auxiliary, temporary and old data files
 
 Docs folder: 
-- Paper folder
-- Slides folder
-- Equations folder
-- Figures folder
-- Tables folder
-- DataStats folder: descriptive statistics of the variables used
-- Settings folder: .tex files with settings for the paper and the slides
-- References folder: .bib file with cited references
-- Aux folder
+- Paper folder: text files that make up the paper
+- Slides folder: files that make up the slides
+- Equations folder: files referencing equations
+- Figures folder: figures used in the paper and the slides
+- Tables folder: tables used in the paper and the slides
+- Settings folder: files with settings for the paper and the slides
+- References folder: files listing the cited references
+- Extra folder: auxiliary, temporary and old files
 
 
-## DATA FILES
+## INSTRUCTIONS FOR REPLICATION
 -------------------------------------------------------------------------------------
-See the metadata guide (Data -> Metadata -> MetadataGuide.docx) for a description of the data files (e.g. date accessed, how to obtain a copy, list of variables, sample period).
+The metadata guide (Data -> Metadata -> MetadataGuide.docx) has a description of the (original and analysis) data files and instructions on how to update them.
 
-The results can be replicated using the data contained in the MAT-file (Data -> Analytic -> datasets.mat). This file constructs the necessary variables for the analysis using the data dowloaded from Bloomberg, which is not included in the replication folder due to licensing rights. However, the dataset can be recreated from scratch and, subsequently, updated if you have access to Bloomberg. See the metadata guide for instructions on how to recreate or update each of the following:
-- Tickers documented in AE_EM_Curves_Tickers.xlsx (Bloomberg and Datastream)
-- Tickers documented in Macro_Finance_Tickers.xlsx (Bloomberg)
-- US yield curve from Gürkaynak, Sack & Wright (2007)
+The replication folder uses stratification to avoid repeating code or duplicating files (e.g. equations, figures and tables used in both the paper and the slides), and to facilitate collaboration, development and testing (because it allows focusing on specific parts). The following master files call the necessary elements in the required order:
+- Codes -> Analysis -> analysis.EXT: runs the codes sequentially to perform the analysis and generate the results (figures and tables). The codes workflow is detailed at the end.
+- Docs -> Paper -> paper.tex: calls the pieces constituting the paper.
+- Docs -> Slides -> slides.tex: calls equations, figures and tables.
+- doAll.sh: calls analysis.EXT, paper.tex and slides.tex to reproduce the results and generate the latest versions of the paper and the slides without manually executing each master file.
 
 
-## INSTRUCTIONS TO REPLICATE THE STUDY
+## CONSIDERATIONS
 -------------------------------------------------------------------------------------
-Open doAll.sh. This file calls runCodes.EXT (Codes -> runCodes.EXT) to reproduce the results (figures and tables), paper.tex (Docs -> Paper -> paper.tex) and slides.tex (Docs -> Slides -> slides.tex) to generate the latest versions of the paper and the slides. If you don't want to or can't execute doAll.sh, you can replicate the results by manually executing runCodes.EXT and then (in any order) executing paper.tex and/or slides.tex.
+Make sure the names of files and folders added or modified have *no* spaces.
 
-What do runCodes.EXT, paper.tex and slides.tex do?
-Stratification (dividing into small components) avoids repeating code or duplicating files (e.g. equations, figures and tables used in both the paper and the slides) and allows one to focus on specific parts. This also has advantages in development and testing, as well as facilitating collaboration. The downside is that it may be difficult to follow the order of the codes and files. Master files solve this issue by calling the necessary files in the required order.
-- runCodes.EXT: run codes sequentially to clean the data, perform the analysis and generate the results (figures and tables). See below if you want to follow the workflow of the codes.
-- paper.tex: call abstract.tex, sections.tex and appendix.tex (the last two call equations, figures and tables).
-- slides.tex: call title_slide.tex as well as equations, figures and tables.
+The codes use relative paths based on structure of the main folder as provided, so they work regardless of where the main folder is located.
 
-Commands that generate specific results in the paper are indicated with comments in the code. Below is a list of results reported in the paper that are replicated:
-1. Figure 3
-1. Table 2, column 4
-1. The simulation reported in section 4.3
-1. The income elasticity of demand for beef (1.86) reported on page 58 of the paper
+Codes use the Unix convention (i.e. forward slash) in directory paths. An error may appear if the codes are executed in a Windows machine (which uses backslashes); in that case, just modify the codes where appropriate (e.g. executable .sh files). Matlab codes are written to be independent of the platform used.
+
+Most of the results can be replicated using the analysis data files in Data -> Analytic, they:
+- Contain most of the variables necessary for the analysis, generated with data downloaded from original sources (some of which are not shared due to licensing rights).
+- Can be updated if the user has access to the (restricted) original sources.
 
 
-## FINAL COMMENTS
+## REPLICATION REFERENCES
 -------------------------------------------------------------------------------------
-If you add or modify the files in the main folder, keep in mind that the names of files and folders must have *no* spaces.
-
-The paths in the codes for opening and/or saving files are relative to the folder in which the file is located. Therefore, the codes work regardless of where the main folder is located. However, the relative paths rely on the structure of the main folder as provided.
-
-The paths of directories are defined using the Unix convention (i.e. forward slash). Keep in mind that Windows systems use a backslash and so, an error may appear if the files are executed in a Windows machine. The user would just need to modify the codes where appropriate. This should only happen with executable .sh and .do files because the codes in Matlab were written to be independent of the platform used.
-
 For more information on the reproducibility of empirical research, see:
-- TIER protocol (http://www.projecttier.org/tier-protocol/)
-- Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide
-- Chang & Li, 2017. A Pre-analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time
+- TIER protocol (http://www.projecttier.org/tier-protocol/).
+- Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
+- Chang & Li, 2017. A Pre-analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time.
+- Andrew Rose, 2017. Notes for Efficient Data Organization/Handling.
 
 For more on the structure of a LaTeX project, see:
-https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT
+- https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT
 
 
 ## CODE WORKFLOW (OPTIONAL)
 -------------------------------------------------------------------------------------
-Below are the details to facilitate following the workflow of the codes.
+Below is the order of the files called by the master files in the Codes subfolders to assist in understanding the codes.
 
-In pre-analysis folder
-	run read_data.m 		-> generates dataset...
+In the Tidy folder, data_clean.EXT calls the following files:
+-
+-
 
-In analysis folder
-	run rp_analysis.m		-> generates...
+In the Stats folder, data_stas.EXT calls the following files:
+-
+-
+
+In the Analysis folder, data_analysis.EXT calls the following files:
+-
+-
