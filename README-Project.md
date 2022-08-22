@@ -47,7 +47,7 @@ The replication folder uses stratification to avoid repeating code or duplicatin
 - Codes -> Analysis -> analysis.EXT: runs the codes sequentially to perform the analysis and generate the results (figures and tables); the workflow of the codes is detailed below.
 - Docs -> Paper -> paper.tex: calls the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: calls equations, figures and tables.
-- doAll.sh: generates the results and the latest versions of the paper and the slides without manually executing each master file (it calls analysis.EXT, paper.tex and slides.tex sequentially).
+- doAll.sh: generates the results and the latest versions of the paper and the slides without manually executing each master file (i.e., it calls analysis.EXT, paper.tex and slides.tex sequentially).
 
 
 ## CONSIDERATIONS
@@ -58,7 +58,7 @@ The codes use relative paths based on the structure of the main folder as provid
 The codes use the Unix convention (i.e. forward slash) in directory paths. An error may appear if some codes (e.g. executable .sh files) are executed in a Windows machine (because it uses backslashes); in that case, just modify the codes where appropriate. Matlab codes are written to be independent of the platform used.
 
 Most of the results can be replicated using the analysis data files in Data -> Analytic, they:
-- Contain most of the variables necessary for the analysis, generated from original data files (some of which are not shared due to licensing rights).
+- Contain most of the variables necessary for the analysis, generated from the original data files (some of which are not shared due to licensing rights).
 - Can be updated if the user has access to the (restricted) original data sources.
 
 
@@ -70,7 +70,7 @@ For more information on the reproducibility of empirical research, see:
 - Andrew Rose, 2017. Notes for Efficient Data Organization/Handling.
 
 For more on the structure of a LaTeX project, see:
-- Mauricio Fernández, 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT)
+- Mauricio Fernández, 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT).
 
 
 ## CODE WORKFLOW (OPTIONAL)
