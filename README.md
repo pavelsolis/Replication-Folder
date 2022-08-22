@@ -349,6 +349,13 @@ $ git checkout -b <branchname> origin/<branchname> # Same as previous but local 
 - [Link](https://stackoverflow.com/questions/10002239/difference-between-git-checkout-track-origin-branch-and-git-checkout-b-branch) explaining the difference between `git checkout -b` and `git checkout -t` for tracking a remote branch.
 
 
+#### See List of Commits
+See a list of previous commits:
+```bash
+$ git log				# Shows the sequence of commits in the current branch
+$ git reflog				# Shows the sequence of actions in the repository
+```
+
 #### Upload Changes to the Remote Repository
 Save all your commits in the local branch `<branchname>` to the remote repository (your branch `<branchname>` in GitHub):
 ```bash
