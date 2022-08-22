@@ -1,6 +1,6 @@
 # <Paper's Title>
 
-The files in this folder are provided to facilitate the replication of the results in "<Paper's Title>" by <Author> (<email>).
+The files in this folder are provided to facilitate the replication of the results in "<Paper's Title>" by <Author(s)> (<email(s)>).
 
 
 ## SYSTEM FEATURES
@@ -83,13 +83,10 @@ For more on the structure of a LaTeX project, see:
 Below is the order of the files called by the master files in the Codes subfolders to assist in understanding the codes.
 
 In the Tidy folder, data_clean.EXT calls the following files:
--
--
+- 
 
 In the Stats folder, data_stas.EXT calls the following files:
--
--
+- 
 
 In the Analysis folder, data_analysis.EXT calls the following files:
--
--
+- 
