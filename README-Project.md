@@ -19,14 +19,14 @@ doAll.sh: generates results, paper and slides
 
 Codes folder: 
 - Tidy folder: codes that generate the analysis data files by cleaning and processing the original data files.
-- Stats folder: codes that check the analysis datasets (e.g. look for outliers) and provide descriptive statistics of the variables used.
+- Stats folder: codes that check the analysis data files (e.g. look for outliers) and provide descriptive statistics of the variables used.
 - Analysis folder: codes that perform the analysis with comments indicating the commands that generate specific results.
 - Extra folder: auxiliary, temporary and old codes.
 
 Data folder:
 - Metadata folder: files documenting the data sources and variables.
 - Raw folder: original data files.
-- Analytic folder: gleaned or processed data files.
+- Analytic folder: analysis (gleaned or processed) data files.
 - Extra folder: auxiliary, temporary and old data files.
 
 Docs folder: 
@@ -44,33 +44,33 @@ Docs folder:
 The metadata guide (Data -> Metadata -> Metadata-Guide.docx) describes the (original and analysis) data files as well as instructions on how to update them.
 
 The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (because it allows focusing on specific parts). The following master files call the necessary elements in the required order:
-- Codes -> Analysis -> analysis.EXT: runs the codes sequentially to perform the analysis and generate the results (figures and tables); the workflow of the codes is detailed at the end.
+- Codes -> Analysis -> analysis.EXT: runs the codes sequentially to perform the analysis and generate the results (figures and tables); the workflow of the codes is detailed below.
 - Docs -> Paper -> paper.tex: calls the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: calls equations, figures and tables.
-- doAll.sh: calls analysis.EXT, paper.tex and slides.tex to reproduce the results and generate the latest versions of the paper and the slides without manually executing each master file.
+- doAll.sh: generates the results and the latest versions of the paper and the slides without manually executing each master file (it calls analysis.EXT, paper.tex and slides.tex sequentially).
 
 
 ## CONSIDERATIONS
 Make sure the names of files and folders added or modified have *no* spaces.
 
-The codes use relative paths based on structure of the main folder as provided, so they work regardless of where the main folder is located.
+The codes use relative paths based on the structure of the main folder as provided, so they run regardless of where the main folder is located.
 
-Codes use the Unix convention (i.e. forward slash) in directory paths. An error may appear if the codes are executed in a Windows machine (which uses backslashes); in that case, just modify the codes where appropriate (e.g. executable .sh files). Matlab codes are written to be independent of the platform used.
+The codes use the Unix convention (i.e. forward slash) in directory paths. An error may appear if some codes (e.g. executable .sh files) are executed in a Windows machine (because it uses backslashes); in that case, just modify the codes where appropriate. Matlab codes are written to be independent of the platform used.
 
 Most of the results can be replicated using the analysis data files in Data -> Analytic, they:
-- Contain most of the variables necessary for the analysis, generated with data downloaded from original sources (some of which are not shared due to licensing rights).
-- Can be updated if the user has access to the (restricted) original sources.
+- Contain most of the variables necessary for the analysis, generated from original data files (some of which are not shared due to licensing rights).
+- Can be updated if the user has access to the (restricted) original data sources.
 
 
 ## REPLICATION REFERENCES
 For more information on the reproducibility of empirical research, see:
-- TIER protocol (http://www.projecttier.org/tier-protocol/).
+- [TIER protocol](http://www.projecttier.org/tier-protocol/).
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
-- Chang & Li, 2017. A Pre-analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time.
+- Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time.
 - Andrew Rose, 2017. Notes for Efficient Data Organization/Handling.
 
 For more on the structure of a LaTeX project, see:
-- https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT
+- Mauricio Fernández, 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT)
 
 
 ## CODE WORKFLOW (OPTIONAL)
