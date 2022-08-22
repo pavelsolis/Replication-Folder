@@ -1,6 +1,6 @@
-# <Paper's Title>
+# \<Paper's Title\>
 
-The files in this folder facilitate the replication of the results in "<Paper's Title>" by <Author(s)> (<email(s)>).
+The files in this folder facilitate the replication of the results in "\<Paper's Title\>" by \<Author(s)\> (\<email(s)\>).
 
 
 ## SYSTEM FEATURES
@@ -9,7 +9,7 @@ The results in the paper were generated using the following:
 - Software: 		Matlab Version, Stata Version, R Version, Python Version, LaTeX Version.
 - Essential add-ons: 	Financial Toolbox (Matlab); regsave, texsave (Stata); tidyverse (R); numpy, pandas (Python).
 - Restricted sources: 	Bloomberg.
-- Running time: 	Tidy <XX> min, Stats <XX> min, Analysis <XX> min.
+- Running time: 	Tidy \<XX\> min, Stats \<XX\> min, Analysis \<XX\> min.
 
 
 ## CONTENTS OF FOLDER
@@ -18,26 +18,26 @@ README.txt (this file)
 doAll.sh: generates results, paper and slides
 
 Codes folder: 
-- Tidy folder: codes that generate the analysis data files by cleaning and processing the original data files
-- Stats folder: codes that check the analysis datasets (e.g. look for outliers) and provide descriptive statistics of the variables used
-- Analysis folder: codes that perform the analysis with comments indicating the commands that generate specific results
-- Extra folder: auxiliary, temporary and old codes
+- Tidy folder: codes that generate the analysis data files by cleaning and processing the original data files.
+- Stats folder: codes that check the analysis datasets (e.g. look for outliers) and provide descriptive statistics of the variables used.
+- Analysis folder: codes that perform the analysis with comments indicating the commands that generate specific results.
+- Extra folder: auxiliary, temporary and old codes.
 
 Data folder:
-- Metadata folder: files documenting the data sources and variables
-- Raw folder: original data files
-- Analytic folder: gleaned or processed data files
-- Extra folder: auxiliary, temporary and old data files
+- Metadata folder: files documenting the data sources and variables.
+- Raw folder: original data files.
+- Analytic folder: gleaned or processed data files.
+- Extra folder: auxiliary, temporary and old data files.
 
 Docs folder: 
-- Paper folder: text files that make up the paper
-- Slides folder: files that make up the slides
-- Equations folder: files referencing equations
-- Figures folder: figures used in the paper or the slides
-- Tables folder: tables used in the paper or the slides
-- Settings folder: files with settings for the paper and the slides
-- References folder: files listing the cited references
-- Extra folder: auxiliary, temporary and old files
+- Paper folder: text files that make up the paper.
+- Slides folder: files that make up the slides.
+- Equations folder: files referencing equations.
+- Figures folder: figures used in the paper or the slides.
+- Tables folder: tables used in the paper or the slides.
+- Settings folder: files with settings for the paper and the slides.
+- References folder: files listing the cited references.
+- Extra folder: auxiliary, temporary and old files.
 
 
 ## INSTRUCTIONS FOR REPLICATION
@@ -77,10 +77,10 @@ For more on the structure of a LaTeX project, see:
 Below is the order of the files called by the master files in the Codes subfolders to assist in understanding the codes.
 
 In the Tidy folder, data_clean.EXT calls the following files:
-- <Ordered list of files called by data_clean.EXT>
+1. \<Ordered list of files called by data_clean.EXT\>
 
 In the Stats folder, data_stas.EXT calls the following files:
-- <Ordered list of files called by data_stas.EXT>
+1. \<Ordered list of files called by data_stas.EXT\>
 
 In the Analysis folder, data_analysis.EXT calls the following files:
-- <Ordered list of files called by data_analysis.EXT>
+1. \<Ordered list of files called by data_analysis.EXT\>
