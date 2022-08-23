@@ -12,28 +12,18 @@
 %---------------------------------------------------------------
 % Title
 %---------------------------------------------------------------
-\title{\vspace{-2.0cm}\input{../Settings/title}
-	\iftoggle{fulldraft}{
-		\thanks{\input{../Settings/acknowledgements}}
-	}
-	{\\ \large Outline}
-	}
-\author{Name1 LastName1 
-	\iftoggle{fulldraft}{
-		\thanks{\input{../Settings/affiliation1}}}
-	{}
-	}
-\author{Name2 LastName2 
-	\iftoggle{fulldraft}{
-		\thanks{\input{../Settings/affiliation2}}}
-	{}
+\title{\vspace{-4ex}\input{../Settings/title}\thanks{\protect\input{../Settings/thanks}}}
+\author{
+	\input{../Settings/author1}\thanks{\protect\input{../Settings/affil1}}\\\input{../Settings/instit1} \and 
+	\input{../Settings/author2}\thanks{\protect\input{../Settings/affil2}}\\\input{../Settings/instit2}
 }
+
 \date{}
 \maketitle	\vspace{-4ex}
 	\iftoggle{fulldraft}{									% Turn it on/off in packages.tex
 	\begin{center}
-		First version: Month Day, Year \\
-		This version: \today	% or Month Day, Year
+		First draft: January 1, 2000 \\
+		This draft: \today	% or Month Day, Year
 	\end{center}
 	}{}	% Closes \iftoggle{fulldraft}
 
@@ -57,7 +47,7 @@
 	\end{appendices}
 	}{}	% Closes \iftoggle{fulldraft}
 
-\iftoggle{toclinks}{\maketoc \listoftodos}{}	% Turn it on/off in packages.tex
+%\iftoggle{toclinks}{\maketoc \listoftodos}{}	% Turn it on/off in packages.tex
 
 \end{document}
 
