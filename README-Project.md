@@ -13,8 +13,8 @@ The results in the paper were generated using the following:
 
 
 ## CONTENTS OF FOLDER
-- README.txt (this file)
-- doAll.sh: generates results, paper and slides
+- README.txt (this file).
+- doAll.sh: generates the results, the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the analysis data files by cleaning and processing the original data files.
 	- Stats: codes that check the analysis data files (e.g. look for outliers) and provide descriptive statistics of the variables used.
@@ -39,8 +39,8 @@ The results in the paper were generated using the following:
 ## INSTRUCTIONS FOR REPLICATION
 The metadata guide (Data -> Metadata -> Metadata-Guide.docx) describes the (original and analysis) data files as well as instructions on how to update them.
 
-The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (by focusing on specific parts). The following master files call the necessary elements in the required order:
-- Codes -> Analysis -> data_analysis.EXT: runs the codes sequentially to generate the figures and tables; the codes workflow is detailed below.
+The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (by focusing on specific parts). The following master files call the necessary bits in the required order:
+- Codes -> Analysis -> data_analysis.EXT: runs the codes sequentially to generate the results; the codes workflow is detailed below.
 - Docs -> Paper -> paper.tex: puts together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: calls equations, figures and tables.
 - doAll.sh: calls the previous master files sequentially to generate the results and the latest versions of the paper and the slides instead of executing each master file individually.
