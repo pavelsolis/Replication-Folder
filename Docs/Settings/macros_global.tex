@@ -1,5 +1,14 @@
-%% Personalized Macros
-% Table of Contents, Tables, Subcaptions
+%% Customized Macros
+% Table of Contents, Tasks, Tables, Subcaptions, Track Changes
+%
+%\gototoc
+%\maketoc
+%\begin{boxeditems} \end{boxeditems}
+%\estauto
+%\specialcell
+%\fignotes
+%\tabnotes
+%\textchange
 
 %---------------------------------------------------------------
 % Table of Contents
@@ -14,6 +23,10 @@
 	\newpage
 	\tableofcontents
 	\vspace{2.5\bigskipamount} }
+
+%---------------------------------------------------------------
+% Tasks
+%---------------------------------------------------------------
 
 % Box with bullets for tasks to do in a section
 \newenvironment{boxeditems}
@@ -31,7 +44,7 @@
 % Tables
 %---------------------------------------------------------------
 
-% Estout Commands following Jörg Weber
+% Estout commands following Jörg Weber
 \newcommand{\sym}[1]{\rlap{#1}}
 
 \let\estinput=\input	% define new input command to flatten the document
@@ -39,7 +52,6 @@
 \newcommand{\estauto}[2]{
 	\newcolumntype{C}{>{\centering\arraybackslash}X}
 	\vspace{.75ex}{
-%		\begin{tabularx}{1.4\textwidth}{l*{#2}C}
 		\begin{tabularx}{0.95\linewidth}{l*{#2}C}
 			\toprule
 			\estinput{#1}
@@ -49,7 +61,7 @@
 	}
 }
 
-% Allow line breaks with \\ in specialcells
+% Allow line breaks with \\ in table columns, e.g. mtitle("\specialcell{Co-Holding\\> \pounds100}")
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 %---------------------------------------------------------------
@@ -69,8 +81,15 @@
 \newcommand{\fignotes}[1]{\figtext{\emph{Notes:~}~#1}}
 
 % Notes after tables
-\newcommand{\tabnote}[1]{
+\newcommand{\tabnotes}[1]{
 	\begin{tablenotes}[para,flushleft]
 		\footnotesize \emph{Notes:~}~#1
 	\end{tablenotes}
 }
+
+%---------------------------------------------------------------
+% Track Changes
+%---------------------------------------------------------------
+
+% % Highlight changes in revised version with color
+\newcommand{\textchange}[1]{\iftoggle{revised}{\textcolor{blue}{#1}}{#1}}
