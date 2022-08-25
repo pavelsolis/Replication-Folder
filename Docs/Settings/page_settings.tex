@@ -1,29 +1,29 @@
 %% Page Settings
-% Date Format, Margins, Head and Foot, Indentation, Spacing, Hyphenation
-
+% Date Format, Margins, Head and Foot, Indentation, Spacing,
+% Hyphenation, Thanks
 
 %---------------------------------------------------------------
 % Date Format
 %---------------------------------------------------------------
 \renewcommand{\today}{\ifcase \month \or January\or February\or March\or %
 	April\or May \or June\or July\or August\or September\or October\or November\or %
-	December\fi \: \number \year} 
+	December\fi \: \number \year}			% Formats \today as month year 
 
 %---------------------------------------------------------------
 % Margins
 %---------------------------------------------------------------
 \usepackage[margin=1in]{geometry}	 % Sets the margins of the file
-%\usepackage[top=2.54cm, bottom=2.54cm,left=3.17cm,right=3.17cm]{geometry}
+%\usepackage[top=2.54cm,bottom=2.54cm,left=3.17cm,right=3.17cm]{geometry}
 
 %---------------------------------------------------------------
 % Head and Foot
 %---------------------------------------------------------------
-\usepackage{fancyhdr} 							% Needed for head and foot options
+\usepackage{fancyhdr} 						 % For head and foot options
 
 %---------------------------------------------------------------
 % Indentation
 %---------------------------------------------------------------
-%\parindent=0cm 				 				 % Sets space of first line of new text block
+\parindent=15pt 				 				  % 15pt is the default in one-column documents
 
 %---------------------------------------------------------------
 % Spacing
@@ -32,7 +32,6 @@
 	\doublespacing
 	%\setlength{\abovedisplayskip}{1pt}  % Sets spaces above/below an equation
 	%\setlength{\belowdisplayskip}{1pt}
-	%\setlength\abovedisplayskip{0pt}
 \AtBeginDocument{								 % Avoids excesive spacing b/w floating objects
 	\addtolength\abovedisplayskip{-0.2\baselineskip}
 	\addtolength\belowdisplayskip{-0.2\baselineskip}
@@ -41,29 +40,15 @@
 %---------------------------------------------------------------
 % Hyphenation
 %---------------------------------------------------------------
-\sloppy 								 			% Try to avoid hyphens
-%\hyphenation{} 		   					   % Sets hyphenation of tolerance parameters
-	%\hyphenpenalty=10000			   % Ridiculously high values force hyphenless
-														 % but may result in lines with very few words
-	%\exhyphenpenalty=10000
+\sloppy 								 				% Try to avoid hyphens (\fussy restores defaults)
+%\hyphenation{word} 		   				  % To manually set the hyphenation
+	%\hyphenpenalty=10000			   	   % Large values force hyphenless but sparse lines likely 
 
 %---------------------------------------------------------------
-% Customize Thanks Symbol
+% Thanks: Customize Symbols
 %---------------------------------------------------------------
 \makeatletter
 \def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \ddagger\or
 		\mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
 		\or \ddagger\ddagger \else\@ctrerr\fi}}
 \makeatother
-
-%---------------------------------------------------------------
-% Sources
-%---------------------------------------------------------------
-% Spacing without extra spacing for floating objects
-%https://tex.stackexchange.com/questions/32918/how-can-i-decrease-spaces-between-equations
-
-% Hyphenation
-% http://www.jr-x.de/publikationen/latex/tipps/zeilenumbruch.html
-
-% Customize Thanks Symbol
-%https://tex.stackexchange.com/questions/455140/customizing-the-symbol-next-to-the-authors-name-in-a-document

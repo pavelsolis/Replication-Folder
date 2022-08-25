@@ -1,103 +1,128 @@
 %% Packages
 % Conditionals, Contents, Layout, Formatting, Math, Figures and Tables,
-% Hyperlinks and References, Special Characters, Appendix
+% Hyperlinks, Special Characters, References, Appendix
 
 %---------------------------------------------------------------
 % Conditionals
 %---------------------------------------------------------------
-\usepackage{etoolbox}
-	\newtoggle{toclinks}				    % Add links in sections to ToC
-	\newtoggle{cboxes}					    % Comments for sections
-	\newtoggle{fulldraft}					 % Versions: outline vs full draft
+\usepackage{etoolbox}					 % A toolbox of programming facilities
+\usepackage{xpatch}						  % Extends etoolbox patching commands
+	\newtoggle{toclinks}				    % When editing, add links (next to section titles) to ToC
+	\newtoggle{cboxes}					   % When editing, write comments and to-dos
+	\newtoggle{fulldraft}					 % Generate short (outline) and long (full draft) versions
+	\newtoggle{revised}					 	% Highlight changes in revised version
 	
 	\settoggle{toclinks}{true}			   	% 'true' to include ToC and links
-	\settoggle{cboxes}{true}				% 'true' to include boxed comments
+	\settoggle{cboxes}{true}			   % 'true' to include boxed comments
 	\settoggle{fulldraft}{true}	   	 	     % 'false' to generate an outline
+	\settoggle{revised}{false}	   	 	 	% 'true' to highlight changes with color
 
 %---------------------------------------------------------------
 % Contents
 %---------------------------------------------------------------
 \usepackage[nottoc]{tocbibind} 		 % Displays bib in ToC, nottoc omits ToC from itself
-\usepackage{textcomp}		  			% For the copyright symbol
-\usepackage{lipsum}
-%\usepackage{authblk}					% multiple authors in blocks or in footnotes
-%\usepackage{todonotes} 					% For to-do lists
+\usepackage{textcomp}		  			 % Handles the copyright symbol
+\usepackage{lipsum}						   % To add dummy text
+%\usepackage{authblk}					 % Multiple authors in blocks or in footnotes
+%\usepackage{todonotes} 			   % For to-do lists
 %\usepackage{makeidx} 					% Creates an index at the end of the document
 %	\makeindex								   % use: \index{} and \printindex
 
 %---------------------------------------------------------------
 % Layout
 %---------------------------------------------------------------
-\usepackage{pdfpages}
-\usepackage{pdflscape}			  		% To rotate page in PDF using \begin{landscape}
-\usepackage{rotating}					  % To rotate page in PDF using \begin{sidewaystable}
+\usepackage{pdfpages}					 % To insert (excerpts of) PDF files
+\usepackage{pdflscape}			  		  % To rotate page in PDF using \begin{landscape}
+%\usepackage{rotating}					  % To rotate page in PDF using \begin{sidewaystable}
 
 %---------------------------------------------------------------
 % Formatting
 %---------------------------------------------------------------
-\usepackage{float}							% Placing inputs in current section
-\usepackage{enumerate}				   % Personalizes the enumerate style
-\usepackage{datetime2}					% Customizes date format
+\usepackage{float}							 % To enable H placement specifier (similar to h!)
+\usepackage{enumerate}				    % To personalize the enumerate style
+%\usepackage{datetime2}					% To customize date format
 
 %---------------------------------------------------------------
 % Math
 %---------------------------------------------------------------
-\usepackage{amsmath} 						% For command eqref
-\usepackage{amssymb} 						% For math fonts
-\usepackage{dsfont}								% More math fonts (e.g. indicator function)
+\usepackage{amsmath} 					 % For command eqref, multi-line statements
+\usepackage{amssymb} 					 % For math symbols and fonts
+\usepackage{dsfont}							% More math fonts (e.g. indicator function)
 %\usepackage{amsthm,enumitem}
 
 %---------------------------------------------------------------
 % Figures and Tables
 %---------------------------------------------------------------
-\usepackage{standalone}			  % To compile sub-files as part of main document
-\usepackage[labelsep=period,labelfont=bf]{caption} % Dot separator, boldfaced
-%	\captionsetup[figure]{position=top}					 % Position of caption
-%	\captionsetup[table]{name=New Table Name}	% Change table caption prefix
+\usepackage{standalone}			   		% To compile sub-files as part of main document
+\usepackage{afterpage}					 % To place floats after current page
+\usepackage[labelsep=period,labelfont=bf]{caption} % Caption with dot separator, boldfaced
+%	\captionsetup[figure]{position=top}					 % To change position of caption
+%	\captionsetup[table]{name=New Table Name}	% To change table caption prefix
 
 % Figures
-\usepackage{graphicx} 				% Needed for \includegraphics
-\usepackage[outdir=./]{epstopdf}  % Avoids errors when calling figures
-\usepackage{subcaption}	    	  % Multi-panel figure: \begin{subfigure}[t]{\textwidth}
+\usepackage{graphicx} 					 % For \includegraphics
+\usepackage[outdir=./]{epstopdf}   % To avoid errors when calling figures
+\usepackage{subcaption}	    	  	   % Multi-panel figure: \begin{subfigure}[t]{\textwidth}
 
 % Tables (extensions to the standard tabular environment)
-\usepackage{booktabs}			  % Needed for \toprule, \midrule, \bottomrule
-\usepackage{tabularx}				% Creates paragraph-like columns
-\usepackage{threeparttable}		 % Includes a structured note section
-\usepackage{longtable} 			   % For multi-page tables, note section needs package threeparttablex
-\usepackage{multirow}			   % To add entries with multiple rows
-\usepackage{bigstrut} 			 	 % Needed for \bigstrut
-\usepackage{siunitx}				 % To align the decimal points
+\usepackage{booktabs}			  	   % For \toprule, \midrule, \bottomrule
+\usepackage{tabularx}					 % For paragraph-like columns
+\usepackage{threeparttable}		 	  % To include a structured note section
+\usepackage{longtable} 			   		% For multi-page tables, needs package threeparttablex
+\usepackage{threeparttablex}		 % Threeparttable functionality for long tables
+\usepackage{multirow}			   		% To add entries with multiple rows
+\usepackage{bigstrut} 			 	 	 % To open up tabular spacing
+\usepackage{siunitx}				 	  % To align the decimal points
 
 %---------------------------------------------------------------
-% Hyperlinks and References
+% Hyperlinks
 %---------------------------------------------------------------
-\usepackage[colorlinks=true]{hyperref} 	% Creates hyperlinks, 'true' gets rid of awful boxes
+\usepackage[colorlinks=true]{hyperref} 	 % Creates hyperlinks, 'true' gets rid of the boxes
 \usepackage{xcolor}
-	\definecolor{c1}{rgb}{0,0,1} 				  % Blue
-	\definecolor{c2}{rgb}{0,0.3,0.9} 			% Light blue
-	\definecolor{c3}{rgb}{0.3,0,0.9} 			% Red blue
+	\definecolor{c1}{rgb}{0,0,0} 		   		 % Black
+	\definecolor{c2}{rgb}{0,0,1} 				 % Blue
+	\definecolor{c3}{rgb}{0,0.3,0.9} 		  % Light blue
 	\hypersetup{
-	    linkcolor={c1}, 								% Internal links
-	    citecolor={c2}, 								% Citations
-	    urlcolor={c3} 									 % External links/urls
+		citecolor={c1}, 							    % Citations
+	    linkcolor={c2}, 								% Internal links
+	    urlcolor={c3} 									% External links/URLs
 	}
-\usepackage[round,authoryear]{natbib} 	% For cite and abbrvnat bibliography style
-%\usepackage{cite} 									% Needed for cite
 
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
-\usepackage[utf8]{inputenc}			  			% Handles accented characters
-%\usepackage{underscore}				   		% Handles "_" in text but hurts labels/files with it
-%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
+\usepackage[utf8]{inputenc}			  		 % Handles accented characters (same output on all systems)
+%\usepackage[T1]{fontenc}		  	  		% Fonts to use for printing characters
+%\usepackage{underscore}				   	% Handles "_" in text but hurts filenames/labels with it
+
+%---------------------------------------------------------------
+% References
+%---------------------------------------------------------------
+\usepackage[style=authoryear,maxbibnames=99,maxcitenames=2,uniquelist=false,uniquename=false,dashed=false,backend=biber]{biblatex} 			 % To read and process bibliographic data
+\usepackage[style=american]{csquotes}  % For inline and display quotations
+
+\addbibresource{../References/library.bib} %Imports the bibliography file 
+\DeclareFieldFormat[book]{title}{#1}		  % Non-italic book title (comment otherwise)
+\DeclareFieldFormat[article]{pages}{#1} 	% No pp. before pages
+\DeclareFieldFormat[incollection]{pages}{#1} 
+\renewbibmacro{in:}{} 								% No in: before journal title
+\xpretobibmacro{date+extradate}{\setunit{\addperiod\space}}{}{}	% Dot after author
+\AtEveryBibitem{										% Omit fields
+	\ifentrytype{article}{
+		\clearfield{doi}%
+		\clearfield{url}%
+		\clearfield{urldate}%
+		\clearfield{review}%
+		\clearfield{series}%%
+		\clearfield{month}%%
+	}{}
+}
+\uspunctuation											% Activate ‘American-style’ punctuation
+%\stdpunctuation									  % Restors standard punctuation
 
 %---------------------------------------------------------------
 % Appendix
 %---------------------------------------------------------------
-\usepackage[page]{appendix}	
+\usepackage[page]{appendix}						% options: titletoc, toc, title (adds 'Appendix' before each letter), page (adds a separate title “Appendices” before the first appendix)
 	\renewcommand*\appendixpagename{Appendix}
 	\renewcommand*\appendixtocname{Appendix}
-% appendix options: [titletoc,title,page,toc]; 
-% title adds 'Appendix' before each letter, 
-% page adds a separate title “Appendices” above the first appendix
