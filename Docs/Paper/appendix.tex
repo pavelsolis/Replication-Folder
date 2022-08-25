@@ -1,27 +1,37 @@
 \newpage
 \begin{appendices}
 	
+\setcounter{page}{1}										% Restart page numbering
+\setcounter{footnote}{0}									% Restart footnote counter
+\renewcommand{\thetable}{\thesection.\arabic{table}}		% Table name aligned to appendix
+\renewcommand\thefigure{\thesection.\arabic{figure}}		% Figure name aligned to appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}	% Equation name aligned to appendix
+%	\captionsetup[table]{name=Table A}						% Change table caption prefix
+
+\section{Section} % \label{sec:appdx1}
+\vspace{0.7cm}
 \iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
 \iftoggle{cboxes}{	   				  % Turn it on/off in packages.tex
 	\begin{boxeditems}
 		\item Issue.
 	\end{boxeditems}}{}
-
-% \captionsetup[table]{name=Table A}
-% Changes table caption prefix plus restart table and figure counters
-\renewcommand{\thetable}{\thesection.\arabic{table}}
-\renewcommand\thefigure{\thesection.\arabic{figure}}
-
-\section{Appendix Name} % \label{sec:appdx1}
 \setcounter{table}{0}
 \setcounter{figure}{0}
+\setcounter{equation}{0}
 
-Appendix content.
+Appendix content.\footnote{The footnote counter is restarted.}
 
 
-\section{Appendix Name} % \label{sec:appdx2}
+\section{Section} % \label{sec:appdx2}
+\vspace{0.7cm}
+\iftoggle{toclinks}{\gototoc}{} % Turn it on/off in packages.tex, command in macros.tex
+\iftoggle{cboxes}{	   				  % Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item Issue.
+	\end{boxeditems}}{}
 \setcounter{table}{0}
 \setcounter{figure}{0}
+\setcounter{equation}{0}
 
 Appendix content.
 
