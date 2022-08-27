@@ -1,26 +1,25 @@
-%% Customized Macros
-% Variable Definitions, Equations
+%% Variable Definitions
 
 %---------------------------------------------------------------
-% Variable Definitions
-%---------------------------------------------------------------
 % General
+%---------------------------------------------------------------
 \providecommand{\tnr}{n}
 \providecommand{\tidx}{t}
 \providecommand{\Yield}{y_{\tidx, \tnr}}
 \providecommand{\PriceLag}{P_{\tidx+1,\tnr-1}}
 
+%---------------------------------------------------------------
 % Math fonts
+%---------------------------------------------------------------
 \providecommand{\Expec}{\mathrm{E}_{\tidx}}
 \providecommand{\Qmeasure}{\mathbb{Q}}
 
+%---------------------------------------------------------------
 % Greeks
+%---------------------------------------------------------------
 \providecommand{\error}{\nu_{\tidx}}
 
-%\providecommand{\}{}
-
 %---------------------------------------------------------------
-% Equations
+% Notes
 %---------------------------------------------------------------
-\newcommand{\eqYP}{\Yield = \Expec^\Qmeasure [\PriceLag] + \error}
-
+%\providecommand defines a new command; if it is already defined, the (re)definition is ignored instead of sending an error.
