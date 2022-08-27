@@ -1,0 +1,7 @@
+All equations are defined in Docs -> Equations -> equations.tex to ensure that each equation is written only once. This is helpful, for example, when the same equation needs to be numbered in the text but unnumbered in the slides.
+
+Once equations are defined in the equations.tex file, create a .tex file (in the Equations folder) calling each one using the following naming conventions: (1) an 'N' or 'U' at the end of the filename will indicate whether the equation is numbered or unnumbered, and (2) for numbered equations, the filename is the same as the label name to reference the equation. See the examples below and the example files in the Equations folder.
+- Example 1: if EqNameN.tex, then \label{eq:EqNameN}.
+- Example 2: if equations (1), (2) and (3) need to be numbered, unnumbered and both, each one is defined once in equations.tex but there will be four files: EqOneN.tex, EqTwoU.tex, EqThreeN.tex and EqThreeU.tex; so if equation (3) needs a correction, only one file is changed (equations.tex) instead of two (EqThreeN.tex, EqThreeU.tex).
+
+Finally, in the paper or the slides call an equation with \input{../Equations/EqNameN} and reference it as \ref{eq:EqNameN}.
