@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[outdir=./]{epstopdf}  					% Avoids errors when input figures
+\usepackage[labelsep=period,labelfont=bf]{caption}
+\usepackage{afterpage}
+\usepackage{subcaption}
+\input{../Settings/macros}			   				% Customized commands
+\input{../Settings/variables}			    		% Variable definitions
+%\pagestyle{empty}
+
+\begin{document}
+	\afterpage{
+		\begin{figure}[tbph]
+			\caption{Title of Figure} \label{fig:exsubfigure}
+			\begin{center}							% Center the minipage on the line
+				\begin{minipage}{0.9\linewidth}
+						\begin{subfigure}[t]{\linewidth}
+							\begin{center}			% Center the subfigure inside the minipage
+								\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=0.2\textheight,width=1\linewidth,keepaspectratio]{../Figures/exfigure1} \\
+							\end{center}
+							\vspace{-0.5cm}
+							\caption{Subfigure A} \label{subfig:exsubfigureA}
+							\vspace{0.5cm}
+						\end{subfigure}
+						
+						\begin{subfigure}[t]{\linewidth}
+							\begin{center}
+								\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=0.2\textheight,width=1\linewidth,keepaspectratio]{../Figures/exfigure2} \\
+							\end{center}
+							\vspace{-0.5cm}
+							\caption{Subfigure B} \label{subfig:exsubfigureB}
+							\vspace{0.5cm}
+						\end{subfigure}
+					\fignotes{Add standalone description. You can reference sections like \ref{sec:data} and variables like \lastobs.} 
+				\end{minipage}
+			\end{center}
+		\end{figure}
+	}
+\end{document}
+% trim = {<left> <lower> <right> <upper>}

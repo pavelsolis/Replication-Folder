@@ -1,44 +1,20 @@
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage[margin=1in]{geometry}
-\usepackage[outdir=./]{epstopdf}  					% Avoids errors when input figures
-\usepackage[labelsep=period,labelfont=bf]{caption}
-%\usepackage{subcaption}
+\documentclass[tikz,border=3pt]{standalone}
+\usetikzlibrary{arrows,intersections,decorations.pathreplacing}
 
 \begin{document}
 
-\begin{figure}[tbph]
-	\begin{center}
-		\caption{Caption of Figure}
-		\label{fig:factorslines}
-		\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-	\end{center}
-	
-	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
-\end{figure}
-
-% trim = {<left> <lower> <right> <upper>}
-
-%\begin{figure}[tbph]
-%	\caption{Caption of Figure}
-%	\label{fig:roa_n_ratios}
-%	\begin{subfigure}[t]{\textwidth}
-%		\begin{center}
-%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-%			\caption{Subcaption of Figure} \label{subfig:roadcmp}
-%%			\vspace{.5cm}
-%		\end{center}
-%	\end{subfigure}
-%	
-%	\begin{subfigure}[t]{\textwidth}
-%		\begin{center}
-%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-%			\caption{Subcaption of Figure} \label{subfig:bankratios}
-%%			\vspace{.4cm}
-%		\end{center}
-%	\end{subfigure}
-%	
-%	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
-%\end{figure}
+\begin{tikzpicture}
+\draw[very thick,-{latex}] (0,0) -- (11.35,0) node{};
+\foreach \x/\l in {0.5/2000,5.5/2010,8/2015,10.5/2020}
+\draw (\x,3pt) -- (\x,-3pt) node[below]{$\l$};
+\draw [decorate,decoration={brace,amplitude=5pt}]
+(0.5,1.6) -- (10.5,1.6) node[midway,yshift=1em]{Phase 2};
+\draw [decorate,decoration={brace,amplitude=5pt}]
+(5.5,0.9) -- (10.5,0.9) node[midway,yshift=1em]{Phase 3};
+\draw [decorate,decoration={brace,amplitude=5pt}]
+(0.5,0.2) -- (5.5,0.2) node[midway,yshift=1em]{Phase 1};
+\draw [decorate,decoration={brace,amplitude=5pt}]
+(8,0.2) -- (10.5,0.2) node[midway,yshift=1em]{Phase 1};
+\end{tikzpicture}
 
 \end{document}

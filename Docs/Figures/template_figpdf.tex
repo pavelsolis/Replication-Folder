@@ -3,42 +3,24 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[outdir=./]{epstopdf}  					% Avoids errors when input figures
 \usepackage[labelsep=period,labelfont=bf]{caption}
-%\usepackage{subcaption}
+\usepackage{afterpage}
+\input{../Settings/macros}			   				% Customized commands
+\input{../Settings/variables}			    		% Variable definitions
+%\pagestyle{empty}
 
 \begin{document}
-
-\begin{figure}[tbph]
-	\begin{center}
-		\caption{Caption of Figure}
-		\label{fig:factorslines}
-		\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-	\end{center}
-	
-	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
-\end{figure}
-
-% trim = {<left> <lower> <right> <upper>}
-
-%\begin{figure}[tbph]
-%	\caption{Caption of Figure}
-%	\label{fig:roa_n_ratios}
-%	\begin{subfigure}[t]{\textwidth}
-%		\begin{center}
-%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-%			\caption{Subcaption of Figure} \label{subfig:roadcmp}
-%%			\vspace{.5cm}
-%		\end{center}
-%	\end{subfigure}
-%	
-%	\begin{subfigure}[t]{\textwidth}
-%		\begin{center}
-%			\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.4\textheight,width=1\textwidth,keepaspectratio]{../filename} \\
-%			\caption{Subcaption of Figure} \label{subfig:bankratios}
-%%			\vspace{.4cm}
-%		\end{center}
-%	\end{subfigure}
-%	
-%	\vspace{-0.4cm} \caption*{\footnotesize{\textit{Notes}: Notes.}}
-%\end{figure}
-
+	\afterpage{
+		\begin{figure}[tbph]
+			\caption{Title of Figure} \label{fig:exfigure}
+			\begin{center}							% Center the minipage on the line
+				\begin{minipage}{0.9\linewidth}
+					\begin{center}					% Center the figure inside the minipage
+						\includegraphics[trim={0cm 0cm 0cm 0cm},clip,height=.2\textheight,width=1\textwidth,keepaspectratio]{../Figures/exfigure1} \\
+					\end{center}
+					\fignotes{Add standalone description. You can reference sections like \ref{sec:data} and variables like \lastobs.} 
+				\end{minipage}
+			\end{center}
+		\end{figure}
+	}
 \end{document}
+% trim = {<left> <lower> <right> <upper>}
