@@ -1,17 +1,30 @@
-\documentclass[a4paper, 12pt]{article} 
-%\usepackage[legalpaper, landscape, margin=2in]{geometry}
+\documentclass[a4paper,12pt]{article}
+\usepackage[labelsep=period,labelfont=bf]{caption}
+\usepackage[margin=1in]{geometry}
+\usepackage{multirow}
 \usepackage{booktabs}
-\input{../../Settings/macros}
+\usepackage{threeparttable}
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\input{../Settings/macros}			   				% Customized commands
+\input{../Settings/variables}			    		% Variable definitions
+%\pagestyle{empty}
 
 \begin{document}
-	\thispagestyle{empty}
-	\begin{scriptsize}
-	\begin{table}
-	\begin{center}
-		
-		\input {}
-	 % \caption{Description.}
-	\end{center}
-	\end{table}
-	\end{scriptsize}
+	%	\afterpage{
+	\begin{normalsize}
+%		\begin{landscape}
+			\begin{table}[t]
+				\begin{center}
+					\caption{Title of Table} \label{tab:extable}
+					\begin{threeparttable}
+						\estauto{../Tables/t_float.tex}{10}
+						\tabnotes{Add standalone description. You can reference sections like \ref{sec:data} and variables like \lastobs. *, **, *** asterisks respectively indicate significance at the 10\%, 5\% and 1\% level.}
+					\end{threeparttable}
+				\end{center}
+			\end{table}
+%		\end{landscape}
+	\end{normalsize}
+	%	}
 \end{document}
