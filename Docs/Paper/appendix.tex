@@ -4,7 +4,7 @@
 \setcounter{page}{1}										% Restart page numbering
 \setcounter{footnote}{0}									% Restart footnote counter
 \renewcommand{\thetable}{\thesection.\arabic{table}}		% Table name aligned to appendix
-\renewcommand\thefigure{\thesection.\arabic{figure}}		% Figure name aligned to appendix
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}		% Figure name aligned to appendix
 \renewcommand{\theequation}{\thesection.\arabic{equation}}	% Equation name aligned to appendix
 %	\captionsetup[table]{name=Table A}						% Change table caption prefix
 
@@ -24,6 +24,7 @@ Appendix content.\footnote{The footnote counter is restarted.}
 \input{../Equations/ExEqN}
 %\input{../Equations/ExEqU} use it in slides
 
+\input{../Figures/template_figpdf}
 
 \section{Section} % \label{sec:appdx2}
 \vspace{0.7cm}
@@ -39,5 +40,7 @@ Appendix content.\footnote{The footnote counter is restarted.}
 Appendix content.
 
 \input{../Equations/ExLongN}
+
+\input{../Figures/template_subfigpdf}
 
 \end{appendices}
