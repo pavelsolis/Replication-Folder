@@ -1,15 +1,15 @@
 \documentclass{article}
-\usepackage{graphicx}
-\usepackage[margin=1in]{geometry}
-\usepackage[outdir=./]{epstopdf}  					% Avoids errors when input figures
 \usepackage[labelsep=period,labelfont=bf]{caption}
+\usepackage[margin=1in]{geometry}
+\usepackage[outdir=./]{epstopdf}
+\usepackage{graphicx}
 \usepackage{afterpage}
 \input{../Settings/macros}			   				% Customized commands
 \input{../Settings/variables}			    		% Variable definitions
 %\pagestyle{empty}
 
 \begin{document}
-	\afterpage{
+%	\afterpage{
 		\begin{figure}[tbph]
 			\caption{Title of Figure} \label{fig:exfigure}
 			\begin{center}							% Center the minipage on the line
@@ -21,6 +21,6 @@
 				\end{minipage}
 			\end{center}
 		\end{figure}
-	}
+%	}
 \end{document}
 % trim = {<left> <lower> <right> <upper>}
