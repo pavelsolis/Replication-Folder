@@ -20,10 +20,10 @@
 % Link back to section from ToC
 \newcommand{\maketoc}{
 	\hypertarget{toc}{}
-	\newpage
 	\tableofcontents
-	\pagenumbering{gobble}
-	\vspace{2.5\bigskipamount} }
+	\thispagestyle{empty}
+	\vspace{2.5\bigskipamount}
+}
 
 %---------------------------------------------------------------
 % Tasks
@@ -45,7 +45,7 @@
 % Tables
 %---------------------------------------------------------------
 
-% Estout commands following Jörg Weber
+% Estout commands following Jörg Weber (https://www.jwe.cc/2012/03/stata-latex-tables-estout/)
 \newcommand{\sym}[1]{\rlap{#1}}
 
 \let\estinput=\input	% define new input command to flatten the document
@@ -62,14 +62,14 @@
 	}
 }
 
-% Allow line breaks with \\ in table columns, e.g. mtitle("\specialcell{Co-Holding\\> \pounds100}")
+% Allow line breaks with \\ in table columns, e.g. mtitle("\specialcell{Co-Holding\\> \var1}")
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 %---------------------------------------------------------------
 % Subcaptions
 %---------------------------------------------------------------
 
-% Notes after figures following Jörg Weber
+% Notes after figures following Jörg Weber (https://www.jwe.cc/2012/03/stata-latex-tables-estout/)
 \newcommand{\figtext}[1]{
 	\vspace{-1ex}
 	\captionsetup{justification=justified,font=footnotesize}
