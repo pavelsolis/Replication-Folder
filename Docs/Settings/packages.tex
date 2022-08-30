@@ -1,6 +1,6 @@
 %% Packages
 % Conditionals, Contents, Layout, Formatting, Math, Figures and Tables,
-% Hyperlinks, Special Characters, References, Appendix
+% Hyperlinks, Special Characters, Appendix, References
 
 %---------------------------------------------------------------
 % Conditionals
@@ -20,7 +20,7 @@
 %---------------------------------------------------------------
 % Contents
 %---------------------------------------------------------------
-\usepackage[nottoc]{tocbibind} 		 			% Displays bib in ToC, nottoc omits ToC from itself
+\usepackage[nottoc]{tocbibind} 		 			% nottoc omits ToC from itself
 \usepackage{lipsum}						   		% To add dummy text
 %\usepackage{authblk}					 		% Multiple authors in blocks or in footnotes
 %\usepackage{todonotes} 			   			% For to-do lists
@@ -95,6 +95,13 @@
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
 
 %---------------------------------------------------------------
+% Appendix
+%---------------------------------------------------------------
+\usepackage[page]{appendix}						% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
+\renewcommand*\appendixpagename{Appendix}
+\renewcommand*\appendixtocname{Appendix}
+
+%---------------------------------------------------------------
 % References
 %---------------------------------------------------------------
 % To read and process bibliographic data
@@ -112,17 +119,19 @@
 		\clearfield{doi}%
 		\clearfield{url}%
 		\clearfield{urldate}%
+		\clearfield{issn}%
+		\clearfield{eprint}%
 		\clearfield{review}%
 		\clearfield{series}%%
 		\clearfield{month}%%
 	}{}
 }
+\renewbibmacro*{volume+number+eid}{%			% Redefine to remove dot after volume
+	\printfield{volume}%
+	\setunit*{\addnbspace}%
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}} % Parenthesis around volume number
 \uspunctuation									% Activate ‘American-style’ punctuation
 %\stdpunctuation								% Restores standard punctuation
-
-%---------------------------------------------------------------
-% Appendix
-%---------------------------------------------------------------
-\usepackage[page]{appendix}						% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
-	\renewcommand*\appendixpagename{Appendix}
-	\renewcommand*\appendixtocname{Appendix}
