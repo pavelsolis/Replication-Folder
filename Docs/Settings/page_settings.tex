@@ -1,6 +1,6 @@
 %% Page Settings
 % Date Format, Margins, Head and Foot, Indentation, Spacing,
-% Hyphenation, Thanks
+% Hyphenation, Thanks, Reset Float Defaults
 
 %---------------------------------------------------------------
 % Date Format
@@ -12,27 +12,27 @@
 %---------------------------------------------------------------
 % Margins
 %---------------------------------------------------------------
-\usepackage[margin=1in]{geometry}	 % Sets the margins of the file
+\usepackage[margin=1in]{geometry}	 		% Sets the margins of the file
 %\usepackage[top=2.54cm,bottom=2.54cm,left=3.17cm,right=3.17cm]{geometry}
 
 %---------------------------------------------------------------
 % Head and Foot
 %---------------------------------------------------------------
-\usepackage{fancyhdr} 						 % For head and foot options
+\usepackage{fancyhdr} 						% For head and foot options
 
 %---------------------------------------------------------------
 % Indentation
 %---------------------------------------------------------------
-\parindent=15pt 				 				  % 15pt is the default in one-column documents
+\parindent=15pt 				 			% 15pt is the default in one-column documents
 
 %---------------------------------------------------------------
 % Spacing
 %---------------------------------------------------------------
 \usepackage{setspace}
 	\doublespacing
-	%\setlength{\abovedisplayskip}{1pt}  % Sets spaces above/below an equation
+	%\setlength{\abovedisplayskip}{1pt}  	% Sets spaces above/below an equation
 	%\setlength{\belowdisplayskip}{1pt}
-\AtBeginDocument{								 % Avoids excesive spacing b/w floating objects
+\AtBeginDocument{							% Avoids excesive spacing b/w floating objects
 	\addtolength\abovedisplayskip{-0.2\baselineskip}
 	\addtolength\belowdisplayskip{-0.2\baselineskip}
 }
@@ -40,9 +40,9 @@
 %---------------------------------------------------------------
 % Hyphenation
 %---------------------------------------------------------------
-\sloppy 								 				% Try to avoid hyphens (\fussy restores defaults)
-%\hyphenation{word} 		   				  % To manually set the hyphenation
-	%\hyphenpenalty=10000			   	   % Large values force hyphenless but sparse lines likely 
+\sloppy 								 	% Try to avoid hyphens (\fussy restores defaults)
+%\hyphenation{word} 		   				% To manually set the hyphenation
+	%\hyphenpenalty=10000			   	   	% Large values force hyphenless but sparse lines likely 
 
 %---------------------------------------------------------------
 % Thanks: Customize Symbols
@@ -52,3 +52,23 @@
 		\mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
 		\or \ddagger\ddagger \else\@ctrerr\fi}}
 \makeatother
+
+%---------------------------------------------------------------
+% Reset Float Defaults (following Andrew Young, https://aty.sdsu.edu/bibliog/latex/floats.html)
+%---------------------------------------------------------------
+
+%   General parameters, for ALL pages
+\renewcommand{\topfraction}{0.9}			% Max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}			% Max fraction of floats at bottom
+
+%   Parameters for TEXT pages (not float pages)
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}     			% 2 may work better
+\setcounter{dbltopnumber}{2}    			% For 2-column pages
+\renewcommand{\dbltopfraction}{0.9}			% Fit big float above 2-col. text
+\renewcommand{\textfraction}{0.07}			% Allow minimal text with figs
+
+%   Parameters for FLOAT pages (not text pages)
+\renewcommand{\floatpagefraction}{0.7}		% Require fuller float pages (floatpagefraction < topfraction)
+\renewcommand{\dblfloatpagefraction}{0.7} 	% Require fuller float pages
