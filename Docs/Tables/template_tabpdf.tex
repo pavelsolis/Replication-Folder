@@ -1,12 +1,14 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[labelsep=period,labelfont=bf]{caption}
 \usepackage[margin=1in]{geometry}
-\usepackage{multirow}
-\usepackage{booktabs}
-\usepackage{threeparttable}
-\usepackage{pdflscape}
 \usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{siunitx}
+\usepackage{threeparttable}
 \usepackage{afterpage}
+\usepackage{pdflscape}
 \input{../Settings/macros}			   				% Customized commands
 \input{../Settings/variables}			    		% Variable definitions
 %\pagestyle{empty}
@@ -15,7 +17,7 @@
 	%	\afterpage{
 	\begin{normalsize}
 %		\begin{landscape}
-			\begin{table}[t]
+			\begin{table}[tbph]
 				\begin{center}
 					\caption{Title of Table} \label{tab:extable}
 					\begin{threeparttable}
