@@ -13,10 +13,12 @@
 %---------------------------------------------------------------
 % Title
 %---------------------------------------------------------------
-\title{ \vspace{-4ex}\input{../Settings/title}\thanks{ \protect\input{thanks} } }
+\title{ \vspace{-4ex}\input{../Settings/title} \iftoggle{blind}{}{ \hspace{-1.4ex}\thanks{ \protect\input{thanks} } } }
 \author{
-	\input{../Settings/author1}\thanks{ \protect\input{../Settings/affil1} }\\\input{../Settings/instit1} \and 
-	\input{../Settings/author2}\thanks{ \protect\input{../Settings/affil2} }\\\input{../Settings/instit2}
+	\iftoggle{blind}{}{
+		\input{../Settings/author1}\thanks{ \protect\input{../Settings/affil1} }\\\input{../Settings/instit1} \and 
+		\input{../Settings/author2}\thanks{ \protect\input{../Settings/affil2} }\\\input{../Settings/instit2}
+	}
 }
 \iftoggle{fulldraft}{ 
 	\date{First draft: January 1, 2000 \\
@@ -36,7 +38,7 @@
 		\printbibliography[title={References},heading=bibintoc]
 	\end{singlespace}
 	
-	\input{appendix}
+	\input{appendix}							% If standalone appendix, comment line and re-run Biber
 }{}												% Closes \iftoggle{fulldraft}
 
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
@@ -52,6 +54,6 @@
 %---------------------------------------------------------------
 % Notes
 %---------------------------------------------------------------
-% To remove previously citated references in TexStudio:
+% To update or remove previously citated references in TexStudio:
 % - Tools -> Commands -> Biber
 % - Build & View

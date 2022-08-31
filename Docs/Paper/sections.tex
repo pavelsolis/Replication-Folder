@@ -1,29 +1,29 @@
-\section{Introduction}
+\section{Introduction} \label{sec:intro}
 \iftoggle{toclinks}{\gototoc}{} 				% Turn it on/off in packages.tex
 \iftoggle{cboxes}{	   				  			% Turn it on/off in packages.tex
 	\begin{boxeditems}
 		\item To-do list.
 	\end{boxeditems}}{}
 
-Part I: RAP (research question, answer, positioning paper in the literature); the order may vary. Part II: Description of sections' takeaways.
+Part I: RAP (research question, answer, positioning paper in the literature); the order may vary. Part II: Description of sections' takeaways. Length from 3 to 5 pages.
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
 
 David Evans' approach for an introduction:\footnote{\url{https://www.cgdev.org/blog/how-write-introduction-your-development-economics-paper}}
 \begin{singlespace}
+	\vspace{-0.3cm}
 	\begin{itemize}
 		\item 1–2 paragraphs. Motivate with a question or problem.
 		\item 1 paragraph. Clearly state your research question.
 		\item 1 paragraph. Empirical approach.
 		\item 3–4 paragraphs. Detailed results.
 		\item 1–3 paragraphs. Value-added relative to related literature.
-		\item Optional paragraphs: robustness checks, policy relevance, limitations.
+		\item Optional paragraphs: Robustness checks, policy relevance, limitations.
 		\item 1 paragraph. Roadmap.
 	\end{itemize}
 \end{singlespace}
 
-For an example of a great introduction see \textcite{MankiwRomerWeil:1992}.
-%Citation examples: \textcite{ChangLi:2017} and \parencite{ChangLi:2017}.
+\textchange{For an example of a great introduction see \textcite{MankiwRomerWeil:1992QJE}.}
 
 }{}												% Closes \iftoggle{fulldraft}
 
@@ -67,20 +67,33 @@ Sub-subsection content (omitted from outline).
 \iftoggle{cboxes}{	   				  			% Turn it on/off in packages.tex
 	\begin{boxeditems}
 		\item To-do list.
-\end{boxeditems}}{}
+	\end{boxeditems}}{}
 
 Section takeaway.
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
 Section content (omitted from outline).
 	
-	\input{../Equations/ExMultiOneN}
-	\input{../Equations/ExMultiEachN}
-	
-	\input{../Figures/template_figpdf}
-	
-	\input{../Tables/template_tabpdf}
-	
+\input{../Equations/exMultiOneN}
+\input{../Equations/exMultiEachN}
+
+\iftoggle{floatstxt}{
+	\input{../Figures/exfigpdf}
+	}{
+	\begin{center}
+		[Insert Figure \ref{fig:exfigpdf} Here.]
+	\end{center}
+	}
+
+\iftoggle{floatstxt}{
+	\input{../Tables/extabpdf}
+	}{
+	\begin{center}
+		[Insert Table \ref{tab:extabpdf} Here.]
+	\end{center}
+	}
+
+
 }{}												% Closes \iftoggle{fulldraft}
 
 
@@ -100,16 +113,20 @@ Remarks (omitted from outline).
 
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
+	\iftoggle{blind}{
 \section*{Acknowledgments}
 
 \input{thanks}
-
+	}{}
 }{}												% Closes \iftoggle{fulldraft}
 
 %---------------------------------------------------------------
 % Figures and Tables
 %---------------------------------------------------------------
 
-%\newpage
-%\input{../Figures/fig1}	% \ref{fig:fig1}
-%\input{../Tables/tab1}		% \ref{tab:tab1}
+\iftoggle{floatstxt}{}{
+	\newpage
+	\input{../Figures/exfigpdf}
+	
+	\input{../Tables/extabpdf}
+}
