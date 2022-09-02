@@ -114,9 +114,9 @@ Remarks (omitted from outline).
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
 	\iftoggle{blind}{
-\section*{Acknowledgments}
-
-\input{thanks}
+	\section*{Acknowledgments}
+	
+	\input{thanks}
 	}{}
 }{}												% Closes \iftoggle{fulldraft}
 
@@ -124,9 +124,13 @@ Remarks (omitted from outline).
 % Figures and Tables
 %---------------------------------------------------------------
 
-\iftoggle{floatstxt}{}{
-	\newpage
-	\input{../Figures/exfigpdf}
+\iftoggle{fulldraft}{							% Turn it on/off in packages.tex
 	
-	\input{../Tables/extabpdf}
-}
+	\iftoggle{floatstxt}{}{
+		\newpage
+		\input{../Figures/exfigpdf}
+		
+		\input{../Tables/extabpdf}
+	}
+
+}{}												% Closes \iftoggle{fulldraft}
