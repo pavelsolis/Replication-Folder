@@ -168,7 +168,9 @@ Once created, click on 'Clone or Download' and copy the https address. In the te
 $ git clone <URL>	# Use the http address you just copied
 ```
 
-A new folder with the name of the new repository will be created under the folder GitHub/Book. Update the *.gitignore* file in GitHub.com including extensions for Excel, Matlab, Stata, R, Python, Shell and Lyx. Copy and paste the contents of the Ch_Skeleton folder into the new repository. Use the following commands in the terminal to update the local and remote repositories: `cd`, `add`, `commit`, `pull`, `push`. Follow the branching model below.
+A new folder with the name of the new repository will be created under the folder GitHub/Book. Update the *.gitignore* file in GitHub.com including extensions for Excel, Matlab, Stata, R, Python, Shell and Lyx. Copy and paste the contents of the Replication-Folder into the new repository. **Note**: Git does not include empty folders in updates (in `commit` or `push` commands) to remote repositories like GitHub. To make Git to recognize such folders, the non-official convention is to put a *.gitkeep* file in them. For this, use `cd` to move to the empty folder and type `touch .gitkeep`.
+
+Use the following commands in the terminal to update the local and remote repositories: `cd`, `add`, `commit`, `pull`, `push`. Follow the branching model below.
 
 
 ### Daily Workflow: Status, Add, Commit and Push
@@ -190,14 +192,15 @@ $ git add <filename1.ext> <filename2.ext>
 - HEAD is the name of the current commit in the current branch.
 - To do the same but for a specific file, use: `git reset HEAD <filename.ext>`, `git reset HEAD -- path/to/file` or `git reset <filename.ext>`. To unstage all files at once, you can also use: `git reset HEAD -- .`.
 - To stop tracking changes to a file without removing it from the working directory (i.e. to only remove the file from the index or staging area), use: `git rm --cached <filename.ext>`. The  working directory is not affected by `git rm --cached`, because `--cached` works directly in the index. This command will set the file to the state it was after it was added to the staging area.
-- To discard changes in the working directory before they are staged (*Warning*: When you do this, you will lose any unsaved work!), use: `git checkout HEAD -- <filename.ext>`
+- See below to discard changes in the working directory.
 - `--` tells Git that what follows after the two dashes are filenames.
 
 Once you finish making changes to the files in the staging area, the next thing to do is to record (i.e. **commit**) those changes. That is, to lock in the changes to your *local* repository, you need to commit a snapshot of the files in the staging area:
 ```bash
-$ git commit -m "Brief (< 50 characters) meaningful comment"
+$ git commit -m "Brief (< 72 characters) meaningful comment"
 ```
 - Always run tests and review changes *before* committing. When working with code, this means to commit working versions of it.
+- See this [link](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) for guidelines on writing commit messages.
 
 When you want to commit all the files in the staging area (e.g. a whole project), you can combine the add and commit steps in one step as follows:
 ```bash
@@ -243,10 +246,17 @@ Discard all local changes, but save them for possible re-use later:
 $ git stash
 ```
 
-Discarding local changes (permanently) to a file:
+Discard local changes (permanently) to a file *before* they are staged (**Warning**: When you do this, you will lose any unsaved work!):
 ```bash
-$ git checkout -- <file>
+$ git restore <file.ext>			# For a specific file
+$ git restore .					# For all unstaged files in current working directory
+
+	# For Git versions previous to 2.23
+$ git checkout -- <file.ext>			# For a specific file
+$ git checkout HEAD -- <filename.ext>
+$ git checkout -- .				# For all unstaged files in current working directory
 ```
+
 
 Discard all local changes to all files permanently:
 ```bash
@@ -260,7 +270,7 @@ $ git reset --soft HEAD^
 $ git reset HEAD path/to/unwanted_file		# Reset the unwanted files in order to leave them out from the commit
 $ git commit -c ORIG_HEAD 			# Commit again with this or the usual command
 ```
-Explained in this [link](https://stackoverflow.com/questions/12481639/remove-files-from-git-commit), which includes case where you also `git push`.
+Explained in this [link](https://stackoverflow.com/questions/12481639/remove-files-from-git-commit), which includes a case where you also did a `git push`.
 
 #### Add All Files But One
 When you want to include all (unstaged or untracked) files to the staging area except one (or a few more), it is easiest to add them all and then remove the ones that you don't want to include in the commit.
