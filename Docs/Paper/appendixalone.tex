@@ -1,0 +1,30 @@
+%---------------------------------------------------------------
+% Preamble
+%---------------------------------------------------------------
+\documentclass[a4paper, 12pt]{article} 			% Document class
+\input{../Settings/packages}		   		  	% Packages
+\input{../Settings/toggles}		   		  		% Toggles
+\input{../Settings/pagesetup}   				% Page settings
+\input{../Settings/macros}		        		% Customized commands
+\input{../Settings/variables}			     	% Variable definitions
+\input{../Equations/equations}			     	% Equations
+%---------------------------------------------------------------
+
+\begin{document}
+
+\input{appendix}
+
+\begin{singlespace}
+	\printbibliography[title={References},heading=bibintoc]
+\end{singlespace}
+
+\iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
+	
+\end{document}
+
+%---------------------------------------------------------------
+% Notes
+%---------------------------------------------------------------
+% To update or remove previously citated references in TexStudio:
+% - Tools -> Commands -> Biber
+% - Build & View
