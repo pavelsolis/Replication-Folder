@@ -3,6 +3,7 @@
 %---------------------------------------------------------------
 \documentclass[a4paper, 12pt]{article} 			% Document class
 \input{../Settings/packages}		   		  	% Packages
+\input{../Settings/toggles}		   		  		% Toggles
 \input{../Settings/pagesetup}   				% Page settings
 \input{../Settings/macros}		        		% Customized commands
 \input{../Settings/variables}			     	% Variable definitions
@@ -13,17 +14,19 @@
 %---------------------------------------------------------------
 % Title
 %---------------------------------------------------------------
-\title{ \vspace{-4ex}\input{../Settings/title} \iftoggle{blind}{}{ \hspace{-1.4ex}\thanks{ \protect\input{thanks} } } }
-\author{
-	\iftoggle{blind}{}{
-		\input{../Settings/author1}\thanks{ \protect\input{../Settings/affil1} }\\\input{../Settings/instit1} \and 
-		\input{../Settings/author2}\thanks{ \protect\input{../Settings/affil2} }\\\input{../Settings/instit2}
-	}
+\title{ \vspace{-4ex}\input{../Settings/title}  
+	\iftoggle{fulldraft}{ \iftoggle{blind}{}{ \hspace{-1.4ex}\thanks{ \protect\input{thanks} } } }{}
 }
-\iftoggle{fulldraft}{ 
+\iftoggle{fulldraft}{
+	\author{
+		\iftoggle{blind}{}{
+			\input{../Settings/author1}\thanks{ \protect\input{../Settings/affil1} }\\\input{../Settings/instit1} \and 
+			\input{../Settings/author2}\thanks{ \protect\input{../Settings/affil2} }\\\input{../Settings/instit2}
+		}
+	}
 	\date{First draft: January 1, 2000 \\
 		  This draft: \today}
-}{ \date{} }
+}{ \author{} \date{} }
 \maketitle	\vspace{-4ex}
 
 %---------------------------------------------------------------
@@ -33,12 +36,12 @@
 
 \input{sections}
 
-\iftoggle{fulldraft}{							% References and appendix only in full draft
+\iftoggle{fulldraft}{							% References (and appendix) only in full draft
 	\begin{singlespace}
 		\printbibliography[title={References},heading=bibintoc]
 	\end{singlespace}
 	
-	\input{appendix}							% If standalone appendix, comment line and re-run Biber
+%	\input{appendix}							% Comment line if standalone appendix (re-run biber)
 }{}												% Closes \iftoggle{fulldraft}
 
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
