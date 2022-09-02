@@ -8,6 +8,12 @@
 \renewcommand{\theequation}{\thesection.\arabic{equation}}	% Equation name aligned to appendix
 %	\captionsetup[table]{name=Table A}						% Change table caption prefix
 
+\begin{center}
+	{\LARGE\textbf{Appendix} \\ \vspace{0.3cm}
+	\input{../Settings/title}}
+\end{center}
+
+
 \section{Section} % \label{sec:appdx1}
 \vspace{0.7cm}
 \iftoggle{toclinks}{\gototoc}{} 							% Turn it on/off in packages.tex
@@ -19,12 +25,12 @@
 \setcounter{figure}{0}
 \setcounter{equation}{0}
 
-Appendix content.\footnote{Counters for pages, footnotes, figures, tables and equations are restarted.}
+Appendix content.
 
 \input{../Equations/exEqN}
 %\input{../Equations/exEqU} use it in slides
 
-Citation examples: \textcite{ChangLi:2017AER} and \parencite{ChangLi:2017AER}.
+Examples of citations only made in appendix: \textcite{ChangLi:2017AER} and \parencite{ChangLi:2017AER}.
 
 
 \section{Section} % \label{sec:appdx2}
