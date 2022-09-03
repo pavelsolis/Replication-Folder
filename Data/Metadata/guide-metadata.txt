@@ -1,0 +1,19 @@
+The study considers two types of data files:
+- The Raw folder contains the original data files downloaded from different sources. 
+- The Analytic folder contains the analysis data files generated after cleaning and processing the original data files.
+
+
+Instructions on how to update files
+Excel files excluded from git, share (cloud based), license
+
+Raw Folder
+Each time you obtain a new original data file, add an entry for that file here right away.  For each of those files, this guide is intended to provide the kind of information typically found in a codebook accompanying a dataset a user would need to know to work with and interpret the data appropriately.
+
+Each time is updated register date.
+
+Analytic Folder
+
+Each time codes in Tidy are run, register date.
+
+Matlab generates the data*.mat files and the data*.xlsx files.
+Stata generates the data*.dta files.
