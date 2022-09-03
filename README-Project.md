@@ -37,7 +37,7 @@ The results in the paper were generated using the following:
 
 
 ## INSTRUCTIONS FOR REPLICATION
-The metadata guide (Data -> Metadata -> Metadata-Guide.docx) describes the (original and analysis) data files as well as instructions on how to update them.
+The metadata file (Data -> Metadata -> metadata.docx) describes the (original and analysis) data files as well as instructions on how to update them.
 
 The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (by focusing on specific parts). The following master files call the necessary bits in the required order:
 - Codes -> Analysis -> data_analysis.EXT: runs the codes sequentially to generate the results; the codes workflow is detailed below.
