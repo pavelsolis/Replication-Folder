@@ -2,18 +2,17 @@ The study considers two types of data files:
 - The Raw folder contains the original data files downloaded from different sources. 
 - The Analytic folder contains the analysis data files generated after cleaning and processing the original data files.
 
+Recommendations:
+- Each time you obtain a new original data file, add an entry for that file in metadata.docx.
+- Register the date in the respective entry for a file in metadata.docx:
+	- Each time an original data file is updated.
+	- Each time codes in the Tidy folder generate or update an analysis data file.
+- All the original and analysis data files used in the paper should be listed in metadata.docx.
 
-Instructions on how to update files
-Excel files excluded from git, share (cloud based), license
-
-Raw Folder
-Each time you obtain a new original data file, add an entry for that file here right away.  For each of those files, this guide is intended to provide the kind of information typically found in a codebook accompanying a dataset a user would need to know to work with and interpret the data appropriately.
-
-Each time is updated register date.
-
-Analytic Folder
-
-Each time codes in Tidy are run, register date.
-
-Matlab generates the data*.mat files and the data*.xlsx files.
-Stata generates the data*.dta files.
+Considerations:
+- Very large files (> 100 MB) do not work well in version control because they are often duplicated in the history.
+- GitHub limits the size of files to 50 MB.
+- For these reasons, Excel files are excluded from updates to the remote repository (this behavior can be reverted by commenting the \*.xls\* line in the *.gitignore file*).
+- So, generally original data files (with an Excel extension) are not included in the replication folder. They can be shared, however, by posting the file online or by using a cloud-based solution.
+- When collaborating, designate the person responsible for having the latest version of the Excel files and for sharing them.
+- Other data file extensions (e.g., .csv, .mat, .dta) are not explicitly excluded but be aware of the 50 MB limit.
