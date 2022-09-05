@@ -39,11 +39,11 @@ The results in the paper were generated using the following:
 ## INSTRUCTIONS FOR REPLICATION
 The metadata file (Data -> Metadata -> metadata.docx) describes the (original and analysis) data files as well as instructions on how to update them.
 
-The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (by focusing on specific parts). The following master files call the necessary bits in the required order:
+The replication folder uses stratification to avoid repeating code or duplicating files (e.g., equations, figures and tables), and to facilitate collaboration, development and testing (by focusing on specific parts). The following main files call the necessary bits in the required order:
 - Codes -> Analysis -> data_analysis.EXT: runs the codes sequentially to generate the results; the codes workflow is detailed below.
 - Docs -> Paper -> paper.tex: puts together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: calls equations, figures and tables.
-- doAll.sh: calls the previous master files sequentially to generate the results and the latest versions of the paper and the slides instead of executing each master file individually.
+- doAll.sh: calls the previous main files sequentially to generate the results and the latest versions of the paper and the slides instead of executing each main file individually.
 
 
 ## CONSIDERATIONS
@@ -70,7 +70,7 @@ For more on the structure of a Latex project, see:
 
 
 ## CODE WORKFLOW (OPTIONAL)
-Below is the order of the files called by the master files in the Codes subfolders to assist when following the codes.
+Below is the order of the files called by the main files in the Codes subfolders to assist when following the codes.
 
 In the Tidy subfolder, data_clean.EXT calls the following files:
 1. \<Ordered list of files called by data_clean.EXT\>
