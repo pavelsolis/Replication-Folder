@@ -1,20 +1,28 @@
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}					  % Input accented characters
-\usepackage{underscore}						   % Control the behaviour of "_" in the text
-%\usepackage[T1]{fontenc}					  % Fonts to use for printing characters
-\usepackage[margin=1in]{geometry} 	   % Sets the margins of the file
-\usepackage[colorlinks=true]{hyperref} 	% colorlinks=true gets rid of the awful boxes
+%---------------------------------------------------------------
+% Preamble
+%---------------------------------------------------------------
+\documentclass[[a4paper,12pt]{article}
+\usepackage[margin=1in]{geometry} 	   			% Sets the margins of the file
+\usepackage[utf8]{inputenc}					  	% Input accented characters
+\usepackage{underscore}						   	% Control the behaviour of "_" in the text
+%\usepackage[T1]{fontenc}					  	% Fonts to use for printing characters
+\usepackage[colorlinks=true]{hyperref} 			% colorlinks=true gets rid of the boxes
 \usepackage{enumitem,amssymb}
 \usepackage{xcolor}
-	\definecolor{clink}{rgb}{0,0,1} 			 % Blue
-	\definecolor{ccite}{rgb}{0,0.3,0.9} 	   % Light blue
-	\definecolor{curl}{rgb}{0.3,0,0.9} 			% Red blue
-	\hypersetup{linkcolor={clink}, citecolor={ccite}, urlcolor={curl}} 		% Internal links, Citations, External links/urls
+	\definecolor{clink}{rgb}{0,0,1} 			% Blue: Internal links
+	\definecolor{ccite}{rgb}{0,0.3,0.9} 	   	% Light blue: Citations
+	\definecolor{curl}{rgb}{0.3,0,0.9} 			% Red blue: External links/urls
+	\hypersetup{linkcolor={clink}, citecolor={ccite}, urlcolor={curl}}
 
+
+%---------------------------------------------------------------
+% Macros
+%---------------------------------------------------------------
 % Link to ToC from section
 \newcommand{\gototoc}{\vspace{-1.8cm} \null\hfill [\hyperlink{toc}{Go to ToC}] \newline}
 
-\newlist{todolist}{itemize}{2}					 % To-do list with checkmarks
+% To-do lists with checkmarks
+\newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
 \usepackage{pifont}
 	\newcommand{\cmark}{\ding{51}}
@@ -23,47 +31,68 @@
 	\hspace{-2.5pt}}
 	\newcommand{\wontdo}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
 
+
+%---------------------------------------------------------------
+% Contents
+%---------------------------------------------------------------
 \begin{document}
-	\title{Tasks for `\input{../../Settings/title}'}
-	\author{Name LastName}
-	\date{}
-	\maketitle
-	\hypertarget{toc}{}								 % Allows to link back to the ToC
-	\tableofcontents
-	\vspace{2.5\bigskipamount}
-	
+\title{\vspace{-4ex}Tasks for `\input{../../Settings/title} \hspace{-1.4ex}'}
+\author{}	\date{}
+\maketitle 	\vspace{-4ex}
+
 
 \section{Ideas}
 \gototoc
 \begin{todolist}
-	\item[\wontdo] Show conjecture.
+	\item[\wontdo] Try additional hypothesis. Reason: Not relevant.
 \end{todolist}
 
-\section{Edits}
-\begin{todolist}
-	\item Introduce easy text edits.
-	\item Introduce longer edits.
-\end{todolist}
 
-\section{Analysis}
+\section{Contents}
 \gototoc
 \begin{todolist}
-	\item[\done] Improve abstract.
+	\item[\done] Edit abstract.
+	\item Make easy text edits.
+	\item Make longer edits.
+\end{todolist}
+
+
+\section{Floats}
+\gototoc
+\begin{todolist}
 	\item Tables:
 	\begin{todolist}
 		\item Format changes.
-		\item Try different rescaling.
 	\end{todolist}
 	\item Figures:
 	\begin{todolist}
-		\item[\done] Correct figure 1. 
+		\item[\done] Amend figure 1.
+		\item Try rescaling.
 	\end{todolist}
 \end{todolist}
+
 
 \section{Updates}
 \gototoc
 \begin{todolist}
 	\item Update dataset.
 \end{todolist}
+
+
+\section{Slides}
+\gototoc
+\begin{todolist}
+	\item Add notes to slides.
+	\item Use same figure as in paper.
+\end{todolist}
+
+
+%---------------------------------------------------------------
+% Table of Contents
+%---------------------------------------------------------------
+\clearpage
+\hypertarget{toc}{}								% Allows to link back to the ToC
+\tableofcontents
+\vspace{2.5\bigskipamount}
 
 \end{document}
