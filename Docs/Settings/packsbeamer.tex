@@ -1,86 +1,74 @@
 %% Packages for Beamer
-% Conditionals, Fromatting, Lists, Figures, Tables, Math,
-% Hyperlinks and References, Special Characters, Theme
-
-%---------------------------------------------------------------
-% Conditionals
-%---------------------------------------------------------------
-\usepackage{etoolbox}						% For conditionals (e.g. slides with stops)
-	\providetoggle{long}					   % Generates long vs. short version
-	\settoggle{long}{false} 					% 'false' for version without stops
-	
-	\providetoggle{struct}					   % Generates long vs. short version
-	\settoggle{struct}{false}					% 'true' for version with customized stops
-
-%---------------------------------------------------------------
-% Fromatting
-%---------------------------------------------------------------
-\setbeamertemplate{navigation symbols}{}				% Omits the navigation symbols
-%\usepackage{todonotes} 											  % Used for to-do lists
-\usepackage{setspace} 		% Line spacing and spaces above/below equations
-	\setstretch{1.7}
-	\AtBeginDocument{		 % Space before and after an equation
-		\addtolength\abovedisplayskip{-0.5\baselineskip}
-		\addtolength\belowdisplayskip{-0.5\baselineskip}}
+% Lists, Fromatting, Math, Figures, Tables,
+% Special Characters, Hyperlinks, References
 
 %---------------------------------------------------------------
 % Lists
 %---------------------------------------------------------------
-\usepackage{enumerate} 											% Personalizes the enumerate style
-	\setbeamertemplate{enumerate items}[default]
-	\setbeamertemplate{itemize items}{$\bullet$}		 % Or {$\vdash$}
-	\setbeamertemplate{itemize subitem}{$\rightharpoonup$}
-	\setbeamertemplate{itemize subsubitem}{---}
-	%\setbeamertemplate{itemize subsubitem}[triangle]
-	%\setbeamercolor{subitem projected}{bg=green}
-	%\setbeamercolor{itemize subitem}{bg=green}
-%\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter}
+\usepackage{enumerate} 							% Customizes the enumerate style
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}{$\bullet$}	% {$\vdash$}
+\setbeamertemplate{itemize subitem}{$\rightharpoonup$}
+\setbeamertemplate{itemize subsubitem}{---}
 
 %---------------------------------------------------------------
-% Figures
+% Fromatting
 %---------------------------------------------------------------
-\usepackage{tikz}								% To create high quality diagrams
-\usepackage{graphicx} 				 		% Needed for \includegraphics
-\usepackage[outdir=./]{epstopdf} 	  % Avoids errors to input figures
-%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]
-%{eso-pic}											 % Draw grid on slide to aid positioning figures
-
-%---------------------------------------------------------------
-% Tables
-%---------------------------------------------------------------
-\usepackage{booktabs}						% Needed for \toprule, \midrule, \bottomrule
+\setbeamertemplate{navigation symbols}{}		% Omits the navigation symbols
+\usepackage{setspace}							% Line spacing and spaces above/below equations
+	\setstretch{1.7}
+	\AtBeginDocument{							% Space before and after an equation
+		\addtolength\abovedisplayskip{-0.5\baselineskip}
+		\addtolength\belowdisplayskip{-0.5\baselineskip}}
 
 %---------------------------------------------------------------
 % Math
 %---------------------------------------------------------------
-\usepackage{amsmath} 					  % Needed for command eqref
-\usepackage{amssymb} 					 % Needed for math fonts
-%\usepackage{breqn}						    % Break lines automatically
-%\usepackage{amssymb,amsmath,amsthm,enumitem}
+\usepackage{amsmath} 					 		% For multi-line statements
+\usepackage{amssymb} 					 		% For math symbols and fonts
+\usepackage{dsfont}								% More math fonts (e.g. indicator function)
+%\usepackage{amsthm,enumitem}					% For theorems and control over list environments
 
 %---------------------------------------------------------------
-% Hyperlinks and References
+% Figures
 %---------------------------------------------------------------
-\usepackage[absolute,overlay]{textpos}	% Positioning text in slide (e.g. links to slides)
-\usepackage{hyperref}				  % For hyperlinks, [colorlinks=true] gets rid of the awful boxes
-\usepackage{xcolor}
-	\definecolor{c1}{rgb}{0,0,1} 		  % Blue
-	\definecolor{c2}{rgb}{0,0.3,0.9} 	% Light blue
-	\definecolor{c3}{rgb}{0.3,0,0.9} 	% Red blue
-	\hypersetup{
-		linkcolor={c1}, 						% Internal links
-		citecolor={c2}, 						% Citations
-		urlcolor={c3} 							 % External links/urls
-	}
-\usepackage[round,authoryear]{natbib} % For cite and abbrvnat bibliography style
-%\usepackage{cite} 							% Needed for cite
+\usepackage{graphicx} 				 			% To include figures
+\usepackage[outdir=./]{epstopdf} 	  			% To avoid errors when calling figures
+\usepackage{subcaption}					  		% Multi-panel figure
+\usepackage{tikz}								% To create high quality diagrams
+	\usetikzlibrary{decorations.pathreplacing}
+
+%---------------------------------------------------------------
+% Tables
+%---------------------------------------------------------------
+\usepackage{tabularx}					 		% For paragraph-like columns
+\usepackage{booktabs}			  	   			% For \toprule, \midrule, \bottomrule
+\usepackage{multirow}			   				% To add entries with multiple rows
+\usepackage{bigstrut} 			 	 		 	% To open up tabular spacing
+\usepackage{siunitx}				 	  		% To align the decimal points
+\usepackage{threeparttable}		 	  			% To include a structured note section
 
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
-\usepackage[utf8]{inputenc}			  % Input accented characters
-%\usepackage{underscore}				   % Control the behaviour of "_" in the text
-%\usepackage[T1]{fontenc}		  	  % Fonts to use for printing characters
+\usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
+%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
+%\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
+\usepackage{pifont}								% Checkmark and xmark
+	\newcommand{\cmark}{\ding{51}}
+	\newcommand{\xmark}{\ding{55}}
+
+%---------------------------------------------------------------
+% Hyperlinks
+%---------------------------------------------------------------
+\usepackage[absolute,overlay]{textpos}			% Positions text in slide (e.g. links to slides)
+%\usepackage[colorlinks=true]{hyperref} 	 	% hyperref is loaded by default in Beamer; pass arguments in \documentclass
+
+%---------------------------------------------------------------
+% References
+%---------------------------------------------------------------
+%\usepackage[style=authoryear,backend=biber,maxbibnames=99,maxcitenames=5,dashed=false]{biblatex} % To read bib data
+%\addbibresource{../References/library.bib}		% Imports bib file
 
 %---------------------------------------------------------------
 % Theme
@@ -91,60 +79,8 @@
 %\usefonttheme{serif}
 %\useoutertheme{infolines} 	% Full list: miniframes, infolines, shadow, sidebar, smoothbars, smoothtree, split, tree
 %\useinnertheme{circles}	 % Full list: rectangles, circles, inmargin, rounded
-\definecolor{JHUblue}{rgb}{0.36, 0.54, 0.66}%{0, 0.45, 0.114}
-\definecolor{JHUgrey2}{rgb}{180, 178, 173}
-\definecolor{JHUorange}{rgb}{255, 105, 0}
-\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
-\definecolor{bluegray}{rgb}{0.4, 0.6, 0.8}
-\definecolor{cerulean}{rgb}{0.0, 0.48, 0.65}
-\definecolor{darkcerulean}{rgb}{0.03, 0.27, 0.49}
-\definecolor{darkpastelblue}{rgb}{0.47, 0.62, 0.8}
-\definecolor{glaucous}{rgb}{0.38, 0.51, 0.71}
-\definecolor{hanblue}{rgb}{0.27, 0.42, 0.81}
-\definecolor{iceberg}{rgb}{0.44, 0.65, 0.82}
-\definecolor{indigo}{rgb}{0.0, 0.25, 0.42}		% with infolines
-\definecolor{internationalkleinblue}{rgb}{0.0, 0.18, 0.65}
-\definecolor{lapislazuli}{rgb}{0.15, 0.38, 0.61}
-\definecolor{mediumelectricblue}{rgb}{0.01, 0.31, 0.59}  %Good
-\definecolor{mediumpersianblue}{rgb}{0.0, 0.4, 0.65}
-\definecolor{mediumtealblue}{rgb}{0.0, 0.33, 0.71}
-\definecolor{midnightblue}{rgb}{0.1, 0.1, 0.44}		% Cool dark
-\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}		% Darker than standard purple
-\definecolor{phthaloblue}{rgb}{0.0, 0.06, 0.54}
-\definecolor{smalt}{rgb}{0.0, 0.2, 0.6} 		% Nice close to standard
-\definecolor{oceanboatblue}{rgb}{0.0, 0.47, 0.75}  % Blue green
-\definecolor{steelblue}{rgb}{0.27, 0.51, 0.71}
-\definecolor{oucrimsonred}{rgb}{0.6, 0.0, 0.0}  % Brick red
-\definecolor{pansypurple}{rgb}{0.47, 0.09, 0.29}
-\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38} % Purple brownish
-\definecolor{parisgreen}{rgb}{0.31, 0.78, 0.47}
-\definecolor{seagreen}{rgb}{0.18, 0.55, 0.34}
-\definecolor{skobeloff}{rgb}{0.0, 0.48, 0.45}	% Elegant green
-\definecolor{pastelblue}{rgb}{0.68, 0.78, 0.81}  % Grey with contrast
-\definecolor{redncs}{rgb}{0.77, 0.01, 0.2}
-\definecolor{richcarmine}{rgb}{0.84, 0.0, 0.25}
-\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
-\definecolor{royalblue}{rgb}{0.0, 0.14, 0.4}	% Almost black
-\definecolor{stpatricksblue}{rgb}{0.14, 0.16, 0.48}		% Darkish blue
-\definecolor{sapphire}{rgb}{0.03, 0.15, 0.4}	% Elegant darkish blue
-\definecolor{tuftsblue}{rgb}{0.28, 0.57, 0.81} 	% Fresh light blue-green
-\definecolor{unitednationsblue}{rgb}{0.36, 0.57, 0.9}
-\definecolor{yaleblue}{rgb}{0.06, 0.3, 0.57}	% Good
+
 
 %\usecolortheme[named=yaleblue]{structure}
 %\setbeamercolor{alerted text}{fg=midnightblue}
 %\setbeamerfont{alerted text}{series=\bfseries}
-
-%---------------------------------------------------------------
-% Sources
-%---------------------------------------------------------------
-% http://latexcolor.com/
-% https://ramblingacademic.com/2015/12/how-to-quickly-overhaul-beamer-colors/
-
-% Position text in a slide
-%https://tex.stackexchange.com/questions/82463/how-to-position-a-beamer-box-in-a-slide
-
-% To draw a box above a table (stored as an image)
-%https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Basic_Drawing
-%https://tex.stackexchange.com/questions/115087/how-can-i-embed-an-external-image-within-a-tikzpicture-environment
-%https://tex.stackexchange.com/questions/57913/putting-a-box-over-an-image-in-beamer-presentation
