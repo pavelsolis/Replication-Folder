@@ -1,10 +1,42 @@
 %----------------------------------------------------------------
 % Preamble
 %----------------------------------------------------------------
-\documentclass[12pt, aspectratio=169, xcolor=dvipsnames]{beamer}  % Document class
-%\documentclass[12pt,aspectratio=169,xcolor=dvipsnames,handout,notes=show]{beamer}	  % For printing
-\input{../Settings/packs_beamer}   		  % Packages
-\input{../Settings/macros}					   % Personalized commands
+\documentclass[12pt,aspectratio=169,xcolor=dvipsnames]{beamer}						% Document class
+%\documentclass[12pt,aspectratio=169,xcolor=dvipsnames,handout]{beamer}				% For printing
+\input{../Settings/packsbeamer}   		  											% Packages
+%\input{../Settings/macros}					   										% Customized commands
+\input{../Settings/variables}			     										% Variable definitions
+\input{../Equations/equations}			     										% Equations
+
+\usetheme{CambridgeUS}			   % Good: Madrid, Copenhagen, CambridgeUS, Boadilla
+%\useoutertheme{noslidenum}
+\usecolortheme{dolphin} 			% Good: lily, dolphin
+\usefonttheme{professionalfonts} % Full list: default professionalfonts serif structurebold structureitalicserif structuresmallcapsserif
+\useoutertheme{infolines} 	% Full list: miniframes, infolines, shadow, sidebar, smoothbars, smoothtree, split, tree
+%\useinnertheme{circles}	 % Full list: rectangles, circles, inmargin, rounded
+\usecolortheme[named=indigo]{structure}
+\setbeamercolor{alerted text}{fg=steelblue}
+\setbeamerfont{alerted text}{series=\bfseries}
+
+\setbeamertemplate{itemize items}{\(\bullet\)}		 % Or {$\rightharpoonup$}
+\setbeamertemplate{itemize subitem}{---}
+\setbeamertemplate{itemize subsubitem}{\(\leftharpoonup\)} %{\(\rightharpoondown\)} %{\(\vdash\)}
+
+% Xmark and checkmark
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% Only activate if notes
+
+
+%\setbeameroption{show notes}
+%\usepackage{pgfpages}
+	%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=17mm]
+%\setbeamertemplate{note page}[plain] % Beamer manual, section 19.1
+%\setbeameroption{show notes on second screen=right} % Beamer manual, section 19.3
+\setbeameroption{hide notes}
+%\setbeameroption{show only notes}
 %----------------------------------------------------------------
 
 \begin{document}
@@ -12,7 +44,7 @@
 %----------------------------------------------------------------
 % Title
 %----------------------------------------------------------------
-\input{titleslide}
+%\input{titleslide}
 
 %\begin{frame}{To Dos}
 %\listoftodos
@@ -27,15 +59,15 @@
  \begin{frame}[label=LinkA]
 	\frametitle{Text Formatting, Equations and \\ \vspace{-.4cm} Links}
 	\begin{itemize}
-		\item Profitability \alert{monetary policy} \textit{and} implies \textcolor{red}{$\coeffmatch = 1$}
+		\item Profitability \alert{monetary policy} \textit{and} implies \textcolor{red}{$\beta = 1$}
 		\iftoggle{long}{\pause}{}
 		\begin{itemize}
 			\item Withstand 
 		\end{itemize}
 	%\vspace{-1cm}
-	\input {../Equations/panelBanksInter}
+	\input{../Equations/exEqU}
 	\vspace{-0.8cm}
-	\quad where $\eqBankbetas$ is
+	\quad where is
 	\end{itemize}
 	\begin{textblock*}{3cm}(.89\textwidth,-.05\textheight)
 		\hyperlink{LinkB}{\beamergotobutton{Go To Text}}
@@ -99,9 +131,9 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}<presentation:0>
-	\bibliographystyle{abbrvnat} 
-	\bibliography{../../../References/library}
-\end{frame}
+%\begin{frame}<presentation:0>
+%	\bibliographystyle{abbrvnat} 
+%	\bibliography{../../../References/library}
+%\end{frame}
 
 \end{document}
