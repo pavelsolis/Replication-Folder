@@ -1,0 +1,14 @@
+Considerations:
+- The codes in this folder (Codes -> Stats) should be prepared after the ones in the Tidy folder and before the ones in the Analysis folder.
+	- The codes in the Tidy folder generate the analysis data files by cleaning and processing the original data files.
+	- The codes in the Analysis folder perform the analysis and generate the specific results.
+- The variables in the analysis data files are described in the metadata file (Data -> Metadata -> metadata.docx).
+- The purpose of a data appendix (metadata + descriptive statistics) is to serve as a users' guide for the analysis data files.
+
+Recomendations:
+- Check the analysis data files (Data -> Analytic) and look for outliers.
+	- For time series, plot the variables in both levels and growth rates.
+- For the variables in the analysis data files, the codes in the Stats folder should generate:
+	- Summary statistics and histograms for quantitative variables.
+	- Relative frequency tables and charts for categorical variables.
+- Use a main file (e.g. data_stas.EXT) to call the codes sequentially to generate the descriptive statistics.

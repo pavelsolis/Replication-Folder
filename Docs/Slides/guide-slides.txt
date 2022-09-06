@@ -1,0 +1,14 @@
+Structure:
+- Elements of the slides (e.g., title, authors' names and affiliations) are stored in separate files so that they can be modified only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
+
+Versions:
+- Two versions of the slides can be generated: with and without notes.
+- Examples of these versions are included in the Docs -> Extra -> Temp folder.
+- To generate the desired version, just comment line XXXX and uncomment next line XXXX as needed. The idea is to avoid extra editing when shifting between versions.
+
+Recommendations:
+- When using PDF versions of the floats (tables and figures) in the slides, run the main latex files generating standalone PDF versions of the floats before compiling the slides.tex file to ensure you are always using the latest version of the floats.
+
+Considerations:
+- The packsbeamer.tex file defines colors and themes. Modify them as desired.
+- The tasks.tex file in the Docs -> Extra -> Tasks folder can help to manage the to-dos for the paper and the slides.

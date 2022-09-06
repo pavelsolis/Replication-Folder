@@ -1,0 +1,8 @@
+Consideration:
+- The codes in this folder (Codes -> Analysis) should be prepared after the ones in the Stats folder, which generate the descriptive statistics.
+
+Recommendations:
+- Add comments indicating the commands that generate specific results.
+- Numbers referenced in earlier drafts of the paper may change in later versions (e.g. due to a dataset update). From the beginning, prepare a code file specifically to replicate the numbers highlighted in the paper. In this way, you minize the need to recreate results during revisions.
+- If possible, make standalone code for figures. That is, start by calling the relevant analysis data file and generate the figure from there. In this way, you do not need to run a large block of code to update a figure.
+- Use a main file (e.g. data_analysis.EXT) to call the codes sequentially to generate the results.

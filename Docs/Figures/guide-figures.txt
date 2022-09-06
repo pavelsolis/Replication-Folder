@@ -1,0 +1,13 @@
+Considerations:
+- Each main figure file has a preamble so that it can generate a standalone PDF file for the figure. Files (e.g., sections.tex, appendix.tex) calling the main figure file, skip that preamble.
+
+Recommendations:
+- To facilitate referencing the figures, use the same file name as the label for the figure. For example, filename 'exfigpdf' and label '\label{fig:exfigpdf}'.
+- Make sure the figures have a consistent format throughout the paper and that the latest versions are used in the slides as in the paper.
+- If possible, for the labels in the figures:
+	- Use the same font as in the paper.
+	- Verify they are horizontally aligned.
+- Run the XXXX main latex file XXXX to generate standalone PDF versions for all the figures.
+
+Notes:
+- The \fignote and \fignotes commands handle the notes below a figure. Both commands are defined in macros.tex.

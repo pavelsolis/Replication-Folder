@@ -1,0 +1,6 @@
+Consideration:
+- The purpose of the codes in this folder (Codes -> Tidy) is to clean and process the original data files into the analysis data files that are used to generate the results.
+
+Recommendations:
+- As much as possible, avoid manual changes to the original data files. Ideally, all steps should be programmed.
+- Use a main file (e.g. data_clean.EXT) to call the codes sequentially to generate all the analysis data files.
