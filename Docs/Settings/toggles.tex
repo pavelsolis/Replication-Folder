@@ -1,3 +1,12 @@
+%---------------------------------------------------------------
+% Conditionals
+%---------------------------------------------------------------
+\usepackage{etoolbox}					 		% Toolbox of programming facilities
+\usepackage{xpatch}						  		% Extends etoolbox patching commands
+
+%---------------------------------------------------------------
+% Paper
+%---------------------------------------------------------------
 \newtoggle{toclinks}				    	% When editing, add links (next to section titles) to ToC
 \newtoggle{cboxes}					   		% When editing, write comments and to-dos
 \newtoggle{fulldraft}					 	% Generate short (outline) and long (full draft) versions
@@ -11,3 +20,12 @@
 \settoggle{floatstxt}{true}	   	 	 		% 'true' to put figures and tables in the text
 \settoggle{blind}{false}	   	 	 		% 'true' to generate version without identifiers
 \settoggle{revised}{false}	   	 	 		% 'true' to highlight changes with color
+
+%---------------------------------------------------------------
+% Slides
+%---------------------------------------------------------------
+\newtoggle{long}					   		% Generate long vs. short version
+\newtoggle{struct}					   		% Generate long vs. short version
+
+\settoggle{long}{false} 					% 'false' for version without stops
+\settoggle{struct}{false}					% 'true' for version with customized stops
