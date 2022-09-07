@@ -2,8 +2,8 @@
 % Preamble
 %---------------------------------------------------------------
 \documentclass[a4paper,12pt]{article} 			% Document class
-\input{../Settings/packages}		   		  	% Packages
 \input{../Settings/toggles}		   		  		% Toggles
+\input{../Settings/packages}		   		  	% Packages
 \input{../Settings/pagesetup}   				% Page settings
 \input{../Settings/macros}		        		% Customized commands
 \input{../Settings/variables}			     	% Variable definitions
@@ -41,7 +41,7 @@
 		\printbibliography[title={References},heading=bibintoc]
 	\end{singlespace}
 	
-%	\input{appendix}							% Comment line if standalone appendix (re-run biber)
+	\input{appendix}							% Comment line if standalone appendix (re-run biber)
 }{}												% Closes \iftoggle{fulldraft}
 
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
