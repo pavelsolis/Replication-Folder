@@ -1,25 +1,17 @@
 %% Packages for Beamer
-% Lists, Fromatting, Math, Figures, Tables,
+% Fromatting, Math, Figures, Tables,
 % Special Characters, Hyperlinks, References
-
-%---------------------------------------------------------------
-% Lists
-%---------------------------------------------------------------
-\usepackage{enumerate} 							% Customizes the enumerate style
-\setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{itemize items}{$\bullet$}	% {$\vdash$}
-\setbeamertemplate{itemize subitem}{$\rightharpoonup$}
-\setbeamertemplate{itemize subsubitem}{---}
 
 %---------------------------------------------------------------
 % Fromatting
 %---------------------------------------------------------------
-\setbeamertemplate{navigation symbols}{}		% Omits the navigation symbols
 \usepackage{setspace}							% Line spacing and spaces above/below equations
 	\setstretch{1.7}
 	\AtBeginDocument{							% Space before and after an equation
 		\addtolength\abovedisplayskip{-0.5\baselineskip}
 		\addtolength\belowdisplayskip{-0.5\baselineskip}}
+\usepackage{enumerate} 							% To customize the enumerate style
+\usepackage{pgfpages}							% To display multiple pages on a single page (for notes)
 
 %---------------------------------------------------------------
 % Math
@@ -51,12 +43,12 @@
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
-\usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
-%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
-%\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
 \usepackage{pifont}								% Checkmark and xmark
 	\newcommand{\cmark}{\ding{51}}
 	\newcommand{\xmark}{\ding{55}}
+\usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
+%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
+%\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
 
 %---------------------------------------------------------------
 % Hyperlinks
@@ -67,20 +59,4 @@
 %---------------------------------------------------------------
 % References
 %---------------------------------------------------------------
-%\usepackage[style=authoryear,backend=biber,maxbibnames=99,maxcitenames=5,dashed=false]{biblatex} % To read bib data
-%\addbibresource{../References/library.bib}		% Imports bib file
-
-%---------------------------------------------------------------
-% Theme
-%---------------------------------------------------------------
-%\usetheme{Madrid}			   % Good: Madrid, Copenhagen, CambridgeUS, Boadilla
-%\useoutertheme{noslidenum}
-%\usecolortheme{lily} 			% Good: lily, dolphin
-%\usefonttheme{serif}
-%\useoutertheme{infolines} 	% Full list: miniframes, infolines, shadow, sidebar, smoothbars, smoothtree, split, tree
-%\useinnertheme{circles}	 % Full list: rectangles, circles, inmargin, rounded
-
-
-%\usecolortheme[named=yaleblue]{structure}
-%\setbeamercolor{alerted text}{fg=midnightblue}
-%\setbeamerfont{alerted text}{series=\bfseries}
+\usepackage[round,authoryear]{natbib}			% To read bib data
