@@ -1,34 +1,24 @@
-%% Packages
-% Conditionals, Contents, Layout, Formatting, Math, Figures and Tables,
-% Hyperlinks, Special Characters, Appendix, References
-
-%---------------------------------------------------------------
-% Conditionals
-%---------------------------------------------------------------
-\usepackage{etoolbox}					 		% Toolbox of programming facilities
-\usepackage{xpatch}						  		% Extends etoolbox patching commands
+%% Packages for Paper
+% Contents, Formatting, Math, Figures and Tables,
+% Special Characters, Hyperlinks, References
 
 %---------------------------------------------------------------
 % Contents
 %---------------------------------------------------------------
 \usepackage[nottoc]{tocbibind} 		 			% nottoc omits ToC from itself
 \usepackage{lipsum}						   		% To add dummy text
+\usepackage{pdfpages}					 		% To insert (excerpts of) PDF files
+\usepackage{appendix}							% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
+%	\renewcommand*\appendixpagename{Appendix}
+%	\renewcommand*\appendixtocname{Appendix}
 %\usepackage{authblk}					 		% Multiple authors in blocks or in footnotes
-%\usepackage{todonotes} 			   			% For to-do lists
 %\usepackage{textcomp}		  			 		% Handles the copyright symbol
 %\usepackage{makeidx} 							% Creates an index at the end, use \index{} and \printindex
 
 %---------------------------------------------------------------
-% Layout
-%---------------------------------------------------------------
-\usepackage{pdfpages}					 		% To insert (excerpts of) PDF files
-\usepackage{pdflscape}			  		  		% To rotate page in PDF using \begin{landscape}
-%\usepackage{rotating}					  		% To rotate page in PDF using \begin{sidewaystable}
-
-%---------------------------------------------------------------
 % Formatting
 %---------------------------------------------------------------
-\usepackage{float}							 	% To enable H placement specifier (similar to h!)
+\usepackage{pdflscape}			  		  		% To rotate page in PDF using \begin{landscape}
 \usepackage{enumerate}				    		% To personalize the enumerate style
 %\usepackage{datetime2}							% To customize date format
 
@@ -43,6 +33,7 @@
 %---------------------------------------------------------------
 % Figures and Tables
 %---------------------------------------------------------------
+\usepackage{float}							 	% To enable H placement specifier (similar to h!)
 \usepackage{standalone}			   				% To compile sub-files as part of main document
 \usepackage{afterpage}					 		% To place floats after current page
 \usepackage[labelsep=period,labelfont=bf]{caption} % Caption with dot separator, boldfaced
@@ -65,20 +56,6 @@
 %\usepackage{threeparttablex}		 			% Threeparttable functionality for long tables
 
 %---------------------------------------------------------------
-% Hyperlinks
-%---------------------------------------------------------------
-\usepackage[colorlinks=true]{hyperref} 	 		% Creates hyperlinks, 'true' gets rid of the boxes
-\usepackage{xcolor}
-	\definecolor{c1}{rgb}{0,0,0} 		   		% Black
-	\definecolor{c2}{rgb}{0,0,1} 				% Blue
-	\definecolor{c3}{rgb}{0,0,0.54} 		  	% Dark blue
-	\hypersetup{
-		citecolor={c1}, 						% Citations
-	    linkcolor={c2}, 						% Internal links
-	    urlcolor={c3} 							% External links/URLs
-	}
-
-%---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
 \usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
@@ -86,11 +63,18 @@
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
 
 %---------------------------------------------------------------
-% Appendix
+% Hyperlinks
 %---------------------------------------------------------------
-\usepackage{appendix}							% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
-%\renewcommand*\appendixpagename{Appendix}
-%\renewcommand*\appendixtocname{Appendix}
+\usepackage{xcolor}
+	\definecolor{c1}{rgb}{0,0,0} 		   		% Black
+	\definecolor{c2}{rgb}{0,0,1} 				% Blue
+	\definecolor{c3}{rgb}{0,0,0.54} 		  	% Dark blue
+\usepackage[colorlinks=true]{hyperref} 	 		% Creates hyperlinks, 'true' gets rid of the boxes
+	\hypersetup{
+		citecolor={c1}, 						% Citations
+	    linkcolor={c2}, 						% Internal links
+	    urlcolor={c3} 							% External links/URLs
+	}
 
 %---------------------------------------------------------------
 % References
