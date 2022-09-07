@@ -1,129 +1,162 @@
 %----------------------------------------------------------------
 % Preamble
 %----------------------------------------------------------------
-\documentclass[12pt,aspectratio=169,xcolor=dvipsnames]{beamer}						% Document class
-%\documentclass[12pt,aspectratio=169,xcolor=dvipsnames,handout]{beamer}				% For printing
-\input{../Settings/packsbeamer}   		  											% Packages
-%\input{../Settings/macros}					   										% Customized commands
-\input{../Settings/variables}			     										% Variable definitions
-\input{../Equations/equations}			     										% Equations
+\documentclass[12pt,aspectratio=169,xcolor=dvipsnames,hyperref={colorlinks=true,linkcolor=blue,citecolor=black}]{beamer}
+\input{../Settings/toggles}		   		  					% Toggles
+\input{../Settings/packsbeamer}   		  					% Packages
+\input{../Settings/themecolors}   		  					% Customized theme colors
+\input{../Settings/variables}			     				% Variable definitions
+\input{../Equations/equations}			     				% Equations
+\listfiles													% .log file shows version of packages loaded
 
-\usetheme{CambridgeUS}			   % Good: Madrid, Copenhagen, CambridgeUS, Boadilla
-%\useoutertheme{noslidenum}
-\usecolortheme{dolphin} 			% Good: lily, dolphin
-\usefonttheme{professionalfonts} % Full list: default professionalfonts serif structurebold structureitalicserif structuresmallcapsserif
-\useoutertheme{infolines} 	% Full list: miniframes, infolines, shadow, sidebar, smoothbars, smoothtree, split, tree
-%\useinnertheme{circles}	 % Full list: rectangles, circles, inmargin, rounded
-\usecolortheme[named=indigo]{structure}
-\setbeamercolor{alerted text}{fg=steelblue}
+%---------------------------------------------------------------
+% Theme
+%---------------------------------------------------------------
+\usetheme{CambridgeUS}			   							% List: default, Madrid, CambridgeUS, Boadilla, Copenhagen
+\useinnertheme{circles}	 									% List: circles, rectangles, rounded
+\useoutertheme{infolines} 									% List: miniframes, infolines, smoothbars, smoothtree, split
+\usefonttheme{professionalfonts}							% List: serif, professionalfonts, structurebold, structuresmallcapsserif
+\usecolortheme{dolphin}										% List: dolphin, lily
+\usecolortheme[named=indigo]{structure}						% Choose color from themecolors.tex
+\setbeamercolor{alerted text}{fg=steelblue}					% Choose color from themecolors.tex
 \setbeamerfont{alerted text}{series=\bfseries}
+\setbeamertemplate{page number in head/foot}{}				% Remove frame numbers
+\setbeamertemplate{navigation symbols}{}					% Remove navigation symbols
+\setbeamertemplate{note page}[plain]						% Remove details in note pages
 
-\setbeamertemplate{itemize items}{\(\bullet\)}		 % Or {$\rightharpoonup$}
+%---------------------------------------------------------------
+% Lists
+%---------------------------------------------------------------
+%\setbeamertemplate{enumerate items}[default]				% List: default, ball, circle, square
+%\setbeamertemplate{itemize items}{\(\bullet\)}
 \setbeamertemplate{itemize subitem}{---}
-\setbeamertemplate{itemize subsubitem}{\(\leftharpoonup\)} %{\(\rightharpoondown\)} %{\(\vdash\)}
+\setbeamertemplate{itemize subsubitem}{\(\leftharpoonup\)} 	%{\(\rightharpoondown\)} %{\(\vdash\)}
 
-% Xmark and checkmark
-\usepackage{pifont}
-\newcommand{\cmark}{\ding{51}}
-\newcommand{\xmark}{\ding{55}}
+%---------------------------------------------------------------
+% Notes
+%---------------------------------------------------------------
+%\setbeameroption{show notes on second screen=right} 									% Option 1
+%\setbeameroption{show notes} \pgfpagesuselayout{2 on 1}[a4paper,border shrink=17mm]	% Option 2
+%	\setbeameroption{hide notes}							% Allows hand-written notes
+%\setbeameroption{show only notes}							% Allows note editing
 
-% Only activate if notes
-
-
-%\setbeameroption{show notes}
-%\usepackage{pgfpages}
-	%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=17mm]
-%\setbeamertemplate{note page}[plain] % Beamer manual, section 19.1
-%\setbeameroption{show notes on second screen=right} % Beamer manual, section 19.3
-\setbeameroption{hide notes}
-%\setbeameroption{show only notes}
-%----------------------------------------------------------------
 
 \begin{document}
 
 %----------------------------------------------------------------
-% Title
+% Title Slide
 %----------------------------------------------------------------
-%\input{titleslide}
-
-%\begin{frame}{To Dos}
-%\listoftodos
-%\end{frame}
-
-%----------------------------------------------------------------
-% Frames
-%----------------------------------------------------------------
-
-\section{Introduction}
-
- \begin{frame}[label=LinkA]
-	\frametitle{Text Formatting, Equations and \\ \vspace{-.4cm} Links}
+\title[]{\input{../Settings/title}}
+\subtitle[]{Subtitle of the Paper}
+\author[]{ \input{../Settings/author1} \hspace{-1.4ex}\inst{1} \and \input{../Settings/author2} \hspace{-1.4ex}\inst{2} }
+\institute[]{ \inst{1} \input{../Settings/instit1} \and \inst{2} \input{../Settings/instit2} }
+\date[]{Month Day, Year}
+\maketitle
+\note[itemize]{
+	\item Hello everyone.
+	\item This paper:
 	\begin{itemize}
-		\item Profitability \alert{monetary policy} \textit{and} implies \textcolor{red}{$\beta = 1$}
+		\item Studies ABC, and
+		\item Contributes to XYZ.
+	\end{itemize}
+}
+
+
+%----------------------------------------------------------------
+% Section
+%----------------------------------------------------------------
+\section[]{Introduction}
+
+\begin{frame}[label=layered]
+	\frametitle{Layered Items and Text Formatting}
+	\begin{itemize}
+		\item Income \quad \cmark
+		\begin{itemize}
+			\item \alert{Net interest margin} (NIM)
+			\begin{itemize}
+				\iftoggle{struct}{\item<2->}{\item} Interest income (II) \(\rightarrow\) \textcolor{red}{Numerator}
+			\end{itemize}
+			\iftoggle{struct}{\item<1->}{\item} \textbf{Non}-interest income (NNI)
+			\begin{itemize}
+				\iftoggle{long}{\item<2>}{\item} Net fees
+			\end{itemize}
+		\end{itemize}
+		\item Operating costs (OC) \quad \xmark
+	\end{itemize}
+\end{frame}
+\note[itemize]{
+	\item Note.
+}
+
+
+\subsection[]{Examples}
+
+\begin{frame}[label=examples]
+	\frametitle{Examples}
+	\begin{itemize}
+		\item Equation from paper (but unnumbered):
 		\iftoggle{long}{\pause}{}
-		\begin{itemize}
-			\item Withstand 
-		\end{itemize}
-	%\vspace{-1cm}
-	\input{../Equations/exEqU}
-	\vspace{-0.8cm}
-	\quad where is
+		\input{../Equations/exEqU}
+		\vspace{-1cm}
+		\item[] where \(\error\) is the error
+		\item Table example
+		\item Figure example
+		\item Reference example: \cite{ChangLi:2017AER}
 	\end{itemize}
-	\begin{textblock*}{3cm}(.89\textwidth,-.05\textheight)
-		\hyperlink{LinkB}{\beamergotobutton{Go To Text}}
+
+	\begin{textblock*}{3cm}(0.3\textwidth,0.715\textheight)	% Left-right, up-down
+		\hyperlink{tableex}{\beamergotobutton{Table}}
+	\end{textblock*}
+	\begin{textblock*}{3cm}(0.3\textwidth,0.835\textheight)	% Left-right, up-down
+		\hyperlink{figureex}{\beamergotobutton{Figure}}
 	\end{textblock*}
 \end{frame}
-\note{Profitability.}
-\note{Granularity.}
+\note[itemize]{
+	\item Note.
+}
 
-\subsection{Layered Items}
 
-\begin{frame}[label=LinkB]
-	\frametitle{Layered Items and Links}
-	\begin{itemize}
-		\item Income
-		\begin{itemize}
-				\item Net interest margin (NIM)
-				\begin{itemize}
-					\iftoggle{struct}{\item<2->}{\item} Interest income (II)
-				\end{itemize}
-				\iftoggle{struct}{\item<1->}{\item} Non-interest income (NNI)
-				\begin{itemize}
-					\iftoggle{long}{\item<2>}{\item} Net fees
-				\end{itemize}
-		\end{itemize}
-		\item Operating costs (OC)
-	\end{itemize}
-	\begin{textblock*}{3cm}(.85\textwidth,-.5\textheight)
-		\hyperlink{LinkA}{\beamerreturnbutton{Go Back Text}}
+%----------------------------------------------------------------
+% Section
+%----------------------------------------------------------------
+\section[]{Inserting A PDF}
+
+\begin{frame}[label=tableex]
+	\frametitle{Table from Paper}
+	\begin{center}
+		\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}
+		% trim={<left> <lower> <right> <upper>}
+	\end{center}
+	
+	\begin{textblock*}{3cm}(0.94\textwidth,0.98\textheight)	% Left-right, up-down
+		\hyperlink{examples}{\beamerreturnbutton{Examples}}
+	\end{textblock*}
+\end{frame}
+\note[itemize]{
+	\item Note.
+}
+
+\begin{frame}
+	\frametitle{Table from Paper (Highlighted)}
+	\vspace{-0.25cm}
+	\hspace{0.55cm}
+	\begin{tikzpicture}
+	\node (table) at (0,0)
+		{\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}};
+		% trim={<left> <lower> <right> <upper>}
+		\draw[red,thick] (-1.2,-0.6) rectangle (0.9,0.6);	%\draw[step=1cm,gray,very thin] (-4,-4) grid (6,6);
+	\end{tikzpicture}
+	
+	\begin{textblock*}{3cm}(0.94\textwidth,0.98\textheight)	% Left-right, up-down
+		\hyperlink{examples}{\beamerreturnbutton{Examples}}
 	\end{textblock*}
 \end{frame}
 
-\section{Inserting Files}
 
-%\begin{frame}
-%	\frametitle{Inserting A PDF}
-%	\vspace{-4.8cm}
-%	\begin{center}
-%		\includegraphics[trim={2cm 3.7cm 3cm 2cm},clip,height=15cm,width=\textwidth,keepaspectratio]{../../../Ch_MX/Docs/Tables/Latex/nimdcmp_all_tsdcmp_lsdvc_pdf.pdf}
-%		% trim={<left> <lower> <right> <upper>}
-%	\end{center}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{Inserting PDF and Highlighting It}
-%	\vspace{-3.2cm}
-%	\hspace{3cm}
-%	\begin{tikzpicture}
-%	\node (table) at (0,0)
-%			{\includegraphics[trim={2cm 1.2cm 1cm 1cm},clip,height=11cm,width=\textwidth,keepaspectratio]{../../../Ch_XXXX/Docs/Tables/Latex/depvars_all_nointer_lsdvc_pdf.pdf}};
-%		% trim={<left> <lower> <right> <upper>}
-%		%\draw[step=1cm,gray,very thin] (-4,-4) grid (6,6);
-%		\draw[red,thick] (-3.7,2.1) rectangle (4,2.95);
-%	\end{tikzpicture}
-%\end{frame}
-
-\section{Appendix}
+%----------------------------------------------------------------
+% Section
+%----------------------------------------------------------------
+\section[]{Appendix}
 
 \begin{frame}
 	\begin{center}
@@ -131,9 +164,24 @@
 	\end{center}
 \end{frame}
 
-%\begin{frame}<presentation:0>
-%	\bibliographystyle{abbrvnat} 
-%	\bibliography{../../../References/library}
-%\end{frame}
+\begin{frame}[label=figureex]
+	\frametitle{Figure from Paper}
+	\begin{center}
+		\includegraphics[trim={0cm 0cm 0cm 1cm},clip,height=7cm,width=\textwidth,keepaspectratio]{../Figures/exfigure1}
+		% trim={<left> <lower> <right> <upper>}
+	\end{center}
+	
+	\begin{textblock*}{3cm}(0.94\textwidth,0.6\textheight)	% Left-right, up-down
+		\hyperlink{examples}{\beamerreturnbutton{Examples}}
+	\end{textblock*}
+\end{frame}
+\note[itemize]{
+	\item Note.
+}
+
+\begin{frame}<presentation:0>								% Process bib file without adding slide
+	\bibliographystyle{abbrvnat} 
+	\bibliography{../References/library}
+\end{frame}
 
 \end{document}
