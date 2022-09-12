@@ -11,7 +11,7 @@ Versions:
 	- A float version in which figures and tables appear at the end.
 	- A tracked version highlighting the changes from a previous version to facilitate revisions.
 - Examples of these versions are included in the Docs -> Extra -> Temp folder.
-- To generate the desired version, just work following the structure of the sections.tex file and adjust the conditionals in toggles.tex as needed. The idea behind the conditionals is to avoid extra editing when shifting between versions.
+- To generate the desired version, just work following the structure of the sections.tex file (e.g., the section takeaway outside the fulldraft toggle and the section content inside) and adjust the conditionals in toggles.tex as needed. The idea behind the conditionals is to avoid extra editing when shifting between versions.
 
 Recommendations:
 - Define a command for frequently-used words potentially subject to change (e.g. date of the last observation in the sample) in the variables.tex file so that they can be updated easily throughout the text.
