@@ -5,13 +5,14 @@
 %---------------------------------------------------------------
 % Fromatting
 %---------------------------------------------------------------
+\usepackage{pgfpages}							% To display multiple pages on a single page (for notes)
 \usepackage{setspace}							% Line spacing and spaces above/below equations
 	\setstretch{1.7}
 	\AtBeginDocument{							% Space before and after an equation
 		\addtolength\abovedisplayskip{-0.5\baselineskip}
 		\addtolength\belowdisplayskip{-0.5\baselineskip}}
 \usepackage{enumerate} 							% To customize the enumerate style
-\usepackage{pgfpages}							% To display multiple pages on a single page (for notes)
+%\usepackage{enumitem} 							% To control list environments, but 'disturbs' beamer
 
 %---------------------------------------------------------------
 % Math
@@ -19,7 +20,7 @@
 \usepackage{amsmath} 					 		% For multi-line statements
 \usepackage{amssymb} 					 		% For math symbols and fonts
 \usepackage{dsfont}								% More math fonts (e.g. indicator function)
-%\usepackage{amsthm,enumitem}					% For theorems and control over list environments
+%\usepackage{amsthm}							% For theorems
 
 %---------------------------------------------------------------
 % Figures
@@ -43,9 +44,9 @@
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
-\usepackage{pifont}								% Checkmark and xmark
-	\newcommand{\cmark}{\ding{51}}
-	\newcommand{\xmark}{\ding{55}}
+\usepackage{pifont}								% Symbols
+	\newcommand{\cmark}{\ding{51}}				% Checkmark
+	\newcommand{\xmark}{\ding{55}}				% Xmark
 \usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
 %\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
