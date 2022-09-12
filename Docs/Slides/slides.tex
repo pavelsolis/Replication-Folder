@@ -27,10 +27,11 @@
 %---------------------------------------------------------------
 % Lists
 %---------------------------------------------------------------
-%\setbeamertemplate{enumerate items}[default]				% List: default, ball, circle, square
-%\setbeamertemplate{itemize items}{\(\bullet\)}
+\setbeamertemplate{enumerate item}[default]				% List: default, ball, circle, square
+%\setbeamertemplate{itemize items}{\(\bullet\)}				% List: default, ball, circle, square
 \setbeamertemplate{itemize subitem}{---}
 \setbeamertemplate{itemize subsubitem}{\(\leftharpoonup\)} 	%{\(\rightharpoondown\)} %{\(\vdash\)}
+\newcounter{currentenumi}									% Define a counter to continue numbering
 
 %---------------------------------------------------------------
 % Notes
@@ -40,17 +41,20 @@
 %	\setbeameroption{hide notes}							% Allows hand-written notes
 %\setbeameroption{show only notes}							% Allows note editing
 
+%---------------------------------------------------------------
+% Title Info
+%---------------------------------------------------------------
+\title[]{\input{../Settings/title}}
+\subtitle[]{Subtitle of the Paper}
+\author[]{ \input{../Settings/author1} \hspace{-1.4ex}\inst{1} \and \input{../Settings/author2} \hspace{-1.4ex}\inst{2} }
+\institute[]{ \inst{1} \input{../Settings/instit1} \and \inst{2} \input{../Settings/instit2} }
+\date[]{Month Day, Year}
 
 \begin{document}
 
 %----------------------------------------------------------------
 % Title Slide
 %----------------------------------------------------------------
-\title[]{\input{../Settings/title}}
-\subtitle[]{Subtitle of the Paper}
-\author[]{ \input{../Settings/author1} \hspace{-1.4ex}\inst{1} \and \input{../Settings/author2} \hspace{-1.4ex}\inst{2} }
-\institute[]{ \inst{1} \input{../Settings/instit1} \and \inst{2} \input{../Settings/instit2} }
-\date[]{Month Day, Year}
 \maketitle
 \note[itemize]{
 	\item Hello everyone.
@@ -74,11 +78,11 @@
 		\begin{itemize}
 			\item \alert{Net interest margin} (NIM)
 			\begin{itemize}
-				\iftoggle{struct}{\item<2->}{\item} Interest income (II) \(\rightarrow\) \textcolor{red}{Numerator}
+				\iftoggle{struct}{\item<2->}{\item} Interest \textit{income} (II) \(\rightarrow\) \textcolor{red}{Numerator}
 			\end{itemize}
 			\iftoggle{struct}{\item<1->}{\item} \textbf{Non}-interest income (NNI)
 			\begin{itemize}
-				\iftoggle{long}{\item<2>}{\item} Net fees
+				\iftoggle{stops}{\item<2>}{\item} \textrm{Net fees}
 			\end{itemize}
 		\end{itemize}
 		\item Operating costs (OC) \quad \xmark
@@ -92,17 +96,20 @@
 \subsection[]{Examples}
 
 \begin{frame}[label=examples]
+	\setbeamertemplate{enumerate item}{\arabic{enumi}.-}		% List: arabic, alph, Alph, roman, Roman
 	\frametitle{Examples}
-	\begin{itemize}
-		\item Equation from paper (but unnumbered):
-		\iftoggle{long}{\pause}{}
+	\begin{enumerate}[<+->] %[label={(\alph*)}]		% \roman*.   \arabic*)
+		\item Equation from paper (but unnumbered): \label{item:eq}
+		\iftoggle{stops}{\pause}{}
 		\input{../Equations/exEqU}
 		\vspace{-1cm}
 		\item[] where \(\error\) is the error
-		\item Table example
-		\item Figure example
-		\item Reference example: \cite{ChangLi:2017AER}
-	\end{itemize}
+		\item[\ding{43}] Table example						% Set the marker
+		\setcounter{currentenumi}{\theenumi}				% Store actual item number
+		\setcounter{enumi}{\thecurrentenumi+1}				% Use stored item number
+		\item Figure example 
+		\item Reference example: \cite{ChangLi:2017AER}. Cross-reference to item \ref{item:eq}
+	\end{enumerate}
 
 	\begin{textblock*}{3cm}(0.3\textwidth,0.715\textheight)	% Left-right, up-down
 		\hyperlink{tableex}{\beamergotobutton{Table}}
@@ -179,9 +186,8 @@
 	\item Note.
 }
 
-\begin{frame}<presentation:0>								% Process bib file without adding slide
-	\bibliographystyle{abbrvnat} 
-	\bibliography{../References/library}
+\begin{frame}<presentation:0>								% Process bib file without adding a slide
+	\printbibliography
 \end{frame}
 
 \end{document}
