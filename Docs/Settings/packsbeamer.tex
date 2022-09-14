@@ -5,12 +5,15 @@
 %---------------------------------------------------------------
 % Fromatting
 %---------------------------------------------------------------
+\usepackage[sfdefault,extralight]{FiraSans}		% To set Fira Sans as the default text font
+	\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
 \usepackage{pgfpages}							% To display multiple pages on a single page (for notes)
 \usepackage{setspace}							% Line spacing and spaces above/below equations
 	\setstretch{1.7}
 	\AtBeginDocument{							% Space before and after an equation
 		\addtolength\abovedisplayskip{-0.5\baselineskip}
 		\addtolength\belowdisplayskip{-0.5\baselineskip}}
+\usepackage{appendixnumberbeamer}				% To restart the frame numbering in appendix
 \usepackage{enumerate} 							% To customize the enumerate style
 %\usepackage{enumitem} 							% To control list environments, but 'disturbs' beamer
 
@@ -29,7 +32,7 @@
 \usepackage[outdir=./]{epstopdf} 	  			% To avoid errors when calling figures
 \usepackage{subcaption}					  		% Multi-panel figure
 \usepackage{tikz}								% To create high quality diagrams
-	\usetikzlibrary{decorations.pathreplacing}
+%	\usetikzlibrary{arrows,calc,decorations,fit,matrix,positioning,shapes,tikzmark}
 
 %---------------------------------------------------------------
 % Tables
@@ -48,17 +51,18 @@
 	\newcommand{\cmark}{\ding{51}}				% Checkmark
 	\newcommand{\xmark}{\ding{55}}				% Xmark
 \usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
-%\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
+\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
 
 %---------------------------------------------------------------
 % Hyperlinks
 %---------------------------------------------------------------
 \usepackage[absolute,overlay]{textpos}			% Positions text in slide (e.g. links to slides)
-%\usepackage[colorlinks=true]{hyperref} 	 	% hyperref is loaded by default in Beamer; pass arguments in \documentclass
+%\usepackage[colorlinks=true]{hyperref} 	 	% Loaded by default in Beamer; pass arguments in \documentclass
 
 %---------------------------------------------------------------
 % References
 %---------------------------------------------------------------
-\usepackage[style=authoryear,backend=biber]{biblatex}
-\addbibresource{../References/library.bib} 		%Imports the bib file
+%\usepackage[style=authoryear,backend=biber]{biblatex}	% Option 1
+%\addbibresource{../References/library.bib} 			% Option 1
+\usepackage[round,authoryear]{natbib}					% Option 2
