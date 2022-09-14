@@ -24,8 +24,13 @@
 %---------------------------------------------------------------
 % Slides
 %---------------------------------------------------------------
-\newtoggle{stops}					   		% Generate version with stops (more slides)
-\newtoggle{struct}					   		% Generate long vs. short version
+\newtoggle{stops}					   		% Generate version with stepwise uncovering (more slides)
 
-\settoggle{stops}{false} 					% 'false' for version without stops
-\settoggle{struct}{false}					% 'true' for version with customized stops
+\settoggle{stops}{true} 					% 'false' for version without stops
+
+%---------------------------------------------------------------
+% Floats
+%---------------------------------------------------------------
+\newtoggle{longnotes}					   	% Standalone descrptions in floats: Long for paper, short for slides
+
+\settoggle{longnotes}{true} 				% Don't change it: paper.tex use it as true, each float file set it to 'false'
