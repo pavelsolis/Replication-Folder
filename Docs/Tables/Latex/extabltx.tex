@@ -9,17 +9,23 @@
 \usepackage{threeparttable}
 \usepackage{afterpage}
 \usepackage{pdflscape}
+\input{../../Settings/toggles}		   		  			% Toggles
 \input{../../Settings/macros}			   			% Customized commands
 \input{../../Settings/variables}			    	% Variable definitions
+\usepackage[sfdefault,extralight]{FiraSans}			% Use same font as in slides
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+\settoggle{longnotes}{false}						% Short notes if standalone
 %\pagestyle{empty}
 
 \begin{document}
+	\newcommand{\Title}{Title of Table}
 %	\afterpage{
 	\begin{footnotesize}
 %		\begin{landscape}
 		\begin{table}[tbph]
 			\centering
-			\caption{Caption} \label{tab:extabltx}
+			\iftoggle{longnotes}{ \caption{\Title} }{ \caption*{\Title} } \label{tab:extabltx}
 			\begin{threeparttable}
 				\begin{tabular}{lccc}
 					\toprule
@@ -40,7 +46,8 @@
 					& & 1 &  9.15 \\
 					\bottomrule
 				\end{tabular}
-				\tabnotes{Add standalone description. You can reference (dynamic) variables like \lastobs.}
+				\tabnotes{ Add standalone description. \iftoggle{longnotes}{Long for text.}{Short for slides.} 
+					You can reference (dynamic) variables like \lastobs. }
 			\end{threeparttable}
 		\end{table}
 %	\end{landscape}

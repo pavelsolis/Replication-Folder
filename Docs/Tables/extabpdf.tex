@@ -9,20 +9,27 @@
 \usepackage{threeparttable}
 \usepackage{afterpage}
 \usepackage{pdflscape}
+\input{../Settings/toggles}		   		  			% Toggles
 \input{../Settings/macros}			   				% Customized commands
 \input{../Settings/variables}			    		% Variable definitions
+\usepackage[sfdefault,extralight]{FiraSans}			% Use same font as in slides
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+\settoggle{longnotes}{false}						% Short notes if standalone
 %\pagestyle{empty}
 
 \begin{document}
+	\newcommand{\Title}{Title of Table}
 %	\afterpage{
 	\begin{normalsize}
 %		\begin{landscape}
 			\begin{table}[tbph]
 				\begin{center}
-					\caption{Title of Table} \label{tab:extabpdf}
+					\iftoggle{longnotes}{ \caption{\Title} }{ \caption*{\Title} } \label{tab:extabpdf}
 					\begin{threeparttable}
 						\estauto{../Tables/ex_float.tex}{5}
-						\tabnotes{Add standalone description. You can reference (dynamic) variables like \lastobs. *, **, *** asterisks respectively indicate significance at the 10\%, 5\% and 1\% level.}
+						\tabnotes{ Add standalone description. \iftoggle{longnotes}{Long for text.}{Short for slides.} 
+							You can reference (dynamic) variables like \lastobs. *, **, *** asterisks respectively indicate significance at the 10\%, 5\% and 1\% level. }
 					\end{threeparttable}
 				\end{center}
 			\end{table}

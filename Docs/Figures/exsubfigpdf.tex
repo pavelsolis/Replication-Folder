@@ -5,14 +5,20 @@
 \usepackage{graphicx}
 \usepackage{afterpage}
 \usepackage{subcaption}
+\input{../Settings/toggles}		   		  			% Toggles
 \input{../Settings/macros}			   				% Customized commands
 \input{../Settings/variables}			    		% Variable definitions
+\usepackage[sfdefault,extralight]{FiraSans}			% Use same font as in slides
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+\settoggle{longnotes}{false}						% Short notes if standalone
 %\pagestyle{empty}
 
 \begin{document}
+	\newcommand{\Title}{Title of Figure}
 %	\afterpage{
 		\begin{figure}[tbph]
-			\caption{Title of Figure} \label{fig:exsubfigpdf}
+			\iftoggle{longnotes}{ \caption{\Title} }{ \caption*{\Title} } \label{fig:exsubfigpdf}
 			\begin{center}							% Center the minipage on the line
 				\begin{minipage}{0.9\linewidth}
 						\begin{subfigure}[t]{\linewidth}
@@ -32,7 +38,8 @@
 							\caption{Subfigure B} \label{subfig:exsubfigureB}
 							\vspace{0.5cm}
 						\end{subfigure}
-					\fignotes{Add standalone description. You can reference (dynamic) variables like \lastobs.} 
+					\fignotes{ Add standalone description. \iftoggle{longnotes}{Long for text.}{Short for slides.} 
+						You can reference (dynamic) variables like \lastobs. }
 				\end{minipage}
 			\end{center}
 		\end{figure}
