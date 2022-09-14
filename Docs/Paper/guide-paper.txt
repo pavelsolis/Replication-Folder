@@ -21,6 +21,7 @@ Recommendations:
 	- Comment the line calling the appendix in paper.tex. Re-run Biber and compile the paper.tex file again so that citations only made in the appendix do not appear in the references of the paper.
 	- Run aloneappendix.tex to generate the standalone appendix.
 	- In the one- and two-file cases, the content of the appendix is the same (i.e., no extra editing is necessary) because both paper.tex and aloneappendix.tex call the same appendix.tex file.
+- Use a reference manager to manage the library.bib file.
 
 Considerations:
 - The pagesetup.tex file resets the Latex float defaults for a better treatment of figures and tables in the text. Modify that file to adjust or restore the default values.
