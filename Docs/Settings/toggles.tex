@@ -29,8 +29,10 @@
 \settoggle{stops}{true} 					% 'false' for version without stops
 
 %---------------------------------------------------------------
-% Floats
+% Paper vs Slides
 %---------------------------------------------------------------
 \newtoggle{longnotes}					   	% Standalone descrptions in floats: Long for paper, short for slides
+\newtoggle{coloreq}					   		% Highlight parts of an equation in slides
 
-\settoggle{longnotes}{true} 				% Don't change it: paper.tex use it as true, each float file set it to 'false'
+\settoggle{longnotes}{true} 				% No need to change it: paper.tex uses it as 'true', each float file sets it to 'false'
+\settoggle{coloreq}{false} 					% No need to change it: paper.tex uses it as 'false', slides.tex sets it to 'true'
