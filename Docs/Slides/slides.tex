@@ -36,9 +36,9 @@
 %---------------------------------------------------------------
 % Notes
 %---------------------------------------------------------------
-\setbeameroption{hide notes}								% Only slides
+%\setbeameroption{hide notes}								% Only slides
 %\setbeameroption{show only notes}							% Only notes (e.g. for editing)
-%\setbeameroption{show notes on second screen=right} 									% Slides+Notes: Option 1
+\setbeameroption{show notes on second screen=right} 									% Slides+Notes: Option 1
 %\setbeameroption{show notes} \pgfpagesuselayout{2 on 1}[a4paper,border shrink=17mm]	% Slides+Notes: Option 2
 
 %---------------------------------------------------------------
@@ -87,7 +87,7 @@
 \section[]{Introduction}
 
 \begin{frame}[label=layered]
-	\frametitle{Layered Items and Text Formatting}
+	\frametitle{Text Formatting}
 	\begin{itemize}
 		\item Income \quad \only<\iftoggle{stops}{2}{1}>{\cmark}
 		\begin{itemize}
@@ -116,8 +116,8 @@
 	\setbeamertemplate{enumerate item}{\arabic{enumi}.-}	% List: \arabic, \alph, \Alph, \roman, \Roman
 	\frametitle{Examples}
 	\begin{enumerate}[<\iftoggle{stops}{+-}{1}>]
-		\item Equation from paper (but unnumbered): \label{item:eq}
-		\input{../Equations/exEqU}
+		\item Equation from paper (but unnumbered and highlighted): \label{item:eq}
+		\settoggle{coloreq}{true} \input{../Equations/exEqU}
 		\vspace{-1cm}
 		\item<1->[] where \(\error\) (defined in \texttt{variables.tex}) is the error
 		\item[\ding{43}] Reference example: \cite{ChangLi:2017AER}. Cross-reference to item \ref{item:eq}
@@ -152,11 +152,11 @@
 \begin{frame}[label=tableex]
 	\frametitle{Table from Paper \uncover<\iftoggle{stops}{2-}{1}>{(Highlighted)}}
 	\vspace{-0.25cm}
-	\hspace{0.55cm}
+	\hspace{0.9cm}
 	\begin{tikzpicture}
 	\node (table) at (0,0)
-		{\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}};
-		\uncover<\iftoggle{stops}{2-}{1}>{\draw[red,thick] (-1.2,-0.6) rectangle (0.9,0.6);}
+		{\includegraphics[trim={2.9cm 20.8cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}};
+		\uncover<\iftoggle{stops}{2-}{1}>{\draw[red,thick] (-1.2,-0.47) rectangle (0.9,0.57);}
 		%\draw[step=1cm,gray,very thin] (-4,-4) grid (6,6);
 	\end{tikzpicture}
 	
@@ -227,9 +227,9 @@
 
 
 \begin{frame}<0>[noframenumbering]							% Process bib file without adding a slide
-%	\printbibliography										% Option 1
-	\bibliographystyle{abbrvnat}							% Option 2
-	\bibliography{../References/library}					% Option 2
+	\printbibliography										% Option 1
+%	\bibliographystyle{abbrvnat}							% Option 2
+%	\bibliography{../References/library}					% Option 2
 \end{frame}
 
 \end{document}
