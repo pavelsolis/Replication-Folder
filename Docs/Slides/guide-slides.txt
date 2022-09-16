@@ -3,8 +3,7 @@ Structure:
 
 Versions:
 - Conditionals (defined in toggles.tex) provide flexibility to generate different versions of the slides:
-
-- Two versions of the slides can be generated: with and without notes.
+- Two versions of the slides can be generated: with and without stops, with and without notes.
 - Examples of these versions are included in the Docs -> Extra -> Temp folder.
 - To generate the desired version, just comment line XXXX and uncomment next line XXXX as needed. The idea is to avoid extra editing when shifting between versions.
 
@@ -17,3 +16,7 @@ Recommendations:
 Considerations:
 - The packsbeamer.tex file defines colors and themes. Modify them as desired.
 - The tasks.tex file in the Docs -> Extra -> Tasks folder can help to manage the to-dos for the paper and the slides.
+- Equations can be highlighted.
+- natbib vs biblatex to process bib files in slides
+- enumitem is not recommended b/c it interferes with beamer
+- For the option of stepwise uncovering (\iftoggle{stops}{}{}) to work properly, use it in the content as well as in the notes. If it is only used in the content, there will be extra slides for the notes.
