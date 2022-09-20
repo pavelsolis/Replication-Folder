@@ -13,6 +13,7 @@ Versions:
 Recommendations:
 - When using PDF versions of the floats (tables and figures) in the slides, run the main latex files generating standalone PDF versions of the floats before compiling the slides.tex file to ensure you are always using the latest version of the floats.
 
+
 Considerations:
 - The packsbeamer.tex file defines colors and themes. Modify them as desired.
 - The tasks.tex file in the Docs -> Extra -> Tasks folder can help to manage the to-dos for the paper and the slides.
@@ -20,3 +21,9 @@ Considerations:
 - natbib vs biblatex to process bib files in slides
 - enumitem is not recommended b/c it interferes with beamer
 - For the option of stepwise uncovering (\iftoggle{stops}{}{}) to work properly, use it in the content as well as in the notes. If it is only used in the content, there will be extra slides for the notes.
+<> in notes
+
+- To update figures and tables, before using them in slides
+cd Docs/Figures/; for i in *.tex; do pdflatex "$i"; done; cd ../..
+cd Docs/Tables/; for i in *.tex; do pdflatex "$i"; done; cd ../..
+During revisions of the paper, execute text_numbers.EXT in Codes/Analysis/
