@@ -1,4 +1,4 @@
-* cd Documents\GitHub\Replication-Folder\Docs\Paper\Numbers
+* cd Documents\GitHub\Replication-Folder\Docs\Numbers
 sysuse auto, clear
 summ mpg
 tempname myfile
