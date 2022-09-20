@@ -27,3 +27,4 @@ Considerations:
 cd Docs/Figures/; for i in *.tex; do pdflatex "$i"; done; cd ../..
 cd Docs/Tables/; for i in *.tex; do pdflatex "$i"; done; cd ../..
 During revisions of the paper, execute text_numbers.EXT in Codes/Analysis/
+This explains the tex files stored in Figures and Tables folders. Tex files not wanted to be updated are stored in subfolders.

@@ -3,6 +3,6 @@ Consideration:
 
 Recommendations:
 - Add comments indicating the commands that generate specific results.
-- Numbers referenced in earlier drafts of the paper may change in later versions (e.g. due to a dataset update). From the beginning, prepare a code file specifically to replicate the numbers highlighted in the paper. In this way, you minize the need to recreate results during revisions.
+- Numbers referenced in earlier drafts of the paper may change in later versions (e.g. due to a dataset update). From the beginning, prepare a code file specifically to replicate the numbers highlighted in the paper. In this way, you minize the need to recreate results during revisions. Store specific numbers as txt files in the Docs/Paper/Numbers folder and call them with the \dynamic command defined in macros.tex.
 - If possible, make standalone code for figures. That is, start by calling the relevant analysis data file and generate the figure from there. In this way, you do not need to run a large block of code to update a figure.
 - Use a main file (e.g. data_analysis.EXT) to call the codes sequentially to generate the results.
