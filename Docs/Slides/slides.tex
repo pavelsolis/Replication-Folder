@@ -36,9 +36,9 @@
 %---------------------------------------------------------------
 % Notes
 %---------------------------------------------------------------
-%\setbeameroption{hide notes}								% Only slides
+\setbeameroption{hide notes}								% Only slides
 %\setbeameroption{show only notes}							% Only notes (e.g. for editing)
-\setbeameroption{show notes on second screen=right} 									% Slides+Notes: Option 1
+%\setbeameroption{show notes on second screen=right} 									% Slides+Notes: Option 1
 %\setbeameroption{show notes} \pgfpagesuselayout{2 on 1}[a4paper,border shrink=17mm]	% Slides+Notes: Option 2
 
 %---------------------------------------------------------------
@@ -65,7 +65,7 @@
 \begin{frame}[noframenumbering]
 	\maketitle \vspace{-0.5cm}
 	\centering {\footnotesize The views expressed do not necessarily reflect the position of XYZ.}
-\end{frame} }
+\end{frame} 
 \note[itemize]{
 	\item Hello everyone.
 	\item This paper:
@@ -73,6 +73,7 @@
 		\item Studies ABC, and
 		\item Contributes to XYZ.
 	\end{itemize}
+	}
 }
 
 
@@ -80,6 +81,7 @@
 	\frametitle{Roadmap}
 	\tableofcontents
 \end{frame}
+
 
 %----------------------------------------------------------------
 % Section
@@ -104,7 +106,6 @@
 		\end{itemize}
 		\item Operating \texttt{costs} (OC) \quad \only<\iftoggle{stops}{2}{1}>{\xmark}
 	\end{itemize}
-
 \note<1->[item]{Note 1.}
 \note<\iftoggle{stops}{2-}{1}>[item]{Note 2.}
 \end{frame}
@@ -117,18 +118,20 @@
 	\frametitle{Examples}
 	\begin{enumerate}[<\iftoggle{stops}{+-}{1}>]
 		\item Equation from paper (but unnumbered and highlighted): \label{item:eq}
-		\settoggle{coloreq}{true} \input{../Equations/exEqU}
+		\settoggle{coloreq}{true}							% Set toggle to highlight part of equation
+		\input{../Equations/exEqU}
 		\vspace{-1cm}
 		\item<1->[] where \(\error\) (defined in \texttt{variables.tex}) is the error
 		\item[\ding{43}] Reference example: \cite{ChangLi:2017AER}. Cross-reference to item \ref{item:eq}
 		\setcounter{currentenumi}{\theenumi}				% Store actual item number
 		\setcounter{enumi}{\thecurrentenumi+1}				% Use stored item number
 		\item Table example \hyperlink{tableex}{\beamergotobutton{Table}}
-		\item Figure example \hyperlink{figureex}{\beamergotobutton{Figure}}
-		
+		\item Figure example \hyperlink{figureex}{\beamergotobutton{Figure}}	
 	\end{enumerate}
-
-\note[item]{Note.}
+\note[item]{Note 1.}
+\note<\iftoggle{stops}{2-}{1}>[item]{Note 2.}
+\note<\iftoggle{stops}{3-}{1}>[item]{Note 3.}
+\note<\iftoggle{stops}{4-}{1}>[item]{Note 4.}
 \end{frame}
 
 
@@ -143,10 +146,8 @@
 		\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}
 		% trim={<left> <lower> <right> <upper>}
 	\end{center}
+\note<1->[item]{Note.}
 \end{frame}
-\note[itemize]{
-	\item Note.
-}
 
 
 \begin{frame}[label=tableex]
@@ -163,10 +164,10 @@
 	\begin{textblock*}{3cm}(0.94\textwidth,0.98\textheight)	% Left-right, up-down
 		\hyperlink<\iftoggle{stops}{2-}{1}>{examples}{\beamerreturnbutton{Examples}}
 	\end{textblock*}
+
+\note<1->[item]{Note 1.}
+\note<\iftoggle{stops}{2-}{1}>[item]{Note 2.}
 \end{frame}
-\note[itemize]{
-	\item Note.
-}
 
 
 %----------------------------------------------------------------
@@ -180,7 +181,9 @@
 	\begin{center}
 		\huge \textcolor{yaleblue}{Appendix}
 	\end{center}
-\end{frame} }
+\end{frame}
+}
+
 
 \begin{frame}[label=figureex]
 	\frametitle{Figure from Paper: I}
@@ -196,6 +199,7 @@
 \note[itemize]{
 	\item Note.
 }
+
 
 \begin{frame}
 	\frametitle{Figure from Paper: II}
