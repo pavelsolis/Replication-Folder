@@ -143,7 +143,7 @@
 \begin{frame}<0>											% <0> hides slide in PDF
 	\frametitle{Table from Paper}
 	\begin{center}
-		\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}
+		\includegraphics[trim={3cm 21.15cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabfrag.pdf}
 		% trim={<left> <lower> <right> <upper>}
 	\end{center}
 \note<1->[item]{Note.}
@@ -156,7 +156,7 @@
 	\hspace{0.9cm}
 	\begin{tikzpicture}
 	\node (table) at (0,0)
-		{\includegraphics[trim={2.9cm 20.8cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabpdf.pdf}};
+		{\includegraphics[trim={2.9cm 20.8cm 3cm 3cm},clip,height=5cm,width=\textwidth,keepaspectratio]{../Tables/extabfrag.pdf}};
 		\uncover<\iftoggle{stops}{2-}{1}>{\draw[red,thick] (-1.2,-0.47) rectangle (0.9,0.57);}
 		%\draw[step=1cm,gray,very thin] (-4,-4) grid (6,6);
 	\end{tikzpicture}
@@ -188,7 +188,7 @@
 \begin{frame}[label=figureex]
 	\frametitle{Figure from Paper: I}
 	\begin{center}
-		\includegraphics[trim={0cm 0cm 0cm 1cm},clip,height=0.85\textheight,width=\textwidth,keepaspectratio]{../Figures/exfigure1}
+		\includegraphics[trim={0cm 0cm 0cm 1cm},clip,height=0.85\textheight,width=\textwidth,keepaspectratio]{../Figures/Plain/exfigure1}
 		% trim={<left> <lower> <right> <upper>}
 	\end{center}
 	
@@ -215,7 +215,7 @@
 	\hfill
 		\begin{column}{0.58\textwidth}
 			\begin{center}
-				\includegraphics[trim={0cm 0cm 0cm 2.7cm},clip,height=\textheight,width=1.2\textwidth,keepaspectratio]{../Figures/exfigure2}
+				\includegraphics[trim={0cm 0cm 0cm 2.7cm},clip,height=\textheight,width=1.2\textwidth,keepaspectratio]{../Figures/Plain/exfigure2}
 				% trim={<left> <lower> <right> <upper>}
 			\end{center}
 		\end{column}%
@@ -231,9 +231,9 @@
 
 
 \begin{frame}<0>[noframenumbering]							% Process bib file without adding a slide
-	\printbibliography										% Option 1
-%	\bibliographystyle{abbrvnat}							% Option 2
-%	\bibliography{../References/library}					% Option 2
+%	\printbibliography										% Option 1
+	\bibliographystyle{abbrvnat}							% Option 2
+	\bibliography{../References/library}					% Option 2
 \end{frame}
 
 \end{document}
