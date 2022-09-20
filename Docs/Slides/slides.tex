@@ -5,6 +5,7 @@
 \input{../Settings/toggles}		   		  					% Toggles
 \input{../Settings/packsbeamer}   		  					% Packages
 \input{../Settings/themecolors}   		  					% Customized theme colors
+\input{../Settings/macros}		        					% Customized commands
 \input{../Settings/variables}			     				% Variable definitions
 \input{../Equations/equations}			     				% Equations
 \listfiles													% .log file shows version of packages loaded
@@ -122,9 +123,10 @@
 		\input{../Equations/exEqU}
 		\vspace{-1cm}
 		\item<1->[] where \(\error\) (defined in \texttt{variables.tex}) is the error
-		\item[\ding{43}] Reference example: \cite{ChangLi:2017AER}. Cross-reference to item \ref{item:eq}
+		\item[\ding{43}] Reference example: \cite{ChangLi:2017AER}. % Set marker
 		\setcounter{currentenumi}{\theenumi}				% Store actual item number
 		\setcounter{enumi}{\thecurrentenumi+1}				% Use stored item number
+		\item Cross-reference examples: to number in paper (\double{../Numbers/exNumMean.txt}) and to item \ref{item:eq} above
 		\item Table example \hyperlink{tableex}{\beamergotobutton{Table}}
 		\item Figure example \hyperlink{figureex}{\beamergotobutton{Figure}}	
 	\end{enumerate}
@@ -132,6 +134,7 @@
 \note<\iftoggle{stops}{2-}{1}>[item]{Note 2.}
 \note<\iftoggle{stops}{3-}{1}>[item]{Note 3.}
 \note<\iftoggle{stops}{4-}{1}>[item]{Note 4.}
+\note<\iftoggle{stops}{5-}{1}>[item]{Note 5.}
 \end{frame}
 
 
@@ -186,7 +189,7 @@
 
 
 \begin{frame}[label=figureex]
-	\frametitle{Figure from Paper: I}
+	\frametitle{Figure from Paper}
 	\begin{center}
 		\includegraphics[trim={0cm 0cm 0cm 1cm},clip,height=0.85\textheight,width=\textwidth,keepaspectratio]{../Figures/Plain/exfigure1}
 		% trim={<left> <lower> <right> <upper>}
@@ -202,28 +205,23 @@
 
 
 \begin{frame}
-	\frametitle{Figure from Paper: II}
+	\frametitle{Tikz Figure}
 	\begin{columns}[T] 										% Align columns
-		\begin{column}{0.38\textwidth}
+		\begin{column}{0.35\textwidth}
 			\begin{itemize}
-				\item[]
 				\item Remark 1
 				\item Remark 2
 				\item Remark 3
 			\end{itemize}
 		\end{column}
 	\hfill
-		\begin{column}{0.58\textwidth}
+		\begin{column}{0.61\textwidth}
 			\begin{center}
-				\includegraphics[trim={0cm 0cm 0cm 2.7cm},clip,height=\textheight,width=1.2\textwidth,keepaspectratio]{../Figures/Plain/exfigure2}
+				\includegraphics[height=\textheight,width=\textwidth,keepaspectratio]{../Figures/Tikz/extikz}
 				% trim={<left> <lower> <right> <upper>}
 			\end{center}
 		\end{column}%
 	\end{columns}
-
-	\begin{textblock*}{3cm}(0.8\textwidth,0.95\textheight)	% Left-right, up-down
-		\hyperlink{examples}{\beamerreturnbutton{Examples}}
-	\end{textblock*}
 \end{frame}
 \note[itemize]{
 	\item Note.
