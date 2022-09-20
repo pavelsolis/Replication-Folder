@@ -1,5 +1,5 @@
 %% Customized Macros
-% Table of Contents, Tasks, Tables, Subcaptions, Track Changes
+% Table of Contents, Tasks, Tables, Subcaptions, Text
 %
 %\gototoc
 %\maketoc
@@ -8,6 +8,7 @@
 %\specialcell
 %\fignotes
 %\tabnotes
+%\double
 %\textchange
 
 %---------------------------------------------------------------
@@ -94,8 +95,11 @@
 }
 
 %---------------------------------------------------------------
-% Track Changes
+% Text
 %---------------------------------------------------------------
 
-% % Highlight changes in revised version with color
+% Input numbers from file
+\newcommand{\double}[1]{\input{#1}\unskip}
+
+% Highlight changes in revised version with color
 \newcommand{\textchange}[1]{\iftoggle{revised}{\textcolor{blue}{#1}}{#1}}
