@@ -1,19 +1,19 @@
-# \<Paper's Title\>
+# \<Title of the Paper\>
 
-The files in this folder facilitate the replication of the results in "\<Paper's Title\>" by \<Author(s)\> (\<email(s)\>).
+The files in this folder facilitate the replication of the results in "\<Title of the Paper\>" by \<Author(s)\> (\<email(s)\>).
 
 
 ## SYSTEM FEATURES
 The results in the paper were generated using the following:
 - Operating system(s): 	macOS Version, Windows Version.
 - Software: 		Matlab Version, Stata Version, R Version, Python Version, LaTeX Version.
-- Essential add-ons: 	Financial Toolbox (Matlab); regsave, texsave (Stata); tidyverse (R); numpy, pandas (Python).
+- Add-ons (essential): 	Financial Toolbox (Matlab); esttab, scheme-modern (Stata); tidyverse (R); numpy, pandas (Python).
 - Restricted sources: 	Bloomberg.
 - Running time: 	Tidy \<XX\> min, Stats \<XX\> min, Analysis \<XX\> min.
 
 
 ## CONTENTS OF FOLDER
-- README.txt (this file).
+- README.md (this file).
 - doAll.sh: generates the results, the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the analysis data files by cleaning and processing the original data files.
