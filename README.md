@@ -7,9 +7,9 @@ Reproducibility of your research results is desirable. This goal is easier to ac
 
 The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* your results.
 
-Guide files briefly describe the purpose and structure of some folders, and explain the example files. Specifically, you will find guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
+A few files briefly guide you through the example files, and the purpose and structure of some folders. Specifically, you will find guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
 
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project reamins in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below reamins in it.
 
 
 # \<Title of the Paper\>
@@ -28,7 +28,7 @@ The results in the paper were generated using the following:
 
 ## Contents of Folder
 - README.md (this file).
-- doAll.sh: call the main files to generate the results, the paper and the slides.
+- doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
 	- Stats: codes that inspect the analysis data files (e.g. look for outliers) and provide descriptive statistics of the variables used.
@@ -58,7 +58,7 @@ The folder structure uses stratification to avoid repeating code or duplicating 
 - Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
 - Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: call equations, figures and tables.
-- doAll.sh: call the previous main files sequentially to generate the results and the latest versions of the paper and slides without having to execute each main file individually.
+- doAll.sh: call the previous main files sequentially to avoid having to execute each main file individually.
 
 
 ## Considerations
@@ -68,8 +68,8 @@ The codes use relative paths based on the structure of the main folder as provid
 
 The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, codes are written to be independent of the platform used.
 
-Most of the results in the paper can be replicated using the analysis data files, which:
-- Contain most of the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
+The analysis data files used to replicate (most of) the results in the paper:
+- Contain (most of) the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
 - Can be updated if the user has access to the (restricted) original data sources.
 
 
@@ -88,10 +88,10 @@ For more on the structure of a LaTex project, see:
 Below is the order of the scripts called by the main files in the Codes subfolders to assist in following the codes.
 
 In the Tidy subfolder, data_clean.EXT calls the following files:
-1. \<Ordered list of files called by data_clean.EXT\>
+1. \<Ordered list of scripts called by data_clean.EXT\>
 
 In the Stats subfolder, data_stats.EXT calls the following files:
-1. \<Ordered list of files called by data_stats.EXT\>
+1. \<Ordered list of scripts called by data_stats.EXT\>
 
 In the Analysis subfolder, data_analysis.EXT calls the following files:
-1. \<Ordered list of files called by data_analysis.EXT\>
+1. \<Ordered list of scripts called by data_analysis.EXT\>
