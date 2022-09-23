@@ -7,7 +7,7 @@ Reproducibility of your research results is desirable. This goal is easier to ac
 
 The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* your results.
 
-A few files briefly guide you through the example files, and the purpose and structure of some folders. Specifically, you will find guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
+A few files briefly guide you through the example files, and the purpose and structure of some folders. Specifically, you will find short guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
 
 Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below reamins in it.
 
@@ -21,7 +21,7 @@ The files in this folder facilitate the replication of the results in "\<Title o
 The results in the paper were generated using the following:
 - Operating system(s): 	\<macOS Version, Windows Version\>.
 - Software: 		\<Matlab Version, Stata Version, R Version, Python Version, LaTeX Version\>.
-- Add-ons (essential): 	\<Financial Toolbox (Matlab); esttab, scheme-modern (Stata); tidyverse (R); numpy, pandas (Python)\>.
+- Add-ons (essential): 	\<Financial Toolbox (Matlab); esttab (Stata); tidyverse (R); numpy, pandas (Python)\>.
 - Restricted sources: 	\<Bloomberg\>.
 - Running time: 	Tidy \<XX\> min, Stats \<XX\> min, Analysis \<XX\> min.
 
@@ -31,7 +31,7 @@ The results in the paper were generated using the following:
 - doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
-	- Stats: codes that inspect the analysis data files (e.g. look for outliers) and provide descriptive statistics of the variables used.
+	- Stats: codes that inspect the analysis data files (e.g. for outliers) and provide descriptive statistics of the variables.
 	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
 	- Extra: auxiliary, temporary and old codes.
 - Data folder with the following subfolders:
@@ -58,7 +58,7 @@ The folder structure uses stratification to avoid repeating code or duplicating 
 - Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
 - Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: call equations, figures and tables.
-- doAll.sh: call the previous main files sequentially to avoid having to execute each main file individually.
+- doAll.sh: call the previous main files sequentially to avoid having to execute each one individually.
 
 
 ## Considerations
@@ -87,11 +87,11 @@ For more on the structure of a LaTex project, see:
 ## Code Workflow (Optional)
 Below is the order of the scripts called by the main files in the Codes subfolders to assist in following the codes.
 
-In the Tidy subfolder, data_clean.EXT calls the following files:
+In the Tidy subfolder, data_clean.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_clean.EXT\>
 
-In the Stats subfolder, data_stats.EXT calls the following files:
+In the Stats subfolder, data_stats.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_stats.EXT\>
 
-In the Analysis subfolder, data_analysis.EXT calls the following files:
+In the Analysis subfolder, data_analysis.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_analysis.EXT\>
