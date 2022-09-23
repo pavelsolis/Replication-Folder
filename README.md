@@ -31,7 +31,7 @@ The results in the paper were generated using the following:
 - doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
-	- Stats: codes that inspect the analysis data files (e.g. for outliers) and provide descriptive statistics of the variables.
+	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics of the variables.
 	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
 	- Extra: auxiliary, temporary and old codes.
 - Data folder with the following subfolders:
