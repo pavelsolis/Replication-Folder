@@ -7,7 +7,7 @@ Reproducibility of your research results is desirable. This goal is easier to ac
 
 The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* your results.
 
-Guide files briefly describe the purpose and structure of a few folders, some also explain the example files. There are guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
+Guide files briefly describe the purpose and structure of some folders, and explain the example files. Specifically, you will find guides for: metadata, codes (tidy, stats, analysis), paper, slides, figures, tables and equations.
 
 Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project reamins in it.
 
@@ -19,16 +19,16 @@ The files in this folder facilitate the replication of the results in "\<Title o
 
 ## System Features
 The results in the paper were generated using the following:
-- Operating system(s): 	macOS Version, Windows Version.
-- Software: 		Matlab Version, Stata Version, R Version, Python Version, LaTeX Version.
-- Add-ons (essential): 	Financial Toolbox (Matlab); esttab, scheme-modern (Stata); tidyverse (R); numpy, pandas (Python).
-- Restricted sources: 	Bloomberg.
+- Operating system(s): 	\<macOS Version, Windows Version\>.
+- Software: 		\<Matlab Version, Stata Version, R Version, Python Version, LaTeX Version\>.
+- Add-ons (essential): 	\<Financial Toolbox (Matlab); esttab, scheme-modern (Stata); tidyverse (R); numpy, pandas (Python)\>.
+- Restricted sources: 	\<Bloomberg\>.
 - Running time: 	Tidy \<XX\> min, Stats \<XX\> min, Analysis \<XX\> min.
 
 
 ## Contents of Folder
 - README.md (this file).
-- doAll.sh: execute the main files to generate the results, the paper and the slides.
+- doAll.sh: call the main files to generate the results, the paper and the slides.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
 	- Stats: codes that inspect the analysis data files (e.g. look for outliers) and provide descriptive statistics of the variables used.
@@ -43,9 +43,9 @@ The results in the paper were generated using the following:
 	- Paper: files that make up the paper.
 	- Slides: files that make up the slides.
 	- Numbers: code-generated text files containing specific numbers cited in the paper and slides.
-	- Equations: files defining and referencing equations.
-	- Figures: figures used in the paper or the slides.
-	- Tables: tables used in the paper or the slides.
+	- Equations: files that define and reference equations.
+	- Figures: files for the figures used in the paper or the slides.
+	- Tables: files for the tables used in the paper or the slides.
 	- Settings: files with settings for the paper and the slides.
 	- References: files listing the cited references.
 	- Extra: auxiliary, temporary and old files.
@@ -54,11 +54,11 @@ The results in the paper were generated using the following:
 ## Instructions for Replication
 The metadata file (Data -> Metadata -> metadata.docx) describes the (original and analysis) data files and provides instructions on how to update them.
 
-The folder structure is based on stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables). This approach also facilitates collaboration, development and testing because one can focus on specific parts. Main files are used to call the necessary bits in the required order:
-- Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow detailed below) to generate the results.
+The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing given that one can focus on specific parts. These main files are used to call the necessary bits in the required order:
+- Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
 - Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: call equations, figures and tables.
-- doAll.sh: call the previous main files sequentially to generate the results and the latest versions of the paper and the slides without having to execute each main file individually.
+- doAll.sh: call the previous main files sequentially to generate the results and the latest versions of the paper and slides without having to execute each main file individually.
 
 
 ## Considerations
@@ -69,7 +69,7 @@ The codes use relative paths based on the structure of the main folder as provid
 The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, codes are written to be independent of the platform used.
 
 Most of the results in the paper can be replicated using the analysis data files, which:
-- Contain most of the variables necessary for the analysis, generated from the original data files (some of which are not shared due to licensing rights).
+- Contain most of the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
 - Can be updated if the user has access to the (restricted) original data sources.
 
 
@@ -85,7 +85,7 @@ For more on the structure of a LaTex project, see:
 
 
 ## Code Workflow (Optional)
-Below is the order of the files called by the main files in the Codes subfolders to assist in following the codes.
+Below is the order of the scripts called by the main files in the Codes subfolders to assist in following the codes.
 
 In the Tidy subfolder, data_clean.EXT calls the following files:
 1. \<Ordered list of files called by data_clean.EXT\>
