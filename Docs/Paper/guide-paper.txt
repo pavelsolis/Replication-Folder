@@ -26,3 +26,5 @@ Recommendations:
 Considerations:
 - The pagesetup.tex file resets the Latex float defaults for a better treatment of figures and tables in the text. Modify that file to adjust or restore the default values.
 - The tasks.tex file in the Docs -> Extra -> Tasks folder can help to manage the to-dos for the paper and the slides.
+
+- The structure for the paper gives you flexibility to generate different versions of the paper: full draft vs outline, clean vs linked (when editing, it is useful to go back and forth to the table of contents), with vs without comment boxes (when editing, it is useful to keep in mind certain pending issues).
