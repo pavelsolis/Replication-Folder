@@ -7,7 +7,7 @@ Reproducibility of your research results is desirable. This goal is easier to ac
 
 You will find a few files that briefly guide you through the example files, and the purpose and structure of some folders. Specifically, you will find short guides for: data (metadata), codes (tidy, stats, analysis) and docs (paper, slides, figures, tables, equations). The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* your results.
 
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below reamins in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below remains in it.
 
 
 # \<Title of the Paper\>
@@ -27,16 +27,16 @@ The results in the paper were generated using the following:
 ## Contents of Folder
 - README.md (this file).
 - doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
-- Codes folder with the following subfolders:
-	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
-	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics of the variables used.
-	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
-	- Extra: auxiliary, temporary and old codes.
 - Data folder with the following subfolders:
 	- Metadata: files documenting the data sources and variables.
 	- Raw: original data files.
 	- Analytic: analysis (gleaned or processed) data files.
 	- Extra: auxiliary, temporary and old data files.
+- Codes folder with the following subfolders:
+	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
+	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics of the variables used.
+	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
+	- Extra: auxiliary, temporary and old codes.
 - Docs folder with the following subfolders:
 	- Paper: files that make up the paper.
 	- Slides: files that make up the slides.
@@ -52,11 +52,11 @@ The results in the paper were generated using the following:
 ## Instructions for Replication
 The metadata file (Data -> Metadata -> metadata.docx) describes the (original and analysis) data files and provides instructions on how to update them.
 
-The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing given that one can focus on specific parts. These main files are used to call the necessary bits in the required order:
+The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing (since one can focus on specific parts). These main files call the necessary bits in the required order:
 - Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
 - Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
 - Docs -> Slides -> slides.tex: call equations, figures and tables.
-- doAll.sh: call the previous main files sequentially to avoid having to execute each one individually.
+- doAll.sh: call the previous main files sequentially to avoid having to execute them individually.
 
 
 ## Considerations
