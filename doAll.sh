@@ -8,6 +8,7 @@
 pathmain=`pwd`
 # cd $pathmain/Codes/Analysis/; nohup stata -b do data_analysis &	# substitute the last part for the respective command depending on the software used for the analysis
 cd $pathmain/Docs/Paper/; pdflatex "paper.tex"
+cd $pathmain/Docs/Paper/; pdflatex "appendixalone.tex"
 cd $pathmain/Docs/Figures/; for i in *.tex; do pdflatex "$i"; done
 cd $pathmain/Docs/Tables/; for i in *.tex; do pdflatex "$i"; done
 cd $pathmain/Docs/Slides/; pdflatex "slides.tex"
