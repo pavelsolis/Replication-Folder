@@ -6,14 +6,14 @@ The metadata file (Data -> Metadata -> metadata.docx) describes the original and
 
 
 ## Considerations
-Excel files are excluded from updates in the repository because:
+Excel files are excluded from the repository because they are usually large and:
 - Very large files (\> 100 MB) do not work well in version control (they are often duplicated in the history).
 - GitHub limits the size of files to 50 MB.
 
 Data files with an Excel extension are thus not included in the replication folder; this behavior can be reverted by commenting the \*.xls\* line in the *.gitignore* file. They can be shared, however, by posting them online or by using a cloud-based platform.
-- For this reason, when collaborating with other people, designate a person responsible for having the latest version of the Excel files and for sharing them.
+- For this reason, when collaborating with other people, a designated person can be responsible for having the latest version of the Excel files and for sharing them.
 
-Other data file extensions (e.g., .csv, .mat, .dta) are not explicitly excluded but be aware of the 50 MB limit.
+Non-Excel data files (e.g., .csv, .mat, .dta) are not explicitly excluded but beware of the 50 MB limit.
 
 
 ## Recommendations
@@ -26,3 +26,6 @@ Add an entry in metadata.docx for a data file:
 Register the date in metadata.docx in the respective entry for a data file:
 - Each time an original data file is updated.
 - Each time codes in the Tidy folder generate or update an analysis data file.
+
+Make arrangements for restricted and confidential data files before making your repository public.
+- Although arrangements for Excel files are not needed (as long as the \*.xls\* line in the *.gitignore* file is not commented), you may need to do them for other file extensions.
