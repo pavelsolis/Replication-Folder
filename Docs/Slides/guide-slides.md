@@ -1,16 +1,20 @@
-Structure:
-- Elements of the slides (e.g., title, authors' names and affiliations) are stored in separate files so that they can be modified only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
+# Slides Guide
 
-Versions:
-- Conditionals (defined in toggles.tex) provide flexibility to generate different versions of the slides:
-- Two versions of the slides can be generated: with and without stops, with and without notes.
-- Examples of these versions are included in the Docs -> Extra -> Temp folder.
-- To generate the desired version, just comment line XXXX and uncomment next line XXXX as needed. The idea is to avoid extra editing when shifting between versions.
+Elements of the slides (e.g., title, authors' names and affiliations) are stored in separate files so that edits are done only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
+
+## Versions
+Conditionals (defined in toggles.tex) provide flexibility to generate different versions of the slides:
+
+Two versions of the slides can be generated: with and without stops, with and without notes.
+
+Examples of these versions are included in the Docs -> Extra -> Temp folder.
+
+To generate the desired version, just comment line XXXX and uncomment next line XXXX as needed. The idea is to avoid extra editing when shifting between versions.
 
 - Examples of these versions are included in the Docs -> Extra -> Temp folder.
 - To generate the desired version, just work following the structure of the sections.tex file (e.g., the section takeaway outside the fulldraft toggle and the section content inside) and adjust the conditionals in toggles.tex as needed. The idea behind the conditionals is to avoid extra editing when shifting between versions.
 
-Recommendations:
+## Recommendations
 - When using PDF versions of the floats (tables and figures) in the slides, run the main latex files generating standalone PDF versions of the floats before compiling the slides.tex file to ensure you are always using the latest version of the floats.
 
 
