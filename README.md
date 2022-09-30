@@ -26,6 +26,7 @@ The results in the paper were generated using the following:
 
 ## Contents of Folder
 - README.md (this file).
+- LICENSE: open source license for repository template.
 - doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
 - Data folder with the following subfolders:
 	- Metadata: files documenting the data sources and variables.
@@ -55,6 +56,7 @@ The metadata file (Data -> Metadata -> metadata.docx) describes the (original an
 The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing (since one can focus on specific parts). These main files call the necessary bits in the required order:
 - Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
 - Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
+- Docs -> Paper -> appendix.tex: generate a standalone file for the appendix.
 - Docs -> Slides -> slides.tex: call equations, figures and tables.
 - doAll.sh: call the previous main files sequentially to avoid having to execute them individually.
 
