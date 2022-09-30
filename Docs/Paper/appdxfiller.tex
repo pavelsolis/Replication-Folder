@@ -1,0 +1,54 @@
+\newpage
+\begin{appendices}
+	
+\setcounter{page}{1}										% Restart page numbering
+\setcounter{footnote}{0}									% Restart footnote counter
+\renewcommand{\thetable}{\thesection.\arabic{table}}		% Table name aligned to appendix
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}		% Figure name aligned to appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}	% Equation name aligned to appendix
+%	\captionsetup[table]{name=Table A}						% Change table caption prefix
+
+\begin{center}
+	{\LARGE\textbf{Appendix} \\ \vspace{0.3cm}
+	\input{../Settings/title}}
+\end{center}
+
+
+\section{Section} % \label{sec:appdx1}
+\vspace{0.7cm}
+\iftoggle{toclinks}{\gototoc}{} 							% Turn it on/off in packages.tex
+\iftoggle{cboxes}{	   				  						% Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item To-do list.
+	\end{boxeditems}}{}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\setcounter{equation}{0}
+
+Appendix content.
+
+\input{../Equations/exEqN}
+
+Examples of citations only made in appendix: \textcite{ChangLi:2017AER} and \parencite{ChangLi:2017AER}.
+
+
+\section{Section} % \label{sec:appdx2}
+\vspace{0.7cm}
+\iftoggle{toclinks}{\gototoc}{} 							% Turn it on/off in packages.tex
+\iftoggle{cboxes}{	   				  						% Turn it on/off in packages.tex
+	\begin{boxeditems}
+		\item To-do list.
+	\end{boxeditems}}{}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\setcounter{equation}{0}
+
+Appendix content.
+
+\input{../Equations/exLongN}
+
+\input{../Tables/Standalone/extabself}
+
+\input{../Figures/exsubfig}
+
+\end{appendices}
