@@ -17,9 +17,9 @@ For the variables in the analysis data files, the scripts in in this folder shou
 - Summary statistics and histograms for quantitative variables.
 - Relative frequency tables and charts for categorical variables.
 
-Specific numbers from descriptive statistics and results cited in earlier drafts of the paper and slides may change in later versions (e.g. due to a dataset update). To minimize the need to recreate results during revisions, automate this process. Ideally, each time you run the codes to perform the analysis, the numbers cited should be updated. To achieve this goal:
-- Include code to store each cited number as a text file in the Docs/Numbers folder. An example script (exnumbers.do) is included in the Codes/Extra/Temp folder.
-- Call the numbers in the paper and slides with the \double command defined in Docs/Settings/macros.tex.
+Numbers cited in the text should be updated each time you run the codes for descriptive statistics and analysis (e.g. due to updates to the dataset). Automate the process to avoid recreating results during revisions.
+- Include code to store each cited number as a text file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
+- Use the \double command (defined in Docs/Settings/macros.tex) to cite the numbers in the paper and the slides.
 
 Use a main file (e.g. data_stats.EXT) to call the necessary scripts sequentially to generate the descriptive statistics.
 - List all the scripts called by such main file at the end of the README.md file.

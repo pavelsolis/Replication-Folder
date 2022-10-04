@@ -13,13 +13,13 @@ If possible, make a standalone script for all the figures.
 - Start each figure by calling the relevant analysis data file and generate the figure directly from it, so that you do not need to run a large block of code (e.g. to clean original data files) each time you want to update a figure.
 - As long as it applies, do the same for tables.
 
-Specific numbers from descriptive statistics and results cited in earlier drafts of the paper and slides may change in later versions (e.g. due to a dataset update). To minimize the need to recreate results during revisions, automate this process. Ideally, each time you run the codes to perform the analysis, the numbers cited should be updated. To achieve this goal:
-- Include code to store each cited number as a text file in the Docs/Numbers folder. An example script (exnumbers.do) is included in the Codes/Extra/Temp folder.
-- Call the numbers in the paper and slides with the \double command defined in Docs/Settings/macros.tex.
+Numbers cited in the text should be updated each time you run the codes for descriptive statistics and analysis (e.g. due to updates to the dataset). Automate the process to avoid recreating results during revisions.
+- Include code to store each cited number as a text file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
+- Use the \double command (defined in Docs/Settings/macros.tex) to cite the numbers in the paper and the slides.
 
 Use a main file (e.g. data_analysis.EXT) to call the necessary scripts sequentially to generate the results.
 - List all the scripts called by such main file at the end of the README.md file.
 - If you wish, data_analysis.EXT can call the main files in the Codes/Tidy and Codes/Stats folders.
 
 An example file data_analysis.do is included in this folder.
-- To reduce the number of extra files included in the repository template, data_analysis.do assumes that scripts data_clean.do, data_stats.do, figures.do, regressions.do exist in their respective subfolders.
+- To reduce the number of extra files included in the repository, data_analysis.do assumes that scripts data_clean.do, data_stats.do, figures.do, regressions.do exist in their respective subfolders.
