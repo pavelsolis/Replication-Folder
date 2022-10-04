@@ -2,7 +2,7 @@
 
 The contents of the paper are distributed in different files like abstract.tex, sections.tex and appendix.tex. If the paper is part of a thesis, for example, the main file then can omit to call the abstract.tex file.
 
-Elements of the paper (like title, acknowledgements, authors' names and affiliations) are stored in separate files in Docs/Settings so that edits are done only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
+Elements of the paper (like title, acknowledgements, authors' names and affiliations) are stored in separate files in the Docs/Settings folder so that edits are done only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
 
 
 ## Versions
@@ -17,7 +17,7 @@ Conditionals provide flexibility to generate the following versions of the paper
 
 To generate the desired version, adjust the conditionals defined in Docs/Settings/toggles.tex as needed.
 - The idea behind the conditionals is to avoid extra editing when switching versions.
-- To switch versions smoothly, just follow the structure in the example files like Docs/Paper/sections.tex. For example, write each section takeaway outside the fulldraft toggle and the section content inside.
+- To switch versions smoothly, just follow the structure in the example files like Docs/Paper/sections.tex. For example, write each section takeaway outside the `fulldraft` toggle and the section content inside.
 
 
 ## Recommendations
@@ -42,3 +42,5 @@ Use the Docs/Paper/highlights.docx file to summarize (without jargon) the main p
 The Docs/Settings/pagesetup.tex file redefines the Latex float defaults for a better treatment of figures and tables in the text. You can modify that file to adjust or restore the default values.
 
 The Docs/Extra/Tasks/tasks.tex file can help you to manage the to-dos for the paper and the slides.
+
+During revisions, it may be useful to store comments received during presentations or in conversations with colleagues (e.g. in the Docs/Extra/Comments folder), but beware of deleting them from the history before making the respository public.

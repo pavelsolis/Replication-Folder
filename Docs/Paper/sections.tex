@@ -72,7 +72,7 @@ Sub-subsection content (omitted from outline).
 Section takeaway.
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
-Section content (omitted from outline). Cite (dynamic) numbers like \double{../Numbers/exNumMean.txt}.
+Cite figure \ref{fig:exfig}, table \ref{tab:extab} and (dynamic) numbers like \double{../Numbers/exNumMean.txt}. Omitted from outline.
 	
 \input{../Equations/exMultiOneN}
 \input{../Equations/exMultiEachN}
@@ -81,15 +81,15 @@ Section content (omitted from outline). Cite (dynamic) numbers like \double{../N
 	\input{../Figures/exfig}
 	}{
 	\begin{center}
-		[Insert Figure \ref{fig:exfigpdf} Here.]
+		[Insert Figure \ref{fig:exfig} Here.]
 	\end{center}
 	}
 
 \iftoggle{floatstxt}{
-	\input{../Tables/extabfrag}
+	\input{../Tables/extab}
 	}{
 	\begin{center}
-		[Insert Table \ref{tab:extabpdf} Here.]
+		[Insert Table \ref{tab:extab} Here.]
 	\end{center}
 	}
 
@@ -128,9 +128,9 @@ Remarks (omitted from outline).
 	
 	\iftoggle{floatstxt}{}{
 		\newpage
-		\input{../Figures/exfigpdf}
+		\input{../Figures/exfig}
 		
-		\input{../Tables/extabpdf}
+		\input{../Tables/extab}
 	}
 
 }{}												% Closes \iftoggle{fulldraft}
