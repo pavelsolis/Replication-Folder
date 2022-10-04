@@ -8,9 +8,9 @@ The Docs/Tables folder contains the following subfolders:
 
 ## Recommendations
 For as many tables as possible, generate their fragments with your preferred software(s) and save them in the Tables/Fragments folder.
-- Call each fragment from a .tex file saved in the Docs/Tables folder, which should have a preamble, title and notes.
-- See Docs/Tables/extabfrag.tex and Docs/Tables/Fragments/f_extabfrag.tex.
-- For tables for which a fragment could not be generated, save them in the Tables/Standalone folder.
+- Call each fragment from a .tex file saved in the Docs/Tables folder, which should have a preamble, title and notes. See Docs/Tables/extab.tex and Docs/Tables/Fragments/f_extab.tex.
+- This approach allows to compile all .tex files in the Docs/Tables folder at the same time. See the respective line in the doAll.sh file.
+- For tables for which a fragment could not be generated, save them in the Tables/Standalone folder. See Docs/Tables/Standalone/extabself.tex.
 
 Table .tex files calling fragments allow to:
 - Call those files from other .tex files (e.g., sections.tex) which skip the preamble.

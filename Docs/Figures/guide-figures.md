@@ -8,9 +8,9 @@ The Docs/Figures folder contains the following subfolders:
 
 ## Recommendations
 For as many figures as possible, generate their images with your preferred software(s) and save them in the Figures/Plain folder.
-- Call each image from a .tex file saved in the Docs/Figures folder, which should have a preamble, title and notes.
-- See Docs/Figures/exfig.tex and Docs/Figures/Plain/exfigure1.png.
-- For figures that do not involve an image, save them in the Figures/Tikz folder.
+- Call each image from a .tex file saved in the Docs/Figures folder, which should have a preamble, title and notes. See Docs/Figures/exfig.tex and Docs/Figures/exsubfig.tex.
+- This approach allows to compile all .tex files in the Docs/Figures folder at the same time. See the respective line in the doAll.sh file.
+- For figures that do not involve an image, save them in the Figures/Tikz folder. See Figures/Tikz/extikz.tex.
 
 Figure .tex files calling images allow to:
 - Call those files from other .tex files (e.g., sections.tex) which skip the preamble.
