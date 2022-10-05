@@ -20,6 +20,10 @@ If the slides call the PDF versions of the floats (tables and figures), run the 
 - This ensures that the slides always use the latest version of the floats.
 - See the doAll.sh file for the commands that automatically compile all the latex files in the Docs/Figures and Docs/Tables folders.
 
+Use Git branches when editing the slides.
+- Branches allow you to modify the contents of the slides while keeping a currently workable version.
+- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#driessens-branching-model) for an effective Git branching model adapted to a research project.
+
 
 ## Considerations
 Add or modify the theme colors defined in Docs/Settings/themecolors.tex as needed.
