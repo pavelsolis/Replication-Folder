@@ -4,7 +4,6 @@ The contents of the paper are distributed in different files like abstract.tex, 
 
 Elements of the paper (like title, acknowledgements, authors' names and affiliations) are stored in separate files in the Docs/Settings folder so that edits are done only once regardless of the number of files using them (e.g., paper.tex, slides.tex).
 
-Cambio ejemplo en branch docs/ppr/guide
 
 ## Versions
 Conditionals provide flexibility to generate the following versions of the paper *just by switching toggles*:
