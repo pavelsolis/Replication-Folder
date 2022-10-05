@@ -1,8 +1,6 @@
 # Research Replication Folder
 
-This repository template provides a folder structure that facilitates the reproducibility of research results. 
-
-delete
+This repository template provides a folder structure that facilitates the reproducibility of research results.
 
 Reproducibility of your research results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 - If you are new to version control with Git and GitHub, I provide step-by-step instructions on how to start from scratch [here](https://github.com/pavelsolis/Git-GitHub-Primer); you can also take a look at these great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
