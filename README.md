@@ -5,7 +5,9 @@ This repository template provides a folder structure that facilitates the reprod
 Reproducibility of your research results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 - If you are new to version control with Git and GitHub, I provide step-by-step instructions on how to start from scratch [here](https://github.com/pavelsolis/Git-GitHub-Primer); you can also take a look at these great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
 
-You will find a few files that briefly guide you through the example files, and the purpose and structure of some folders. Specifically, you will find short guides for: data (metadata), codes (tidy, stats, analysis) and docs (paper, slides, figures, tables, equations). The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* your results.
+You will find short guides (for data, codes and docs) that briefly describe the purpose of some folders and the example files.
+- The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary.
+- In this way, someone else (including yourself) can easily *replicate* and *update* the results.
 
 Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below remains in it.
 
@@ -66,7 +68,7 @@ Make sure the names of files and folders added or modified have *no* spaces.
 
 The codes use relative paths based on the structure of the main folder as provided, so they run regardless of where the main folder is located.
 
-The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, codes are written to be independent of the platform used.
+The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, directory paths are written to be independent of the platform used.
 
 The analysis data files used to replicate (most of) the results in the paper:
 - Contain (most of) the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
