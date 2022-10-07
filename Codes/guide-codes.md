@@ -11,12 +11,12 @@ The scripts generating the research results are distributed in the following sub
 ## General Recommendations
 Use relative paths based on the structure of the main folder, so that the codes run regardless of its location.
 
-When possible, write directory paths to be independent of the platform used.
-- For example, see `fullfile` in Matlab, `file.path` in R and `os.path.join` in Python.
+Whenever possible, write directory paths to be independent of the platform used.
+- See, for example, `fullfile` in Matlab, `file.path` in R and `os.path.join` in Python.
 
 In each subfolder, break tasks into scripts and use main files to call the scripts sequentially.
 - For example, data_clean.EXT for the data files, data_stats.EXT for the descriptive statistics, and data_analysis.EXT for the results.
-	- If these main files are written in the same programming language, data_analysis.EXT could in turn call data_clean.EXT and data_stats.EXT. See the example script Codes/Analysis/data_analysis.do; it *assumes* that the scripts data_clean.do, data_stats.do, figures.do, regressions.do exist in their respective subfolders to reduce the number of extra files included in the repository.
+	- If those main files are written in the same programming language, data_analysis.EXT could in turn call data_clean.EXT and data_stats.EXT. See the example script Codes/Analysis/data_analysis.do; it *assumes* that the scripts data_clean.do, data_stats.do, figures.do, regressions.do exist in their respective subfolders to reduce the number of extra files included in the repository.
 - List all the scripts called by each main file at the end of the README.md file.
 
 Code in a way that the scripts are agnostic to the sample size so that no additional coding is necessary when you update the datasets.
@@ -24,8 +24,8 @@ Code in a way that the scripts are agnostic to the sample size so that no additi
 Add concise comments to the code indicating the commands that generate specific results.
 
 Numbers cited in the text should be updated whenever you run the codes (e.g. after a dataset update) to avoid recreating results during revisions.
-- To automate the process, include code to store each cited number as a txt file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
-- Use the \double command (defined in Docs/Settings/macros.tex) to cite those numbers in the paper and the slides.
+- To automate this process, include code to store each cited number as a txt file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
+- Use the \double command (defined in Docs/Settings/macros.tex) to cite those numbers in the paper and the slides. The example number Docs/Numbers/exNumMean.txt is called by Docs/Paper/sections.tex and Docs/Slides/slides.tex.
 
 Use Git branches when editing code.
 - Branches allow you to test changes in the codes while keeping workable versions intact.
@@ -33,7 +33,8 @@ Use Git branches when editing code.
 
 
 ## Recommendations for Tidy Subfolder
-Avoid manual changes to the original data files as much as possible. All steps should ideally be programmed.
+Avoid manual changes to the original data files as much as possible.
+- All steps should ideally be programmed.
 - Report any necessary manual changes to a data file in the respective entry in Data/Metadata/metadata.docx so that a user can repeat the same steps.
 
 
@@ -48,9 +49,9 @@ For the variables in the analysis data files, the scripts in this subfolder shou
 
 
 ## Recommendations for Analysis Subfolder
-Start *each* figure and table by calling the relevant analysis data file and generate the float from it. In this way, 
-- You do not need to run a large block of code (e.g. to clean original data files) each time you want to update a figure.
-- You can update a particular float independent of the others.
+Start the codes generating *each* figure and table by calling the relevant analysis data file. In this way,
+- You do not need to run a large block of code (e.g. to clean original data files) each time you want to update a float.
+- You can update a particular float independently from the others (by executing only the lines for that particular float).
 
 If possible, make a standalone script for all the figures and another for all the tables.
-- If you use different programming languages (e.g. R, Stata) to generate them, do a standalone script for each language.
+- If you use different programming languages (e.g. R, Matlab, Stata) to generate them, do a standalone script for each language.
