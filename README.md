@@ -3,12 +3,11 @@
 This repository template provides a folder structure that facilitates the reproducibility of research results.
 
 Reproducibility of your results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- The philosophy behind the folder structure is to automate as much as possible so that manual tweaks are not necessary.
-- In this way, someone else (including yourself) can easily *replicate* and *update* the results.
-- You will find short guides (for data, codes and docs) briefly describing the purpose of some folders and example files.
+- The philosophy behind the folder structure is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* the results.
+- Short guides (for data, codes and docs) briefly describe the purpose of some folders and example files.
 - If you are new to version control with Git and GitHub, I provide step-by-step instructions on how to start from scratch [here](https://github.com/pavelsolis/Git-GitHub-Primer); you can also take a look at these great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
 
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. This file (as the guides) is written in [Markdown](https://www.markdownguide.org/cheat-sheet/). Start by deleting up to this line so that only the description of your project below remains in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below remains in it.
 
 
 # \<Title of the Paper\>
@@ -37,7 +36,6 @@ The results in the paper were generated using the following:
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
 	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics.
-	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
 	- Analysis: codes that perform the analysis.
 	- Extra: auxiliary, temporary and old codes.
 - Docs folder with the following subfolders:
@@ -77,7 +75,7 @@ The analysis data files used to replicate (most of) the results in the paper:
 
 ## Replication References
 For more information on the reproducibility of empirical research, see:
-- Chang & Li, 2017. A Pre-Analysis Plan to Replicate 60 Economics Research Papers That Worked Half of the Time.
+- Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Papers That Worked Half of the Time.
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
 - Rose, A., 2017. Notes for Efficient Data Organization/Handling.
 - [TIER protocol](http://www.projecttier.org/tier-protocol/).
