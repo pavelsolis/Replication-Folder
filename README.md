@@ -5,9 +5,19 @@ This repository template provides a folder structure that facilitates the reprod
 Reproducibility of your results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 - The philosophy behind the folder structure is to automate as much as possible so that manual tweaks are not necessary. In this way, someone else (including yourself) can easily *replicate* and *update* the results.
 - Short guides (for data, codes and docs) briefly describe the purpose of some folders and example files.
-- If you are new to version control with Git/GitHub, [here](https://github.com/pavelsolis/Git-GitHub-Primer) are step-by-step instructions on how to start from scratch.
+- If you are new to version control with Git/GitHub, [here](https://github.com/pavelsolis/Git-GitHub-Primer) are step-by-step instructions to start from scratch.
 
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below remains in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to the line just before \<Title of the Paper\> so that only the description of your project remains in it.
+
+For more information on the reproducibility of empirical research, see:
+- Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Papers That Worked Half of the Time.
+- Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
+- Rose, A., 2017. Notes for Efficient Data Organization/Handling.
+- [TIER protocol](http://www.projecttier.org/tier-protocol/).
+
+For more on the structure of a LaTex project, see:
+- Fernández, M., 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT).
+
 
 
 # \<Title of the Paper\>
@@ -71,17 +81,6 @@ The codes use the Unix convention (i.e. forward slash) in directory paths. If an
 The analysis data files used to replicate (most of) the results in the paper:
 - Contain (most of) the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
 - Can be updated if the user has access to the (restricted) original data sources.
-
-
-## Replication References
-For more information on the reproducibility of empirical research, see:
-- Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Papers That Worked Half of the Time.
-- Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
-- Rose, A., 2017. Notes for Efficient Data Organization/Handling.
-- [TIER protocol](http://www.projecttier.org/tier-protocol/).
-
-For more on the structure of a LaTex project, see:
-- Fernández, M., 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT).
 
 
 ## Code Workflow (Optional)
