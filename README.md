@@ -2,14 +2,13 @@
 
 This repository template provides a folder structure that facilitates the reproducibility of research results.
 
-Reproducibility of your research results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
+Reproducibility of your results is desirable. This goal is easier to achieve if it is part of the research process, from inception to completion. The folder structure and example files in this template facilitate working on a project that is replicable. Just [create your project repository from the template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
+- The philosophy behind the folder structure is to automate as much as possible so that manual tweaks are not necessary.
+- In this way, someone else (including yourself) can easily *replicate* and *update* the results.
+- You will find short guides (for data, codes and docs) briefly describing the purpose of some folders and example files.
 - If you are new to version control with Git and GitHub, I provide step-by-step instructions on how to start from scratch [here](https://github.com/pavelsolis/Git-GitHub-Primer); you can also take a look at these great introductory pieces: [1](https://www.frankpinter.com/notes/git-for-economists-presentation.pdf), [2](https://www.sas.upenn.edu/~jesusfv/Chapter_HPC_5_Git.pdf), [3](https://rubygarage.org/blog/most-basic-git-commands-with-examples), [4](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), [5](https://nvie.com/posts/a-successful-git-branching-model/).
 
-You will find short guides (for data, codes and docs) that briefly describe the purpose of some folders and the example files.
-- The philosophy behind the folder structure and the example files is to automate as much as possible so that manual tweaks are not necessary.
-- In this way, someone else (including yourself) can easily *replicate* and *update* the results.
-
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to this line so that only the description of your project below remains in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. This file (as the guides) is written in [Markdown](https://www.markdownguide.org/cheat-sheet/). Start by deleting up to this line so that only the description of your project below remains in it.
 
 
 # \<Title of the Paper\>
@@ -37,8 +36,9 @@ The results in the paper were generated using the following:
 	- Extra: auxiliary, temporary and old data files.
 - Codes folder with the following subfolders:
 	- Tidy: codes that generate the *analysis data files* by cleaning and processing the *original data files*.
-	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics of the variables used.
+	- Stats: codes that inspect the analysis data files (e.g. for outliers) and yield descriptive statistics.
 	- Analysis: codes that perform the analysis, comments indicate the commands that generate specific results.
+	- Analysis: codes that perform the analysis.
 	- Extra: auxiliary, temporary and old codes.
 - Docs folder with the following subfolders:
 	- Paper: files that make up the paper.
@@ -53,14 +53,14 @@ The results in the paper were generated using the following:
 
 
 ## Instructions for Replication
-The metadata file (Data -> Metadata -> metadata.docx) describes the (original and analysis) data files and provides instructions on how to update them.
+The metadata file (Data/Metadata/metadata.docx) describes the (original and analysis) data files and provides instructions on how to update them.
 
-The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing (since one can focus on specific parts). These main files call the necessary bits in the required order:
-- Codes -> Analysis -> data_analysis.EXT: run the codes sequentially (workflow below) to generate the results.
-- Docs -> Paper -> paper.tex: put together the pieces constituting the paper.
-- Docs -> Paper -> appendix.tex: generate a standalone file for the appendix.
-- Docs -> Slides -> slides.tex: call equations, figures and tables.
-- doAll.sh: call the previous main files sequentially to avoid having to execute them individually.
+The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing (since researchers can focus on specific parts). The following main files call the necessary bits in the required order:
+- Codes/Analysis/data_analysis.EXT: runs the codes sequentially (workflow below) to generate the results.
+- Docs/Paper/paper.tex: puts together the pieces constituting the paper.
+- Docs/Paper/appendix.tex: generates a standalone file for the appendix.
+- Docs/Slides/slides.tex: calls equations, figures and tables.
+- doAll.sh: calls the previous main files sequentially to avoid having to execute them individually.
 
 
 ## Considerations
@@ -77,7 +77,7 @@ The analysis data files used to replicate (most of) the results in the paper:
 
 ## Replication References
 For more information on the reproducibility of empirical research, see:
-- Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Research Papers That Worked Half of the Time.
+- Chang & Li, 2017. A Pre-Analysis Plan to Replicate 60 Economics Research Papers That Worked Half of the Time.
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
 - Rose, A., 2017. Notes for Efficient Data Organization/Handling.
 - [TIER protocol](http://www.projecttier.org/tier-protocol/).
