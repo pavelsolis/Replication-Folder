@@ -24,7 +24,7 @@ Code in a way that the scripts are agnostic to the sample size so that no additi
 Add concise comments to the code indicating the commands that generate specific results.
 
 Numbers cited in the text should be updated whenever you run the codes (e.g. after a dataset update) to avoid recreating results during revisions.
-- To automate this process, include code to store each cited number as a txt file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
+- To automate this process, include code to store each cited number as a .txt file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
 - Use the \double command (defined in Docs/Settings/macros.tex) to cite those numbers in the paper and the slides. The example number Docs/Numbers/exNumMean.txt is called by Docs/Paper/sections.tex and Docs/Slides/slides.tex.
 
 Use Git branches when editing code.

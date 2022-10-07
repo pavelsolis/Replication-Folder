@@ -48,7 +48,7 @@ The results in the paper were generated using the following:
 - Docs folder with the following subfolders:
 	- Paper: files that make up the paper.
 	- Slides: files that make up the slides.
-	- Numbers: code-generated txt files containing specific numbers cited in the paper and slides.
+	- Numbers: code-generated .txt files containing specific numbers cited in the paper and slides.
 	- Equations: files that define and reference equations.
 	- Figures: files for the figures used in the paper or the slides.
 	- Tables: files for the tables used in the paper or the slides.
