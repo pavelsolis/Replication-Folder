@@ -82,11 +82,11 @@ The analysis data files used to replicate (most of) the results in the paper:
 ## Code Workflow (Optional)
 Below is the order of the scripts called by the main files in the Codes subfolders to assist in following the codes.
 
-In the Tidy subfolder, data_clean.EXT calls the following scripts:
+Codes/Tidy/data_clean.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_clean.EXT\>
 
-In the Stats subfolder, data_stats.EXT calls the following scripts:
+Codes/Stats/data_stats.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_stats.EXT\>
 
-In the Analysis subfolder, data_analysis.EXT calls the following scripts:
+Codes/Analysis/data_analysis.EXT calls the following scripts:
 1. \<Ordered list of scripts called by data_analysis.EXT\>
