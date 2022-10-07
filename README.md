@@ -7,17 +7,14 @@ Reproducibility of your results is desirable. This goal is easier to achieve if 
 - Short guides (for data, codes and docs) briefly describe the purpose of some folders and example files.
 - If you are new to version control with Git/GitHub, [here](https://github.com/pavelsolis/Git-GitHub-Primer) are step-by-step instructions to start from scratch.
 
-Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting up to the line just before \<Title of the Paper\> so that only the description of your project remains in it.
+Once you have created your project repository from the template, tailor this file (README.md) to your specific project. Start by deleting this introduction so that only the description of your project below remains in it.
 
 For more information on the reproducibility of empirical research, see:
 - Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Papers That Worked Half of the Time.
+- Fernández, M., 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT) (on the structure of a LaTex project).
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
 - Rose, A., 2017. Notes for Efficient Data Organization/Handling.
 - [TIER protocol](http://www.projecttier.org/tier-protocol/).
-
-For more on the structure of a LaTex project, see:
-- Fernández, M., 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT).
-
 
 
 # \<Title of the Paper\>
