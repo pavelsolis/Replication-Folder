@@ -71,9 +71,8 @@ The folder structure uses stratification to avoid repeating code or duplicating 
 ## Considerations
 Make sure the names of files and folders added or modified have *no* spaces.
 
-The codes use relative paths based on the structure of the main folder as provided, so they run regardless of where the main folder is located.
-
-The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, directory paths are written to be independent of the platform used.
+The codes run regardless of the location of the main folder because they use relative paths based on the structure provided.
+- The codes use the Unix convention (i.e. forward slash) in directory paths. If an error occurs while executing a code in a Windows machine, just modify it (i.e. use backslashes) where appropriate. When possible, directory paths are written to be independent of the platform used.
 
 The analysis data files used to replicate (most of) the results in the paper:
 - Contain (most of) the variables necessary for the analysis, generated from the original data files; some variables and original data files are not shared due to licensing rights.
