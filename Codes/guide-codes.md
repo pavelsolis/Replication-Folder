@@ -49,7 +49,7 @@ For the variables in the analysis data files, the scripts in this subfolder shou
 
 
 ## Recommendations for Analysis Subfolder
-Add comments to the code indicating the commands that generate specific results.
+Add concise comments to the code indicating the commands that generate specific results.
 
 If possible, make a standalone script for all the figures.
 - If you use different software (e.g. R, Stata) to generate the figures, do a standalone script for each software.

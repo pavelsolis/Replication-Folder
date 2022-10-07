@@ -11,7 +11,7 @@ Once you have created your project repository from the template, tailor this fil
 
 For more information on the reproducibility of empirical research, see:
 - Chang & Li, 2017. A Pre-Analysis Plan to Replicate Sixty Economics Papers That Worked Half of the Time.
-- Fernández, M., 2015. [Writing a Book/Thesis in Latex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT) (on the structure of a LaTex project).
+- Fernández, M., 2015. [Writing a Book/Thesis in LaTex](https://youtu.be/Qjp-a2uZWZc?list=PLOxllPK04FfH5HHUlDPPyUGG-VvPWM5xT) (on the structure of a LaTex project).
 - Gentzkow & Shapiro, 2014. Code and Data for the Social Sciences: A Practitioner’s Guide.
 - Rose, A., 2017. Notes for Efficient Data Organization/Handling.
 - [TIER protocol](http://www.projecttier.org/tier-protocol/).
@@ -33,8 +33,8 @@ The results in the paper were generated using the following:
 
 ## Contents of Folder
 - README.md (this file).
-- LICENSE: open source license for repository template.
-- doAll.sh: call the main files to generate the results and the latest versions of the paper and the slides.
+- LICENSE: open source license for the repository template.
+- doAll.sh: calls the main files to generate the results and the latest versions of the paper and the slides.
 - Data folder with the following subfolders:
 	- Metadata: files documenting the data sources and variables.
 	- Raw: original data files.
@@ -48,7 +48,7 @@ The results in the paper were generated using the following:
 - Docs folder with the following subfolders:
 	- Paper: files that make up the paper.
 	- Slides: files that make up the slides.
-	- Numbers: code-generated text files containing specific numbers cited in the paper and slides.
+	- Numbers: code-generated txt files containing specific numbers cited in the paper and slides.
 	- Equations: files that define and reference equations.
 	- Figures: files for the figures used in the paper or the slides.
 	- Tables: files for the tables used in the paper or the slides.
