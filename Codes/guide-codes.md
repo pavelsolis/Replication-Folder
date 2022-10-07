@@ -2,9 +2,9 @@
 
 The scripts generating the research results are distributed in the following subfolders.
 - Scripts in the Codes/Tidy folder clean and process the *original data files* into the *analysis data files*.
-- A data appendix consisting of metadata and descriptive statistics serves as a users' guide for the *analysis data files*.
+- Scripts in the Codes/Stats folder inspect the *analysis data files* (e.g. for outliers) and yield descriptive statistics for the variables used.
 	- Data/Metadata/metadata.docx describes the variables in the *analysis data files*.
-	- Scripts in the Codes/Stats folder inspect the *analysis data files* (e.g. for outliers) and yield descriptive statistics for the variables used.
+	- A data appendix consisting of metadata and descriptive statistics serves as a users' guide for the *analysis data files*.
 - Scripts in the Codes/Analysis folder use the *analysis data files* to generate the specific results.
 
 
