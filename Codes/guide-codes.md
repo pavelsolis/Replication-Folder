@@ -2,7 +2,7 @@
 
 The scripts generating the research results are distributed in the following subfolders.
 - Scripts in the Codes/Tidy folder clean and process the *original data files* into the *analysis data files*.
-- Scripts in the Codes/Stats folder inspect the *analysis data files* (e.g. for outliers) and yield descriptive statistics for the variables used.
+- Scripts in the Codes/Stats folder inspect the *analysis data files* (e.g., for outliers) and yield descriptive statistics for the variables used.
 	- Data/Metadata/metadata.docx describes the variables in the data files.
 	- The metadata and the descriptive statistics work as a data appendix and serve as a users' guide for the data files.
 - Scripts in the Codes/Analysis folder use the *analysis data files* to generate the specific results.
@@ -23,7 +23,7 @@ Code in a way that the scripts are agnostic to the sample size so that no additi
 
 Add concise comments to the code indicating the commands that generate specific results.
 
-Numbers cited in the text should be updated whenever you run the codes (e.g. after a dataset update) to avoid recreating results during revisions.
+Numbers cited in the text should be updated whenever you run the codes (e.g., after a dataset update) to avoid recreating results during revisions.
 - To automate this process, include code to store each cited number as a .txt file in the Docs/Numbers folder. See the example script Codes/Extra/Temp/exnumbers.do.
 - Use the \double command (defined in Docs/Settings/macros.tex) to cite those numbers in the paper and the slides. The example number Docs/Numbers/exNumMean.txt is called by Docs/Paper/sections.tex and Docs/Slides/slides.tex.
 
@@ -50,8 +50,8 @@ For the variables in the analysis data files, the scripts in this subfolder shou
 
 ## Recommendations for Analysis Subfolder
 Start the codes generating *each* figure and table by calling the relevant analysis data file. In this way,
-- You do not need to run a large block of code (e.g. to clean original data files) each time you want to update a float.
+- You do not need to run a large block of code (e.g., to clean original data files) each time you want to update a float.
 - You can update a particular float independently from the others (by executing only the lines for that particular float).
 
 If possible, make a standalone script for all the figures and another for all the tables.
-- If you use different programming languages (e.g. R, Matlab, Stata) to generate them, do a standalone script for each language.
+- If you use different programming languages (e.g., R, Matlab, Stata) to generate them, do a standalone script for each language.

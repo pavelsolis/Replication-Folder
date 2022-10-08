@@ -9,7 +9,7 @@ The Docs/Tables folder contains the following subfolders.
 ## Recommendations
 Whenever possible, generate table fragments with your preferred software and save them in the Tables/Fragments folder (see Docs/Tables/Fragments/f_extab.tex).
 - Call each fragment from a .tex file saved in the Docs/Tables folder, which should have a preamble, title and notes. See Docs/Tables/extab.tex.
-- This approach allows to compile *all* .tex files in the Docs/Tables folder at the same time (see the  doAll.sh file).
+- This approach allows to compile *all* .tex files in the Docs/Tables folder at the same time (see the doAll.sh file).
 - For tables for which a fragment could not be generated, save them in the Tables/Standalone folder. See Docs/Tables/Standalone/extabself.tex.
 
 Table .tex files calling fragments allow to:
@@ -22,7 +22,7 @@ Use the same filename as the label for the table to facilitate referencing them.
 - Example: filename 'extab.tex' and label '\label{tab:extab}'.
 
 Make sure the tables have a consistent format throughout the paper and the slides.
-- Confirm that *identical* variables have the same names across tables (e.g. R2 vs R-squared).
+- Confirm that *identical* variables have the same names across tables (e.g., R2 vs R-squared).
 
 If possible, use the same font for the tables as in the text.
 

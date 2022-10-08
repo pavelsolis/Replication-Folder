@@ -1,7 +1,7 @@
 # Figures Guide
 
 The Docs/Figures folder contains the following subfolders.
-- Plain: original images (e.g. png, jpeg, eps) downloaded or generated with your preferred software.
+- Plain: original images (e.g., png, jpeg, eps) downloaded or generated with your preferred software.
 - Tikz: files for figures generated with the Tikz package.
 - Temp: auxiliary, temporary and old figures.
 
@@ -9,7 +9,7 @@ The Docs/Figures folder contains the following subfolders.
 ## Recommendations
 Generate the original images with your preferred software and save them in the Figures/Plain folder.
 - Call each image from a .tex file saved in the Docs/Figures folder, which should have a preamble, title and notes. See Docs/Figures/exfig.tex and Docs/Figures/exsubfig.tex.
-- This approach allows to compile *all* .tex files in the Docs/Figures folder at the same time (see the  doAll.sh file).
+- This approach allows to compile *all* .tex files in the Docs/Figures folder at the same time (see the doAll.sh file).
 - For figures generated with the Tikz package, save them in the Figures/Tikz folder. See Figures/Tikz/extikz.tex.
 
 Figure .tex files calling the original images allow to:
@@ -22,7 +22,7 @@ Use the same filename as the label for the figure to facilitate referencing them
 - Example: filename 'exfig.tex' and label '\label{fig:exfig}'.
 
 Make sure the figures have a consistent format throughout the paper and the slides.
-- Confirm that *identical* units have the same symbol (e.g. \%) or label across figures.
+- Confirm that *identical* units have the same symbol (e.g., \%) or label across figures.
 
 If possible, use the same font for the x/y labels of the figures as in the text.
 - Verify that the labels are horizontally aligned (rotate them otherwise).
