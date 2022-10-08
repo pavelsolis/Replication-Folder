@@ -33,7 +33,7 @@ The results in the paper were generated using the following:
 
 ## Contents of Folder
 - README.md (this file).
-- LICENSE: open source license for the repository template.
+- LICENSE: open source license for the repository.
 - doAll.sh: calls the main files to generate the results and the latest versions of the paper and the slides.
 - Data folder with the following subfolders:
 	- Metadata: files documenting the data sources and variables.
