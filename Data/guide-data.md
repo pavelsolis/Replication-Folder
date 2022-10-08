@@ -19,6 +19,8 @@ All the original and analysis data files used in the paper (regardless of the fi
 Make arrangements for restricted and confidential data files before making your repository public.
 - Although arrangements for Excel files are not needed (as long as the \*.xls\* line in the *.gitignore* file is not commented), you may need to do them for other file extensions.
 
+Verify that any unused (yet potentially useful) data file is stored in the Data/Extra folder.
+
 
 ## Considerations
 Excel files are usually large and thus excluded from the repository.
