@@ -19,7 +19,7 @@ For more information on the reproducibility of empirical research, see:
 
 # \<Title of the Paper\>
 
-The files in this folder facilitate the replication of the results in "\<Title of the Paper\>" by \<Author(s)\> (\<email(s)\>).
+by \<Author(s)\> (\<email(s)\>)
 
 
 ## System Features
