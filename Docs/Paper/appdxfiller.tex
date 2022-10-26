@@ -1,6 +1,8 @@
 \newpage
 \begin{appendices}
-	
+
+\titleformat{\section}{\Large\bfseries}{}{0pt}{\appendixname\enskip\thesection:\quad}
+
 \setcounter{page}{1}										% Restart page numbering
 \setcounter{footnote}{0}									% Restart footnote counter
 \renewcommand{\thetable}{\thesection.\arabic{table}}		% Table name aligned to appendix
@@ -9,8 +11,7 @@
 %	\captionsetup[table]{name=Table A}						% Change table caption prefix
 
 \begin{center}
-	{\LARGE\textbf{Appendix} \\ \vspace{0.3cm}
-	\input{../Settings/title}}
+	{\LARGE \input{../Settings/title}}
 \end{center}
 
 
