@@ -1,7 +1,7 @@
 \newpage
 \begin{appendices}
 
-\titleformat{\section}{\Large\bfseries}{}{0pt}{\appendixname\enskip\thesection:\quad}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{\appendixname\enskip\thesection:\quad}	% Customize section titles
 
 \setcounter{page}{1}										% Restart page numbering
 \setcounter{footnote}{0}									% Restart footnote counter
@@ -51,5 +51,8 @@ Appendix content.
 \input{../Tables/Standalone/extabself}
 
 \input{../Figures/exsubfig}
+
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}	% Restore section titles defaults
 
 \end{appendices}
