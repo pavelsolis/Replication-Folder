@@ -25,7 +25,7 @@ by \<Author(s)\> (\<email(s)\>)
 ## System Features
 The results in the paper were generated using the following:
 - Operating system(s): 	\<macOS Version, Windows Version\>.
-- Software: 		\<Matlab Version, Stata Version, R Version, Python Version, LaTeX Version\>.
+- Software: 		\<Matlab Version, Stata Version, R Version, Python Version, MacTeX Version, MiKTeX Version\>.
 - Add-ons (essential): 	\<Financial Toolbox (Matlab); esttab (Stata); tidyverse (R); numpy, pandas (Python)\>.
 - Restricted sources: 	\<Bloomberg\>.
 - Running time: 	Tidy \<XX\> min, Stats \<XX\> min, Analysis \<XX\> min.
