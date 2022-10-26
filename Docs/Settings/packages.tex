@@ -8,9 +8,12 @@
 \usepackage[nottoc]{tocbibind} 		 			% nottoc omits ToC from itself
 \usepackage{lipsum}						   		% To add dummy text
 \usepackage{pdfpages}					 		% To insert (excerpts of) PDF files
-\usepackage{appendix}							% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
-%	\renewcommand*\appendixpagename{Appendix}
-%	\renewcommand*\appendixtocname{Appendix}
+\usepackage[page]{appendix}						% options: titletoc, toc, title, page
+	\renewcommand{\appendixpagename}{\centering Appendices}
+	\renewcommand{\appendixname}{Appendix}
+	\renewcommand{\appendixtocname}{Appendix}
+\usepackage{endnotes}							% To place footnotes at the end
+%	\let\footnote=\endnote						% Turn on or off as needed
 %\usepackage{authblk}					 		% Multiple authors in blocks or in footnotes
 %\usepackage{textcomp}		  			 		% Handles the copyright symbol
 %\usepackage{makeidx} 							% Creates an index at the end, use \index{} and \printindex
@@ -20,6 +23,8 @@
 %---------------------------------------------------------------
 \usepackage{pdflscape}			  		  		% To rotate page in PDF using \begin{landscape}
 \usepackage{enumerate}				    		% To personalize the enumerate style
+\usepackage{titlesec}							% To customize section titles
+	\titleformat*{\subsection}{\large\bfseries\itshape}
 %\usepackage{datetime2}							% To customize date format
 
 %---------------------------------------------------------------
