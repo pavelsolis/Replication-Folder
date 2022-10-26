@@ -1,3 +1,5 @@
+\titleformat{\section}{\Large\bfseries}{}{0pt}{\thesection.\quad}	% Customize section titles
+
 \section{Introduction} \label{sec:intro}
 \iftoggle{toclinks}{\gototoc}{} 				% Turn it on/off in packages.tex
 \iftoggle{cboxes}{	   				  			% Turn it on/off in packages.tex
@@ -110,6 +112,9 @@ Summary.
 Remarks (omitted from outline).
 
 }{}	% Closes \iftoggle{fulldraft}
+
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}	% Restore section titles defaults
 
 
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
