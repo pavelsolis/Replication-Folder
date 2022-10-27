@@ -25,7 +25,6 @@
 \usepackage{enumerate}				    		% To personalize the enumerate style
 \usepackage{titlesec}							% To customize section titles
 	\titleformat*{\subsection}{\large\bfseries\itshape}
-%\usepackage{datetime2}							% To customize date format
 
 %---------------------------------------------------------------
 % Math
@@ -63,6 +62,7 @@
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
+\usepackage[style=american]{csquotes}  			% For inline and display quotations
 \usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
 %\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
@@ -84,16 +84,29 @@
 %---------------------------------------------------------------
 % References
 %---------------------------------------------------------------
-% To read and process bibliographic data
+% To process bibliographic data
 \usepackage[style=authoryear,maxbibnames=99,maxcitenames=2,uniquelist=false,uniquename=false,dashed=false,backend=biber]{biblatex}
-\usepackage[style=american]{csquotes}  			% For inline and display quotations
+	\addbibresource{../References/library.bib} 		%Imports the bibliography file 
 
-\addbibresource{../References/library.bib} 		%Imports the bibliography file 
-\DeclareFieldFormat[book]{title}{#1}		  	% Non-italic book title
-\DeclareFieldFormat[article]{pages}{#1} 		% No pp. before pages
-\DeclareFieldFormat[incollection]{pages}{#1} 
-\renewbibmacro{in:}{} 							% No in: before journal title
+% General
+\renewcommand\multicitedelim{\addcomma\space}	% Citations separated by a comma
+\uspunctuation									% Activate ‘American-style’ punctuation
+%\stdpunctuation								% Restores standard punctuation
+
+% Customize all types
+\DeclareDelimFormat[bib]{nametitledelim}{\addspace} % Remove dot after year
 \xpretobibmacro{date+extradate}{\setunit{\addperiod\space}}{}{}	% Dot after author
+\renewbibmacro{in:}{} 							% No in: before title
+
+% Customize book type
+\DeclareFieldFormat[book]{title}{#1}		  	% Non-italic book title
+
+% Customize report type
+\DeclareFieldFormat[report]{pages}{#1}			% No pp. before pages
+\DeclareFieldFormat[report]{title}{\mkbibquote{#1\isdot}} % % Title in quotations and not in italics
+
+% Customize article type
+\DeclareFieldFormat[article]{pages}{#1} 		% No pp. before pages
 \AtEveryBibitem{								% Omit fields
 	\ifentrytype{article}{
 		\clearfield{doi}%
@@ -113,5 +126,3 @@
 	\setunit{\addcomma\space}%
 	\printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}} % Parenthesis around volume number
-\uspunctuation									% Activate ‘American-style’ punctuation
-%\stdpunctuation								% Restores standard punctuation
