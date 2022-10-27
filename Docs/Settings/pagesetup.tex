@@ -1,6 +1,6 @@
 %% Page Settings
 % Margins, Head and Foot, Indentation, Spacing, Hyphenation,
-% Date Format, Thanks Symbols, Reset Float Defaults
+% Date Format, Thanks Symbols, Reset Float Defaults, Footnotes
 
 %---------------------------------------------------------------
 % Margins
@@ -72,3 +72,25 @@
 %   Parameters for FLOAT pages (not text pages)
 \renewcommand{\floatpagefraction}{0.7}		% Require fuller float pages (floatpagefraction < topfraction)
 \renewcommand{\dblfloatpagefraction}{0.7} 	% Require fuller float pages
+
+%---------------------------------------------------------------
+% Footnotes
+%---------------------------------------------------------------
+
+% Change the look of foonote indicators
+\makeatletter
+\let \@makefntextorig \@makefntext
+\newcommand{\@makefntextcustom}[1]{%
+	\thefootnote.\enskip #1%
+}
+\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+\makeatother
+
+% Change the look of endnote indicators
+\renewcommand{\makeenmark}{\hbox{$^{\theenmark}$}}
+\makeatletter
+\def\enoteformat{%
+	\rightskip\z@ \leftskip\z@ \parindent=1.8em
+	\leavevmode{\setbox\z@=\lastbox}\llap{\theenmark.\enskip}%
+}
+\makeatother
