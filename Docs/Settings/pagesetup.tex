@@ -77,14 +77,14 @@
 % Footnotes
 %---------------------------------------------------------------
 
-% Change the look of footnote indicators
-\makeatletter
-\let \@makefntextorig \@makefntext
-\newcommand{\@makefntextcustom}[1]{%
-	\thefootnote.\enskip #1%
-}
-\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
-\makeatother
+%% Change the look of footnote indicators
+%\makeatletter
+%\let \@makefntextorig \@makefntext
+%\newcommand{\@makefntextcustom}[1]{%
+%	\thefootnote.\enskip #1%
+%}
+%\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+%\makeatother
 
 % Change the look of endnote indicators
 \renewcommand{\makeenmark}{\hbox{$^{\theenmark}$}}
