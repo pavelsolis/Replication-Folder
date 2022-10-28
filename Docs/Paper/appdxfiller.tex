@@ -6,7 +6,7 @@
 % Restart counters and customize numbering
 \setcounter{page}{1}
 \setcounter{footnote}{0}
-%\setcounter{endnote}{0}
+\iftoggle{floatstxt}{}{\setcounter{endnote}{0}}
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
 \counterwithin{equation}{section}
