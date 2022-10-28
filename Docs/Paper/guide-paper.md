@@ -11,7 +11,7 @@ Conditionals provide flexibility to generate the following versions of the paper
 - An outline version containing only sections' takeaways to have a bird's-eye view of the paper.
 - A draft version including boxes with to-do lists and links to the table of contents to facilitate the back and forth while writing and editing.
 - A blind version without author identifiers and acknowledgements at the end so that it is ready to be submitted to peer-reviewed journals.
-- A text-only version in which figures and tables appear at the end, with pointers to them in the text.
+- A text-only version in which figures and tables appear at the end, with pointers to them in the text. Since this version is usually required for journal submission, it also places footnotes at the end.
 - A tracked version highlighting the changes from a previous version to facilitate referee revisions.
 - A one-file version with appendices included (the references will list citations made in both the paper and the appendix).
 - See examples of different versions in the Docs/Extra/Temp folder.
@@ -50,6 +50,7 @@ Docs/Settings/pagesetup.tex redefines the following (in case you want to restore
 - The format of the `\today` command from 'month day, year' to 'month year'.
 - The order of the thanks symbols.
 - The default settings of Latex floats for a better treatment of figures and tables in the text.
+- The look of endnote indicators.
 
 Docs/Extra/Tasks/tasks.tex can help you manage the to-dos for the paper and the slides.
 
