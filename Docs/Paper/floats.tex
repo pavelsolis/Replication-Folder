@@ -1,0 +1,31 @@
+%---------------------------------------------------------------
+% Counters and Numbering
+%---------------------------------------------------------------
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand\thefigure{\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+%---------------------------------------------------------------
+% Figures
+%---------------------------------------------------------------
+\clearpage
+\input{../Figures/exfig}
+
+% In appendix
+\clearpage
+\renewcommand\thefigure{\ref{sec:appdx2}.\arabic{figure}}
+\setcounter{figure}{0}
+\input{../Figures/exsubfig}
+
+%---------------------------------------------------------------
+% Tables
+%---------------------------------------------------------------
+\clearpage
+\input{../Tables/extab}
+
+% In appendix
+\clearpage
+\renewcommand{\thetable}{\ref{sec:appdx2}.\arabic{table}}
+\setcounter{table}{0}
+\input{../Tables/Standalone/extabself}
