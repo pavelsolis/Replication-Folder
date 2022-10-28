@@ -13,10 +13,8 @@
 	\renewcommand{\appendixname}{Appendix}
 	\renewcommand{\appendixtocname}{Appendix}
 \usepackage{endnotes}							% To place footnotes at the end
-%	\let\footnote=\endnote						% Turn on or off as needed
+	\iftoggle{floatstxt}{}{\let\footnote=\endnote}	% Defined based on toggle
 %\usepackage{authblk}					 		% Multiple authors in blocks or in footnotes
-%\usepackage{textcomp}		  			 		% Handles the copyright symbol
-%\usepackage{makeidx} 							% Creates an index at the end, use \index{} and \printindex
 
 %---------------------------------------------------------------
 % Formatting
