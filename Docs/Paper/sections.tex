@@ -124,18 +124,3 @@ Remarks (omitted from outline).
 	\input{thanks}
 	}{}
 }{}												% Closes \iftoggle{fulldraft}
-
-%---------------------------------------------------------------
-% Figures and Tables
-%---------------------------------------------------------------
-
-\iftoggle{fulldraft}{							% Turn it on/off in packages.tex
-	
-	\iftoggle{floatstxt}{}{
-		\newpage
-		\input{../Figures/exfig}
-		
-		\input{../Tables/extab}
-	}
-
-}{}												% Closes \iftoggle{fulldraft}
