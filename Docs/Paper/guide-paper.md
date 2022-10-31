@@ -27,18 +27,21 @@ Define frequently-used words potentially subject to change (like the date of the
 - Example: When the variable `lastobs` defined in Docs/Settings/variables.tex is edited, the notes in the figures and tables using it will reflect the change after the next compilation.
 
 You may sometimes need to have the appendix right after the main text in the same file.
-- The one-file case can be useful for writing, editing and distributing, while the two-file case may be useful for submitting to journals.
+- The one-file case can be useful for writing, editing and distributing, while the two-file case may be useful for journal submissions.
 	- Regardless of whether the appendix is included in the same file as the paper, Docs/Paper/appendix.tex will always generate a standalone file for the appendix (with its own references).
 
 - To switch between cases, turn the `withappdx` toggle on or off in Docs/Settings/toggles.tex as needed.
-	- In the case in which some references only appear in the appendix, but not in the paper, Docs/Paper/paper.tex might not compile properly when switching the toggle. To address this, re-run Biber and compile it again. You may need to remove all its LaTeX auxiliary files (i.e., file names ending with aux, bbl, log, etc.) before re-running Biber.
+	- In the case in which some references only appear in the appendix, but not in the paper, Docs/Paper/paper.tex might not compile properly when switching the toggle. To address this, re-run Biber and compile paper.tex again. You may need to remove all its LaTeX auxiliary files (i.e., file names ending with aux, bbl, log, etc.) before re-running Biber.
 	- This process handles (i.e., removes or adds) citations only made in the appendix when switching the toggle.
 - Make sure you write the contents of your appendix in Docs/Paper/appdxfiller.tex.
 	- In this way, the content of the appendix in the one- and two-file cases is the same (i.e., no extra editing necessary) because both paper.tex and appendix.tex call the same appdxfiller.tex file.
 
 Use a reference manager software to simplify the process of updating the library.bib file.
+- Make sure to use the appropriate entry type in bibtex (e.g., unpublished papers as reports) to be able to tailor each type based on journal requirements.
 
-Use the Docs/Paper/highlights.docx file to summarize (without jargon) the main points of the paper.
+After finishing a draft:
+- Use a word counter to identify or confirm the keywords.
+- Use the Docs/Paper/highlights.docx file to summarize (without jargon) the main points of the paper.
 
 Use Git branches when editing the paper.
 - Branches allow you to work on new drafts while keeping a workable version intact.
