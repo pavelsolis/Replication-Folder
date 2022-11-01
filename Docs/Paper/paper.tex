@@ -15,7 +15,7 @@
 % Title
 %---------------------------------------------------------------
 \title{ \vspace{-4ex}\input{../Settings/title}  
-	\iftoggle{fulldraft}{ \iftoggle{blind}{}{ \hspace{-1.99ex}\thanks{ \protect\input{thanks} } } }{}
+	\iftoggle{fulldraft}{ \iftoggle{blind}{}{ \hspace{-1em}\thanks{ \protect\input{thanks} } } }{ \vspace{-4ex} }
 }
 \iftoggle{fulldraft}{
 	\author{
@@ -36,12 +36,20 @@
 
 \input{sections}
 
-\iftoggle{fulldraft}{							% References (and appendix) only in full draft
+\iftoggle{fulldraft}{							% Next only in full draft
 	\begin{singlespace}
 		\printbibliography[title={References},heading=bibintoc]
 	\end{singlespace}
 	
-	\iftoggle{withappdx}{\input{appdxfiller}}{}	% May need to compile twice (for ToC) and re-run biber (for references)
+	\iftoggle{withappdx}{\input{appdxfiller}}{}	% See comment for withappdx in toggles.tex
+	
+	\iftoggle{floatstxt}{}{
+		\newpage
+		\theendnotes
+		
+		\input{floats}
+		\input{appdxfloats}
+	}
 }{}												% Closes \iftoggle{fulldraft}
 
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
@@ -52,11 +60,11 @@
 % CRediT (Contributor Roles Taxonomy) author statement
 %---------------------------------------------------------------
 % Author 1: Conceptualization, methodology, data curation, formal analysis. 
-% Author 2: Investigation, software, validation, visualization, writing, supervision.
+% Author 2: Research, coding, validation, visualization, writing, supervision.
 
 %---------------------------------------------------------------
 % Notes
 %---------------------------------------------------------------
-% To update or remove previously citated references in TexStudio:
+% To update or remove previously citated references in TeXstudio:
 % - Tools -> Commands -> Biber
 % - Build & View

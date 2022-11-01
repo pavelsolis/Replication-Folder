@@ -1,3 +1,5 @@
+\titleformat{\section}{\Large\bfseries}{}{0pt}{\thesection.\quad}	% Customize section titles
+
 \section{Introduction} \label{sec:intro}
 \iftoggle{toclinks}{\gototoc}{} 				% Turn it on/off in packages.tex
 \iftoggle{cboxes}{	   				  			% Turn it on/off in packages.tex
@@ -83,7 +85,7 @@ Cite figure \ref{fig:exfig}, table \ref{tab:extab} and (dynamic) numbers like \d
 	\begin{center}
 		[Insert Figure \ref{fig:exfig} Here.]
 	\end{center}
-	}
+}
 
 \iftoggle{floatstxt}{
 	\input{../Tables/extab}
@@ -91,7 +93,7 @@ Cite figure \ref{fig:exfig}, table \ref{tab:extab} and (dynamic) numbers like \d
 	\begin{center}
 		[Insert Table \ref{tab:extab} Here.]
 	\end{center}
-	}
+}
 
 
 }{}												% Closes \iftoggle{fulldraft}
@@ -112,25 +114,13 @@ Remarks (omitted from outline).
 }{}	% Closes \iftoggle{fulldraft}
 
 
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}	% Restore section titles defaults
+
+
 \iftoggle{fulldraft}{							% Turn it on/off in packages.tex
 	\iftoggle{blind}{
 	\section*{Acknowledgments}
 	
 	\input{thanks}
 	}{}
-}{}												% Closes \iftoggle{fulldraft}
-
-%---------------------------------------------------------------
-% Figures and Tables
-%---------------------------------------------------------------
-
-\iftoggle{fulldraft}{							% Turn it on/off in packages.tex
-	
-	\iftoggle{floatstxt}{}{
-		\newpage
-		\input{../Figures/exfig}
-		
-		\input{../Tables/extab}
-	}
-
 }{}												% Closes \iftoggle{fulldraft}

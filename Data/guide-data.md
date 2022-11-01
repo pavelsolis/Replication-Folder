@@ -4,11 +4,14 @@ The documentation and datasets used in the analysis are distributed in the follo
 - The Data/Raw folder contains the *original data files* downloaded from different sources. 
 - The Data/Analytic folder contains the *analysis data files* generated after cleaning and processing the *original data files*.
 - The Data/Metadata folder contains files documenting the data sources and variables.
-	- Data/Metadata/metadata.docx describes the original and analysis data files and provides instructions on how to update them; it serves as a codebook for a user to work with and interpret the data appropriately.
+	- Data/Metadata/metadata.docx describes the original and analysis data files and provides instructions on how to update them. It serves as a codebook for a user to work with and interpret the data appropriately.
 
 
 ## Recommendations
-All the original and analysis data files used in the paper (regardless of the file extension) should be listed in Data/Metadata/metadata.docx.
+Save the analysis data files in ASCII format (e.g., .txt, .csv, .dat), so that they are ready to be shared and accessed by anyone.
+- Verify that they are exported correctly and contain all the relevant variables.
+
+All the original and analysis data files relevant for the paper (regardless of file extension) should be listed in Data/Metadata/metadata.docx.
 - Add an entry for a data file:
 	- Each time you obtain a new original data file.
 	- Each time you generate a new analysis data file.

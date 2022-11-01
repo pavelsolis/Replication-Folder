@@ -8,19 +8,22 @@
 \usepackage[nottoc]{tocbibind} 		 			% nottoc omits ToC from itself
 \usepackage{lipsum}						   		% To add dummy text
 \usepackage{pdfpages}					 		% To insert (excerpts of) PDF files
-\usepackage{appendix}							% options: titletoc, toc, title (b/f each letter), page (“Appendices” b/f first appendix)
-%	\renewcommand*\appendixpagename{Appendix}
-%	\renewcommand*\appendixtocname{Appendix}
+\usepackage[page]{appendix}						% options: titletoc, toc, title, page
+	\renewcommand{\appendixpagename}{\centering Appendices}
+	\renewcommand{\appendixname}{Appendix}
+	\renewcommand{\appendixtocname}{Appendix}
+\usepackage{endnotes}							% To place footnotes at the end
+	\iftoggle{floatstxt}{}{\let\footnote=\endnote}	% Defined based on toggle
 %\usepackage{authblk}					 		% Multiple authors in blocks or in footnotes
-%\usepackage{textcomp}		  			 		% Handles the copyright symbol
-%\usepackage{makeidx} 							% Creates an index at the end, use \index{} and \printindex
 
 %---------------------------------------------------------------
 % Formatting
 %---------------------------------------------------------------
 \usepackage{pdflscape}			  		  		% To rotate page in PDF using \begin{landscape}
 \usepackage{enumerate}				    		% To personalize the enumerate style
-%\usepackage{datetime2}							% To customize date format
+\usepackage{titlesec}							% To customize section titles
+	\titleformat*{\subsection}{\large\bfseries\itshape}
+%	\titlespacing*{\subsection}{0pt}{0.6\baselineskip}{1.3\parskip}
 
 %---------------------------------------------------------------
 % Math
@@ -28,7 +31,7 @@
 \usepackage{amsmath} 					 		% For multi-line statements
 \usepackage{amssymb} 					 		% For math symbols and fonts
 \usepackage{dsfont}								% More math fonts (e.g. indicator function)
-%\usepackage{amsthm,enumitem}					% For theorems and control over list environments
+%\usepackage{amsthm}							% To handle theorems
 
 %---------------------------------------------------------------
 % Figures and Tables
@@ -58,6 +61,7 @@
 %---------------------------------------------------------------
 % Special Characters
 %---------------------------------------------------------------
+\usepackage[style=american]{csquotes}  			% For inline and display quotations
 \usepackage[utf8]{inputenc}			  		 	% Handles accented characters (same output on all systems)
 %\usepackage[T1]{fontenc}		  	  			% Fonts to use for printing characters
 %\usepackage{underscore}				   		% Handles "_" in text but hurts filenames/labels with it
@@ -79,16 +83,29 @@
 %---------------------------------------------------------------
 % References
 %---------------------------------------------------------------
-% To read and process bibliographic data
+% To process bibliographic data
 \usepackage[style=authoryear,maxbibnames=99,maxcitenames=2,uniquelist=false,uniquename=false,dashed=false,backend=biber]{biblatex}
-\usepackage[style=american]{csquotes}  			% For inline and display quotations
+	\addbibresource{../References/library.bib} 		%Imports the bibliography file 
 
-\addbibresource{../References/library.bib} 		%Imports the bibliography file 
-\DeclareFieldFormat[book]{title}{#1}		  	% Non-italic book title
-\DeclareFieldFormat[article]{pages}{#1} 		% No pp. before pages
-\DeclareFieldFormat[incollection]{pages}{#1} 
-\renewbibmacro{in:}{} 							% No in: before journal title
+% General
+\renewcommand\multicitedelim{\addcomma\space}	% Citations separated by a comma
+\uspunctuation									% Activate ‘American-style’ punctuation
+%\stdpunctuation								% Restores standard punctuation
+
+% Customize all types
+\DeclareDelimFormat[bib]{nametitledelim}{\addspace} % Remove dot after year
 \xpretobibmacro{date+extradate}{\setunit{\addperiod\space}}{}{}	% Dot after author
+\renewbibmacro{in:}{} 							% No in: before title
+
+% Customize book type
+\DeclareFieldFormat[book]{title}{#1}		  	% Non-italic book title
+
+% Customize report type
+\DeclareFieldFormat[report]{pages}{#1}			% No pp. before pages
+\DeclareFieldFormat[report]{title}{\mkbibquote{#1\isdot}} % % Title in quotations and not in italics
+
+% Customize article type
+\DeclareFieldFormat[article]{pages}{#1} 		% No pp. before pages
 \AtEveryBibitem{								% Omit fields
 	\ifentrytype{article}{
 		\clearfield{doi}%
@@ -108,5 +125,3 @@
 	\setunit{\addcomma\space}%
 	\printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}} % Parenthesis around volume number
-\uspunctuation									% Activate ‘American-style’ punctuation
-%\stdpunctuation								% Restores standard punctuation

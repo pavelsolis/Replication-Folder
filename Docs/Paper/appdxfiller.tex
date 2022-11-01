@@ -1,16 +1,21 @@
 \newpage
 \begin{appendices}
-	
-\setcounter{page}{1}										% Restart page numbering
-\setcounter{footnote}{0}									% Restart footnote counter
-\renewcommand{\thetable}{\thesection.\arabic{table}}		% Table name aligned to appendix
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}		% Figure name aligned to appendix
-\renewcommand{\theequation}{\thesection.\arabic{equation}}	% Equation name aligned to appendix
-%	\captionsetup[table]{name=Table A}						% Change table caption prefix
+
+\titleformat{\section}{\Large\bfseries}{}{0pt}{\appendixname\enskip\thesection:\quad}	% Customize section titles
+
+% Restart counters and customize numbering
+\setcounter{page}{1}
+\setcounter{footnote}{0}
+\iftoggle{floatstxt}{}{\setcounter{endnote}{0}}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
 
 \begin{center}
-	{\LARGE\textbf{Appendix} \\ \vspace{0.3cm}
-	\input{../Settings/title}}
+	{\LARGE \input{../Settings/title}}
 \end{center}
 
 
@@ -21,9 +26,6 @@
 	\begin{boxeditems}
 		\item To-do list.
 	\end{boxeditems}}{}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-\setcounter{equation}{0}
 
 Appendix content.\footnote{Footnotes numbering is restarted in the appendix.}
 
@@ -39,16 +41,28 @@ Example of citation only made in appendix: \parencite{ChangLi:2017AER}.
 	\begin{boxeditems}
 		\item To-do list.
 	\end{boxeditems}}{}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-\setcounter{equation}{0}
 
 Appendix content.
 
 \input{../Equations/exLongN}
 
-\input{../Tables/Standalone/extabself}
+\iftoggle{floatstxt}{
+	\input{../Tables/Standalone/extabself}
+	}{
+	\begin{center}
+		[Insert Table \ref{tab:extabself} Here.]
+	\end{center}
+}
 
-\input{../Figures/exsubfig}
+\iftoggle{floatstxt}{
+	\input{../Figures/exsubfig}
+	}{
+	\begin{center}
+		[Insert Figure \ref{fig:exsubfig} Here.]
+	\end{center}
+}
+
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}	% Restore section titles defaults
 
 \end{appendices}

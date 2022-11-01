@@ -18,6 +18,13 @@
 	\printbibliography[title={References},heading=bibintoc]
 \end{singlespace}
 
+\iftoggle{floatstxt}{}{
+	\newpage
+	\theendnotes
+	
+	\input{appdxfloats}
+}
+
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
 	
 \end{document}
@@ -25,6 +32,6 @@
 %---------------------------------------------------------------
 % Notes
 %---------------------------------------------------------------
-% To update or remove previously citated references in TexStudio:
+% To update or remove previously citated references in TeXstudio:
 % - Tools -> Commands -> Biber
 % - Build & View
