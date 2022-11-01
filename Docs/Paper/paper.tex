@@ -15,7 +15,7 @@
 % Title
 %---------------------------------------------------------------
 \title{ \vspace{-4ex}\input{../Settings/title}  
-	\iftoggle{fulldraft}{ \iftoggle{blind}{}{ \hspace{-1.99ex}\thanks{ \protect\input{thanks} } } }{}
+	\iftoggle{fulldraft}{ \iftoggle{blind}{}{ \hspace{-1em}\thanks{ \protect\input{thanks} } } }{}
 }
 \iftoggle{fulldraft}{
 	\author{
@@ -48,6 +48,7 @@
 		\theendnotes
 		
 		\input{floats}
+		\input{appdxfloats}
 	}
 }{}												% Closes \iftoggle{fulldraft}
 
