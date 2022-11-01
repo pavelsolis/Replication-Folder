@@ -9,13 +9,13 @@ The scripts generating the research results are distributed in the following sub
 
 
 ## General Recommendations
-Save the analysis data files in ASCII format (e.g., .txt, .csv, .dat), so that they are ready to be shared and accessed by anyone.
-- Verify that they exported correctly and contain all the relevant variables.
-
 In each subfolder, break tasks into scripts and use main files to call the scripts sequentially.
 - Examples of main files: data_clean.EXT for the data files, data_stats.EXT for the descriptive statistics, and data_analysis.EXT for the results.
 	- If the main files are written in the same programming language, data_analysis.EXT could in turn call data_clean.EXT and data_stats.EXT. See the example script Codes/Analysis/data_analysis.do; it *assumes* that the scripts data_clean.do, data_stats.do, figures.do, regressions.do exist in their respective subfolders to reduce the number of extra files included in the repository.
 - List all the scripts called by each main file at the end of the README.md file.
+
+Save the analysis data files in ASCII format (e.g., .txt, .csv, .dat), so that they are ready to be shared and accessed by anyone.
+- Verify that they are exported correctly and contain all the relevant variables.
 
 In your codes:
 - Use relative paths based on the structure of the main folder, so that the codes run regardless of its location.
