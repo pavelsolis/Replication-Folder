@@ -9,7 +9,7 @@ The documentation and datasets used in the analysis are distributed in the follo
 
 ## Recommendations
 Save the analysis data files in ASCII format (e.g., .txt, .csv, .dat), so that they are ready to be shared and accessed by anyone.
-- Verify that they exported correctly and contain all the relevant variables.
+- Verify that they are exported correctly and contain all the relevant variables.
 
 All the original and analysis data files relevant for the paper (regardless of file extension) should be listed in Data/Metadata/metadata.docx.
 - Add an entry for a data file:
