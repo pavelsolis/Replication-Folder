@@ -16,12 +16,12 @@ In each subfolder, break tasks into scripts and use main files to call the scrip
 
 Save the analysis data files in ASCII format (e.g., .txt, .csv, .dat), so that they are ready to be shared and accessed by anyone.
 - Verify that they are exported correctly and contain all the relevant variables.
+- Load the analysis data files in ASCII format and perform the analysis, just as a researcher with access to the file would do.
 
 In your codes:
 - Use relative paths based on the structure of the main folder, so that the codes run regardless of its location.
 - Whenever possible, write directory paths to be independent of the platform used (e.g., Mac, Windows, Linux).
 	- See, for example, `fullfile` in Matlab, `file.path` in R and `os.path.join` in Python.
-- Load the analysis data files in ASCII format and perform the analysis, just as a researcher with access to the file would do.
 - Make sure the scripts work for any sample size, so that no additional coding is necessary when you update the datasets.
 - Add concise comments to the code indicating the commands that generate specific results.
 
