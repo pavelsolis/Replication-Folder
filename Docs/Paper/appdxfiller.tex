@@ -46,9 +46,21 @@ Appendix content.
 
 \input{../Equations/exLongN}
 
-\input{../Tables/Standalone/extabself}
+\iftoggle{floatstxt}{
+	\input{../Tables/Standalone/extabself}
+	}{
+	\begin{center}
+		[Insert Table \ref{tab:extabself} Here.]
+	\end{center}
+}
 
-\input{../Figures/exsubfig}
+\iftoggle{floatstxt}{
+	\input{../Figures/exsubfig}
+	}{
+	\begin{center}
+		[Insert Figure \ref{fig:exsubfig} Here.]
+	\end{center}
+}
 
 
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}	% Restore section titles defaults

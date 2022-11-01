@@ -18,6 +18,8 @@
 	\printbibliography[title={References},heading=bibintoc]
 \end{singlespace}
 
+\iftoggle{floatstxt}{}{ \input{appdxfloats} }
+
 \iftoggle{toclinks}{\maketoc}{}		% Table of contents for editing
 	
 \end{document}
