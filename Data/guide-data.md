@@ -28,7 +28,7 @@ Verify that any unused (yet potentially useful) data file is stored in the Data/
 ## Considerations
 Excel files are usually large and thus excluded from the repository.
 - Very large files (\> 100 MB) do not work well in version control (they are duplicated in the history).
-- GitHub limits the size of files to 50 MB.
+- GitHub blocks files larger than 100 MB and sends warnings for files over 50 MB.
 
 Excel files would then need to be shared in a conventional way (e.g., physical devices, website, cloud).
 - Designate a person in the team responsible for having the latest version of the Excel files and for sharing them.
