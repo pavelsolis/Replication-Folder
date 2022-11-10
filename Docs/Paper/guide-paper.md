@@ -45,7 +45,7 @@ After finishing a draft:
 
 Use Git branches when editing the paper.
 - Branches allow you to work on new drafts while keeping a workable version intact.
-- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#driessens-branching-model) for an effective Git branching model adapted to a research project.
+- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#a-branching-model-for-research-) for an effective Git branching model adapted to a research project.
 
 
 ## Considerations

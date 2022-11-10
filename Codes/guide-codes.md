@@ -31,7 +31,7 @@ Numbers cited in the text should be updated whenever you run the codes (e.g., af
 
 Use Git branches when editing code.
 - Branches allow you to test changes in the codes while keeping workable versions intact.
-- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#driessens-branching-model) for an effective Git branching model adapted to a research project.
+- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#a-branching-model-for-research-) for an effective Git branching model adapted to a research project.
 
 
 ## Recommendations for Tidy Subfolder

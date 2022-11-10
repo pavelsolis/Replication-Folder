@@ -23,7 +23,7 @@ If the slides call the PDF versions of the floats (i.e., tables and figures), ru
 
 Use Git branches when editing the slides.
 - Branches allow you to modify the contents of the slides while keeping a workable version intact.
-- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#driessens-branching-model) for an effective Git branching model adapted to a research project.
+- See [here](https://github.com/pavelsolis/Git-GitHub-Primer#a-branching-model-for-research-) for an effective Git branching model adapted to a research project.
 
 
 ## Considerations
