@@ -46,7 +46,7 @@ The results in the paper were generated using the following:
 	- Analysis: codes that perform the analysis.
 	- Extra: auxiliary, temporary and old codes.
 - Docs folder with the following subfolders:
-	- Paper: files that make up the paper.
+	- Paper: files that make up the manuscript.
 	- Slides: files that make up the slides.
 	- Numbers: code-generated .txt files containing specific numbers cited in the paper and slides.
 	- Equations: files that define and reference equations.
@@ -62,7 +62,7 @@ The metadata file (Data/Metadata/metadata.docx) describes the (original and anal
 
 The folder structure uses stratification to avoid repeating code or duplicating files (e.g., equations, figures, tables), and to facilitate collaboration, development and testing (since researchers can focus on specific parts). The following main files call the necessary bits in the required order:
 - Codes/Analysis/data_analysis.EXT: runs the codes sequentially (workflow below) to generate the results.
-- Docs/Paper/paper.tex: puts together the pieces constituting the paper.
+- Docs/Paper/paper.tex: puts together the pieces constituting the manuscript.
 - Docs/Paper/appendix.tex: generates a standalone file for the appendix.
 - Docs/Slides/slides.tex: calls equations, figures and tables.
 - doAll.sh: calls the previous main files sequentially to avoid having to execute them individually.
